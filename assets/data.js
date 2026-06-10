@@ -124,6 +124,48 @@ window.COLD_DATA = [
       "invoice-card",
       "chart-blip"
     ]
+  },
+  {
+    "id": "simple-essentials",
+    "num": "10",
+    "title": "Simple Essentials",
+    "desc": "Clean normal cursors for everyday UI previews.",
+    "icon": "dot",
+    "effects": [
+      "simple-dot",
+      "clean-ring",
+      "soft-shadow",
+      "cursor-cross",
+      "arrow-pointer"
+    ]
+  },
+  {
+    "id": "animal-friends",
+    "num": "11",
+    "title": "Animal Friends",
+    "desc": "Small animal-style cursor marks: paw, butterfly, birds, rabbit and dragonfly.",
+    "icon": "paw",
+    "effects": [
+      "cat-paw",
+      "butterfly-pair",
+      "bird-flock",
+      "rabbit-hop",
+      "dragonfly-dash"
+    ]
+  },
+  {
+    "id": "tiny-toys",
+    "num": "12",
+    "title": "Tiny Toys",
+    "desc": "Playful paper plane, rocket, wand, bouncing ball and mini planet effects.",
+    "icon": "toy",
+    "effects": [
+      "paper-plane",
+      "rocket-spark",
+      "magic-wand",
+      "bouncing-ball",
+      "mini-planet"
+    ]
   }
 ];
 window.COLD_EFFECTS = [
@@ -1115,6 +1157,336 @@ window.COLD_EFFECTS = [
       "a": "#2d7b49",
       "b": "#6b8a2c",
       "ink": "#15191e"
+    }
+  },
+  {
+    "key": "simple-dot",
+    "name": "Simple Dot",
+    "desc": "A clean cursor dot with soft fade.",
+    "kind": "simple-dot",
+    "cat_id": "simple-essentials",
+    "cat_num": "10",
+    "cat_title": "Simple Essentials",
+    "cat_desc": "Clean normal cursors for everyday UI previews.",
+    "cat_icon": "dot",
+    "index": 1,
+    "dark": {
+      "a": "#b9ff57",
+      "b": "#ffffff",
+      "ink": "#101014"
+    },
+    "light": {
+      "a": "#4f6f25",
+      "b": "#1b1f23",
+      "ink": "#f5f1e8"
+    }
+  },
+  {
+    "key": "clean-ring",
+    "name": "Clean Ring",
+    "desc": "A minimal ring pulse for normal hover previews.",
+    "kind": "clean-ring",
+    "cat_id": "simple-essentials",
+    "cat_num": "10",
+    "cat_title": "Simple Essentials",
+    "cat_desc": "Clean normal cursors for everyday UI previews.",
+    "cat_icon": "dot",
+    "index": 2,
+    "dark": {
+      "a": "#75d6ff",
+      "b": "#d5ecff",
+      "ink": "#101014"
+    },
+    "light": {
+      "a": "#326878",
+      "b": "#1b1f23",
+      "ink": "#f5f1e8"
+    }
+  },
+  {
+    "key": "soft-shadow",
+    "name": "Soft Shadow",
+    "desc": "A calm blurred shadow that follows the pointer.",
+    "kind": "soft-shadow",
+    "cat_id": "simple-essentials",
+    "cat_num": "10",
+    "cat_title": "Simple Essentials",
+    "cat_desc": "Clean normal cursors for everyday UI previews.",
+    "cat_icon": "dot",
+    "index": 3,
+    "dark": {
+      "a": "#c89cff",
+      "b": "#ffffff",
+      "ink": "#101014"
+    },
+    "light": {
+      "a": "#6a5389",
+      "b": "#29242f",
+      "ink": "#f5f1e8"
+    }
+  },
+  {
+    "key": "cursor-cross",
+    "name": "Cursor Cross",
+    "desc": "Small crosshair marks around the pointer.",
+    "kind": "cursor-cross",
+    "cat_id": "simple-essentials",
+    "cat_num": "10",
+    "cat_title": "Simple Essentials",
+    "cat_desc": "Clean normal cursors for everyday UI previews.",
+    "cat_icon": "dot",
+    "index": 4,
+    "dark": {
+      "a": "#f5f1e8",
+      "b": "#a7e956",
+      "ink": "#101014"
+    },
+    "light": {
+      "a": "#1b1f23",
+      "b": "#688e30",
+      "ink": "#f5f1e8"
+    }
+  },
+  {
+    "key": "arrow-pointer",
+    "name": "Arrow Pointer",
+    "desc": "A tiny pointer arrow flicks away from the cursor.",
+    "kind": "arrow-pointer",
+    "cat_id": "simple-essentials",
+    "cat_num": "10",
+    "cat_title": "Simple Essentials",
+    "cat_desc": "Clean normal cursors for everyday UI previews.",
+    "cat_icon": "dot",
+    "index": 5,
+    "dark": {
+      "a": "#f7f2df",
+      "b": "#a7e956",
+      "ink": "#101014"
+    },
+    "light": {
+      "a": "#22262c",
+      "b": "#6f8f35",
+      "ink": "#f5f1e8"
+    }
+  },
+  {
+    "key": "cat-paw",
+    "name": "Cat Paw Trail",
+    "desc": "Soft paw prints step behind the cursor.",
+    "kind": "cat-paw",
+    "cat_id": "animal-friends",
+    "cat_num": "11",
+    "cat_title": "Animal Friends",
+    "cat_desc": "Small animal-style cursor marks: paw, butterfly, birds, rabbit and dragonfly.",
+    "cat_icon": "paw",
+    "index": 1,
+    "dark": {
+      "a": "#f7e6c8",
+      "b": "#b9ff57",
+      "ink": "#211911"
+    },
+    "light": {
+      "a": "#2b241d",
+      "b": "#6f8f35",
+      "ink": "#faf8f1"
+    }
+  },
+  {
+    "key": "butterfly-pair",
+    "name": "Butterfly Pair",
+    "desc": "Two tiny wings flutter away from the pointer.",
+    "kind": "butterfly",
+    "cat_id": "animal-friends",
+    "cat_num": "11",
+    "cat_title": "Animal Friends",
+    "cat_desc": "Small animal-style cursor marks: paw, butterfly, birds, rabbit and dragonfly.",
+    "cat_icon": "paw",
+    "index": 2,
+    "dark": {
+      "a": "#ff9ad5",
+      "b": "#75d6ff",
+      "ink": "#17131f"
+    },
+    "light": {
+      "a": "#7d3e65",
+      "b": "#326878",
+      "ink": "#faf8f1"
+    }
+  },
+  {
+    "key": "bird-flock",
+    "name": "Bird Flock",
+    "desc": "Small V-shaped birds lift from the cursor.",
+    "kind": "birds",
+    "cat_id": "animal-friends",
+    "cat_num": "11",
+    "cat_title": "Animal Friends",
+    "cat_desc": "Small animal-style cursor marks: paw, butterfly, birds, rabbit and dragonfly.",
+    "cat_icon": "paw",
+    "index": 3,
+    "dark": {
+      "a": "#f5f1e8",
+      "b": "#b9ff57",
+      "ink": "#101014"
+    },
+    "light": {
+      "a": "#1b1f23",
+      "b": "#6f8f35",
+      "ink": "#faf8f1"
+    }
+  },
+  {
+    "key": "rabbit-hop",
+    "name": "Rabbit Hop",
+    "desc": "Tiny oval footprints hop in pairs.",
+    "kind": "rabbit",
+    "cat_id": "animal-friends",
+    "cat_num": "11",
+    "cat_title": "Animal Friends",
+    "cat_desc": "Small animal-style cursor marks: paw, butterfly, birds, rabbit and dragonfly.",
+    "cat_icon": "paw",
+    "index": 4,
+    "dark": {
+      "a": "#fff2d7",
+      "b": "#ffdca8",
+      "ink": "#1a1510"
+    },
+    "light": {
+      "a": "#302820",
+      "b": "#6f5f49",
+      "ink": "#faf8f1"
+    }
+  },
+  {
+    "key": "dragonfly-dash",
+    "name": "Dragonfly Dash",
+    "desc": "A thin body and four glass wings dash forward.",
+    "kind": "dragonfly",
+    "cat_id": "animal-friends",
+    "cat_num": "11",
+    "cat_title": "Animal Friends",
+    "cat_desc": "Small animal-style cursor marks: paw, butterfly, birds, rabbit and dragonfly.",
+    "cat_icon": "paw",
+    "index": 5,
+    "dark": {
+      "a": "#82ffe7",
+      "b": "#b7d5ff",
+      "ink": "#101014"
+    },
+    "light": {
+      "a": "#287d72",
+      "b": "#3c618b",
+      "ink": "#faf8f1"
+    }
+  },
+  {
+    "key": "paper-plane",
+    "name": "Paper Plane",
+    "desc": "A folded paper plane glides from the cursor.",
+    "kind": "paper-plane",
+    "cat_id": "tiny-toys",
+    "cat_num": "12",
+    "cat_title": "Tiny Toys",
+    "cat_desc": "Playful paper plane, rocket, wand, bouncing ball and mini planet effects.",
+    "cat_icon": "toy",
+    "index": 1,
+    "dark": {
+      "a": "#f5f1e8",
+      "b": "#9bd7ff",
+      "ink": "#101014"
+    },
+    "light": {
+      "a": "#2f343b",
+      "b": "#5b7b92",
+      "ink": "#faf8f1"
+    }
+  },
+  {
+    "key": "rocket-spark",
+    "name": "Rocket Spark",
+    "desc": "A mini rocket streaks with sparks.",
+    "kind": "rocket",
+    "cat_id": "tiny-toys",
+    "cat_num": "12",
+    "cat_title": "Tiny Toys",
+    "cat_desc": "Playful paper plane, rocket, wand, bouncing ball and mini planet effects.",
+    "cat_icon": "toy",
+    "index": 2,
+    "dark": {
+      "a": "#ff6b6b",
+      "b": "#ffd166",
+      "ink": "#101014"
+    },
+    "light": {
+      "a": "#944141",
+      "b": "#967739",
+      "ink": "#faf8f1"
+    }
+  },
+  {
+    "key": "magic-wand",
+    "name": "Magic Wand",
+    "desc": "A small wand throws stars and dust.",
+    "kind": "wand",
+    "cat_id": "tiny-toys",
+    "cat_num": "12",
+    "cat_title": "Tiny Toys",
+    "cat_desc": "Playful paper plane, rocket, wand, bouncing ball and mini planet effects.",
+    "cat_icon": "toy",
+    "index": 3,
+    "dark": {
+      "a": "#c89cff",
+      "b": "#fff27a",
+      "ink": "#101014"
+    },
+    "light": {
+      "a": "#654f8a",
+      "b": "#8a7a29",
+      "ink": "#faf8f1"
+    }
+  },
+  {
+    "key": "bouncing-ball",
+    "name": "Bouncing Ball",
+    "desc": "A little ball drops and bounces away.",
+    "kind": "ball",
+    "cat_id": "tiny-toys",
+    "cat_num": "12",
+    "cat_title": "Tiny Toys",
+    "cat_desc": "Playful paper plane, rocket, wand, bouncing ball and mini planet effects.",
+    "cat_icon": "toy",
+    "index": 4,
+    "dark": {
+      "a": "#54d7ff",
+      "b": "#ffffff",
+      "ink": "#101014"
+    },
+    "light": {
+      "a": "#2d6f83",
+      "b": "#293036",
+      "ink": "#faf8f1"
+    }
+  },
+  {
+    "key": "mini-planet",
+    "name": "Mini Planet",
+    "desc": "A small planet with an orbit ring appears.",
+    "kind": "planet",
+    "cat_id": "tiny-toys",
+    "cat_num": "12",
+    "cat_title": "Tiny Toys",
+    "cat_desc": "Playful paper plane, rocket, wand, bouncing ball and mini planet effects.",
+    "cat_icon": "toy",
+    "index": 5,
+    "dark": {
+      "a": "#b9ff57",
+      "b": "#c89cff",
+      "ink": "#101014"
+    },
+    "light": {
+      "a": "#5f8032",
+      "b": "#6b4f8a",
+      "ink": "#faf8f1"
     }
   }
 ];

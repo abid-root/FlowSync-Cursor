@@ -1,3 +1,5 @@
 # Coldboot Cursor Library
 
-Fresh clean static cursor animation library. Open `index.html` with Live Server.
+Clean build with 12 categories and 60 cursor effects.
+
+Open `index.html` with Live Server.

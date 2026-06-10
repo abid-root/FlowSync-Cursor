@@ -149,3 +149,357 @@ html[data-theme="light"] .site-snake-fx{
     0 5px 10px rgba(35,32,24,.13) !important;
 }
 /* ===== SITE SNAKE OVERRIDE STYLE END ===== */
+/* ===== REAL COLORFUL SERVICE SNAKE START ===== */
+.service-real-snake-fx {
+  position: absolute !important;
+  z-index: 99999 !important;
+  width: calc(24px - (var(--snake-index) * 0.55px)) !important;
+  height: calc(13px - (var(--snake-index) * 0.23px)) !important;
+  min-width: 8px !important;
+  min-height: 5px !important;
+  border-radius: 999px !important;
+  pointer-events: none !important;
+  transform-origin: 50% 50% !important;
+  transition: opacity 220ms ease !important;
+  background:
+    linear-gradient(
+      90deg,
+      hsl(var(--snake-hue), 92%, 58%),
+      hsl(calc(var(--snake-hue) + 45), 96%, 66%)
+    ) !important;
+  box-shadow:
+    0 0 6px hsla(var(--snake-hue), 95%, 64%, 0.52),
+    0 0 16px hsla(calc(var(--snake-hue) + 45), 95%, 66%, 0.22) !important;
+  will-change: left, top, transform !important;
+  backface-visibility: hidden !important;
+}
+
+.service-real-snake-fx::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 23% !important;
+  border-radius: inherit !important;
+  background: rgba(255, 255, 255, 0.35) !important;
+}
+
+.service-real-snake-fx.snake-head {
+  width: 32px !important;
+  height: 17px !important;
+  background:
+    linear-gradient(
+      90deg,
+      #5cf28b,
+      #54d7ff,
+      #c89cff
+    ) !important;
+  box-shadow:
+    0 0 8px rgba(92, 242, 139, 0.5),
+    0 0 18px rgba(84, 215, 255, 0.3) !important;
+}
+
+.service-real-snake-fx.snake-head::before {
+  content: "" !important;
+  position: absolute !important;
+  right: 7px !important;
+  top: 4px !important;
+  width: 4px !important;
+  height: 4px !important;
+  border-radius: 999px !important;
+  background: #101014 !important;
+  box-shadow: 0 8px 0 #101014 !important;
+}
+
+.service-real-snake-fx.snake-head::after {
+  inset: 25% !important;
+}
+
+.service-real-snake-jelly {
+  filter: blur(.2px) !important;
+  opacity: .9 !important;
+}
+
+.service-real-snake-fish:not(.snake-head) {
+  width: calc(18px - (var(--snake-index) * 0.34px)) !important;
+  height: calc(10px - (var(--snake-index) * 0.13px)) !important;
+}
+/* ===== REAL COLORFUL SERVICE SNAKE END ===== */
+
+/* ===== FINAL SITE SNAKE CSS START ===== */
+
+/* shared */
+.library-site-snake {
+  pointer-events: none !important;
+  transform-origin: 50% 50% !important;
+  transition: opacity 120ms ease !important;
+  will-change: transform, opacity !important;
+  backface-visibility: hidden !important;
+  contain: layout paint !important;
+}
+
+/* =========================================================
+   ABOUT / SECOND SECTION
+   Bone snake follower
+========================================================= */
+.about-good-snake-fx {
+  --bone: rgba(255, 244, 223, 0.96);
+  --bone-soft: rgba(255, 235, 198, 0.82);
+  --bone-edge: rgba(123, 96, 62, 0.46);
+  --bone-cut: rgba(30, 24, 20, 0.28);
+  --bone-eye: #17131f;
+
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  width: calc(24px - (var(--snake-i) * 0.52px)) !important;
+  height: calc(15px - (var(--snake-i) * 0.23px)) !important;
+  min-width: 8px !important;
+  min-height: 5px !important;
+  border-radius: 999px !important;
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      var(--bone) 0 2.8px,
+      var(--bone-edge) 3px 3.6px,
+      transparent 3.8px
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0 37%,
+      var(--bone) 38% 62%,
+      transparent 63%
+    ),
+    radial-gradient(
+      ellipse at 28% 50%,
+      var(--bone-soft) 0 2.1px,
+      transparent 2.4px
+    ),
+    radial-gradient(
+      ellipse at 72% 50%,
+      var(--bone-soft) 0 2.1px,
+      transparent 2.4px
+    ) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.22) !important;
+}
+
+.about-good-snake-fx::before,
+.about-good-snake-fx::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 50% !important;
+  width: calc(17px - (var(--snake-i) * 0.28px)) !important;
+  height: calc(9px - (var(--snake-i) * 0.12px)) !important;
+  min-width: 5px !important;
+  min-height: 3px !important;
+  border-radius: 999px !important;
+  opacity: calc(0.9 - (var(--snake-i) * 0.018)) !important;
+}
+
+.about-good-snake-fx::before {
+  top: 47% !important;
+  border-top: 1.4px solid var(--bone) !important;
+  border-left: 1px solid transparent !important;
+  transform: translate(-50%, -85%) rotate(-15deg) !important;
+}
+
+.about-good-snake-fx::after {
+  top: 53% !important;
+  border-bottom: 1.4px solid var(--bone) !important;
+  border-left: 1px solid transparent !important;
+  transform: translate(-50%, -15%) rotate(15deg) !important;
+}
+
+/* skull head */
+.about-good-snake-fx.about-good-snake-head {
+  z-index: 100060 !important;
+  width: 31px !important;
+  height: 18px !important;
+  min-width: 31px !important;
+  min-height: 18px !important;
+  border-radius: 68% 42% 46% 62% / 58% 48% 52% 56% !important;
+  border: 1px solid var(--bone-edge) !important;
+  background:
+    radial-gradient(
+      circle at 68% 34%,
+      var(--bone-eye) 0 2px,
+      transparent 2.2px
+    ),
+    radial-gradient(
+      circle at 68% 66%,
+      var(--bone-eye) 0 2px,
+      transparent 2.2px
+    ),
+    radial-gradient(
+      ellipse at 82% 50%,
+      var(--bone-cut) 0 2.5px,
+      transparent 2.8px
+    ),
+    radial-gradient(
+      ellipse at 38% 50%,
+      rgba(255, 255, 255, 0.18) 0 6px,
+      transparent 6.5px
+    ),
+    linear-gradient(90deg, var(--bone), var(--bone-soft)) !important;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.24) !important;
+}
+
+.about-good-snake-fx.about-good-snake-head::before {
+  content: "" !important;
+  position: absolute !important;
+  right: 2px !important;
+  top: 50% !important;
+  left: auto !important;
+  width: 12px !important;
+  height: 1.4px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  border: 0 !important;
+  border-radius: 999px !important;
+  background: var(--bone-cut) !important;
+  transform: translateY(-50%) !important;
+  opacity: 0.9 !important;
+}
+
+.about-good-snake-fx.about-good-snake-head::after {
+  content: "" !important;
+  position: absolute !important;
+  right: -1px !important;
+  top: 52% !important;
+  left: auto !important;
+  width: 8px !important;
+  height: 6px !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  border: 0 !important;
+  border-radius: 0 999px 999px 0 !important;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--bone) 0 1px,
+    transparent 1px 3px
+  ) !important;
+  transform: translateY(-50%) !important;
+  opacity: 0.82 !important;
+}
+
+/* light theme bone */
+:root:not([data-theme="dark"]) .about-good-snake-fx {
+  --bone: rgba(24, 22, 20, 0.92);
+  --bone-soft: rgba(38, 34, 29, 0.74);
+  --bone-edge: rgba(250, 248, 241, 0.28);
+  --bone-cut: rgba(250, 248, 241, 0.32);
+  --bone-eye: #faf8f1;
+
+  box-shadow: 0 1px 2px rgba(24, 22, 20, 0.14) !important;
+}
+
+/* colorful / neon / jelly / fish share the same physics but different looks */
+.service-real-snake-fx {
+  position: absolute !important;
+  left: 0;
+  top: 0;
+  width: calc(24px - (var(--snake-index) * 0.55px)) !important;
+  height: calc(13px - (var(--snake-index) * 0.23px)) !important;
+  min-width: 8px !important;
+  min-height: 5px !important;
+  border-radius: 999px !important;
+  background:
+    linear-gradient(
+      90deg,
+      hsl(var(--snake-hue), 92%, 58%),
+      hsl(calc(var(--snake-hue) + 45), 96%, 66%)
+    ) !important;
+  box-shadow:
+    0 0 6px hsla(var(--snake-hue), 95%, 64%, 0.52),
+    0 0 16px hsla(calc(var(--snake-hue) + 45), 95%, 66%, 0.22) !important;
+}
+
+.service-real-snake-fx::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 23% !important;
+  border-radius: inherit !important;
+  background: rgba(255, 255, 255, 0.35) !important;
+}
+
+.service-real-snake-fx.snake-head {
+  z-index: 100060 !important;
+  width: 32px !important;
+  height: 17px !important;
+  background:
+    linear-gradient(
+      90deg,
+      #5cf28b,
+      #54d7ff,
+      #c89cff
+    ) !important;
+  box-shadow:
+    0 0 8px rgba(92, 242, 139, 0.5),
+    0 0 18px rgba(84, 215, 255, 0.3) !important;
+}
+
+.service-real-snake-fx.snake-head::before {
+  content: "" !important;
+  position: absolute !important;
+  right: 7px !important;
+  top: 4px !important;
+  width: 4px !important;
+  height: 4px !important;
+  border-radius: 999px !important;
+  background: #101014 !important;
+  box-shadow: 0 8px 0 #101014 !important;
+}
+
+.service-real-snake-fx.snake-head::after {
+  inset: 25% !important;
+}
+
+.library-site-snake-neon:not(.snake-head) {
+  border-radius: 8px 999px 999px 8px !important;
+  filter: saturate(1.25) !important;
+}
+
+.library-site-snake-jelly {
+  opacity: .88 !important;
+  filter: blur(.35px) saturate(1.2) !important;
+  background:
+    radial-gradient(circle at 38% 34%, rgba(255,255,255,.62), transparent 0 18%),
+    linear-gradient(90deg, rgba(120,220,255,.62), rgba(210,170,255,.55)) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.44),
+    0 0 14px rgba(130,220,255,.22) !important;
+}
+
+.library-site-snake-fish:not(.snake-head) {
+  width: calc(18px - (var(--snake-index) * 0.28px)) !important;
+  height: calc(11px - (var(--snake-index) * 0.12px)) !important;
+  clip-path: polygon(0 50%, 22% 8%, 100% 50%, 22% 92%) !important;
+  border-radius: 0 !important;
+}
+
+/* ===== FINAL SITE SNAKE CSS END ===== */
+
+/* ===== EXTRA SIMPLE ANIMAL TOY CURSORS START ===== */
+.extra-fx{position:absolute;pointer-events:none;display:block;will-change:transform,opacity;transform:translate(-50%,-50%)}
+.extra-dot{width:var(--s,12px);height:var(--s,12px);border-radius:999px;background:var(--a);box-shadow:0 0 14px color-mix(in srgb,var(--a) 44%,transparent)}
+.extra-ring{width:var(--s,56px);height:var(--s,56px);border-radius:999px;border:2px solid color-mix(in srgb,var(--a) 72%,transparent);background:transparent;box-shadow:0 0 18px color-mix(in srgb,var(--a) 20%,transparent)}
+.extra-shadow{width:var(--s,64px);height:var(--s,64px);border-radius:999px;background:color-mix(in srgb,var(--a) 36%,transparent);filter:blur(12px)}
+.extra-cross-x,.extra-cross-y{background:var(--a);border-radius:999px;box-shadow:0 0 10px color-mix(in srgb,var(--a) 32%,transparent)}
+.extra-cross-x{width:42px;height:2px}.extra-cross-y{width:2px;height:42px}
+.extra-arrow{width:0;height:0;border-left:16px solid var(--a);border-top:9px solid transparent;border-bottom:9px solid transparent;filter:drop-shadow(0 0 8px color-mix(in srgb,var(--a) 35%,transparent))}
+.extra-paw{width:28px;height:26px;background:radial-gradient(circle at 50% 70%,var(--a) 0 7px,transparent 7.5px),radial-gradient(circle at 20% 30%,var(--a) 0 4px,transparent 4.5px),radial-gradient(circle at 50% 20%,var(--a) 0 4px,transparent 4.5px),radial-gradient(circle at 80% 30%,var(--a) 0 4px,transparent 4.5px);filter:drop-shadow(0 2px 4px rgba(0,0,0,.18))}
+.extra-butterfly{width:30px;height:24px;background:radial-gradient(ellipse at 30% 40%,var(--a) 0 8px,transparent 8.5px),radial-gradient(ellipse at 70% 40%,var(--b) 0 8px,transparent 8.5px),linear-gradient(var(--ink),var(--ink)) center/2px 20px no-repeat;filter:drop-shadow(0 0 10px color-mix(in srgb,var(--b) 30%,transparent))}
+.extra-bird{width:28px;height:14px;background:linear-gradient(135deg,transparent 0 43%,var(--a) 44% 50%,transparent 51%),linear-gradient(45deg,transparent 0 43%,var(--a) 44% 50%,transparent 51%)}
+.extra-rabbit{width:24px;height:30px;background:radial-gradient(ellipse at 35% 28%,var(--a) 0 4px,transparent 4.5px),radial-gradient(ellipse at 65% 28%,var(--a) 0 4px,transparent 4.5px),radial-gradient(ellipse at 50% 68%,var(--a) 0 8px,transparent 8.5px)}
+.extra-dragonfly{width:46px;height:24px;background:radial-gradient(ellipse at 34% 28%,color-mix(in srgb,var(--b) 70%,transparent) 0 9px,transparent 9.5px),radial-gradient(ellipse at 34% 72%,color-mix(in srgb,var(--b) 70%,transparent) 0 9px,transparent 9.5px),radial-gradient(ellipse at 66% 28%,color-mix(in srgb,var(--b) 55%,transparent) 0 9px,transparent 9.5px),radial-gradient(ellipse at 66% 72%,color-mix(in srgb,var(--b) 55%,transparent) 0 9px,transparent 9.5px),linear-gradient(90deg,var(--a),var(--ink)) center/44px 4px no-repeat;filter:drop-shadow(0 0 10px color-mix(in srgb,var(--a) 32%,transparent))}
+.extra-plane{width:0;height:0;border-left:34px solid var(--a);border-top:13px solid transparent;border-bottom:8px solid transparent;filter:drop-shadow(0 0 10px color-mix(in srgb,var(--b) 30%,transparent))}
+.extra-rocket{width:34px;height:16px;border-radius:999px 60% 60% 999px;background:linear-gradient(90deg,var(--a),var(--b));box-shadow:0 0 14px color-mix(in srgb,var(--b) 36%,transparent)}
+.extra-mini-spark{width:8px;height:8px;border-radius:999px;background:var(--b)}
+.extra-wand{width:54px;height:4px;border-radius:999px;background:linear-gradient(90deg,var(--ink),var(--a));box-shadow:0 0 12px color-mix(in srgb,var(--a) 35%,transparent)}
+.extra-star{color:var(--b);font-weight:950;font-size:15px;text-shadow:0 0 10px color-mix(in srgb,var(--b) 45%,transparent)}
+.extra-ball{width:var(--s,22px);height:var(--s,22px);border-radius:999px;background:radial-gradient(circle at 32% 28%,#fff 0 3px,transparent 3.5px),linear-gradient(135deg,var(--a),var(--b));box-shadow:0 10px 18px rgba(0,0,0,.18)}
+.extra-planet{width:34px;height:34px;border-radius:999px;background:linear-gradient(135deg,var(--a),var(--b));box-shadow:0 0 14px color-mix(in srgb,var(--a) 28%,transparent)}
+.extra-planet::after{content:"";position:absolute;left:-8px;right:-8px;top:13px;height:7px;border:2px solid color-mix(in srgb,var(--b) 78%,transparent);border-radius:999px;transform:rotate(-18deg)}
+@keyframes extraFly{0%{opacity:0;transform:translate(-50%,-50%) scale(.55) rotate(0deg)}15%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) translate(var(--dx),var(--dy)) scale(var(--sc,1)) rotate(var(--rot))}}
+@keyframes extraRing{0%{opacity:.72;transform:translate(-50%,-50%) scale(.2)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.45)}}
+@keyframes extraBounce{0%{opacity:0;transform:translate(-50%,-50%) scale(.6)}20%{opacity:1}55%{transform:translate(-50%,-50%) translate(calc(var(--dx) * .55),calc(var(--dy) * .65)) scale(1.05)}75%{transform:translate(-50%,-50%) translate(calc(var(--dx) * .75),calc(var(--dy) * .35)) scale(.96)}100%{opacity:0;transform:translate(-50%,-50%) translate(var(--dx),var(--dy)) scale(.8)}}
+/* ===== EXTRA SIMPLE ANIMAL TOY CURSORS END ===== */

@@ -102,7 +102,7 @@ function attachEffectPreview(section, effect) {
   let last = 0;
   target.addEventListener("pointermove", (event) => {
     const now = performance.now();
-    const gap = ["snake", "centipede", "jelly", "fish"].includes(effect.kind) ? 6 : 72;
+    const gap = ["snake", "centipede", "jelly", "fish"].includes(effect.kind) ? 0 : 72;
     if (now - last < gap) return;
     last = now;
     const rect = layer.getBoundingClientRect();
