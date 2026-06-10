@@ -517,8 +517,163 @@ const COLD_FX = (() => {
       removeAfter(n, 1400);
     }
   }
+/* ===== UPLOADED LAB CURSORS START ===== */
 
+  let labStylesReady = false;
+  function injectLabStyles() {
+    if (labStylesReady) return;
+    labStylesReady = true;
+    const style = document.createElement("style");
+    style.textContent = `
+.fx-plane{width:0;height:0;border-left:16px solid var(--a);border-top:8px solid transparent;border-bottom:8px solid transparent;filter:drop-shadow(0 8px 14px color-mix(in srgb,var(--a) 30%,transparent))}
+.fx-lab-scan{width:136px;height:2px;border-radius:999px;background:linear-gradient(90deg,transparent,var(--a),var(--b),transparent);box-shadow:0 0 22px color-mix(in srgb,var(--a) 45%,transparent)}
+.fx-lab-scan::before,.fx-lab-scan::after{content:"";position:absolute;left:50%;top:-38px;width:2px;height:78px;background:linear-gradient(transparent,color-mix(in srgb,var(--a) 70%,transparent),transparent)}
+.fx-lab-scan::after{top:-5px;width:12px;height:12px;border:1px solid color-mix(in srgb,var(--a) 80%,transparent);border-radius:999px;background:transparent;transform:translateX(-50%)}
+.fx-gear{width:var(--s,30px);height:var(--s,30px);border-radius:999px;background:repeating-conic-gradient(from 0deg,var(--a) 0 12deg,transparent 12deg 24deg),radial-gradient(circle,var(--panel,rgba(0,0,0,.18)) 0 27%,var(--b) 29% 42%,transparent 44%);border:1px solid color-mix(in srgb,var(--a) 45%,rgba(255,255,255,.14));filter:drop-shadow(0 0 12px color-mix(in srgb,var(--a) 24%,transparent))}
+.fx-spine-lab{width:var(--w,24px);height:var(--h,12px);border-radius:999px;background:linear-gradient(90deg,var(--a),color-mix(in srgb,var(--b) 52%,var(--a)));border:1px solid color-mix(in srgb,var(--b) 36%,rgba(0,0,0,.18));box-shadow:0 0 8px color-mix(in srgb,var(--b) 20%,transparent);opacity:.92}
+.fx-spine-lab.head{width:30px;height:18px;border-radius:60% 45% 45% 60%;box-shadow:0 0 14px color-mix(in srgb,var(--b) 36%,transparent)}
+.fx-spine-lab.head::before,.fx-spine-lab.head::after{content:"";position:absolute;right:6px;width:4px;height:4px;border-radius:999px;background:var(--b)}
+.fx-spine-lab.head::before{top:4px}.fx-spine-lab.head::after{bottom:4px}
+@keyframes labPlaneFly{0%{opacity:0;transform:translate(-50%,-50%) rotate(var(--ang)) scale(.45)}18%{opacity:1}100%{opacity:0;transform:translate(-50%,-50%) translate(var(--dx),var(--dy)) rotate(calc(var(--ang) + 24deg)) scale(1.05)}}
+@keyframes labGearMove{0%{opacity:0;transform:translate(-50%,-50%) scale(.35) rotate(0deg)}18%{opacity:.95}100%{opacity:0;transform:translate(-50%,-50%) translate(var(--dx),var(--dy)) scale(1.05) rotate(var(--spin))}}
+`;
+    document.head.appendChild(style);
+  }
+
+  function rendererDigitalDustLab(effect, layer, x, y) {
+    for (let i = 0; i < 10; i++) {
+      const n = add(layer, "fx-square", x + rand(-5, 5), y + rand(-5, 5), effect);
+      css(n, {"--s": `${rand(4, 9)}px`, "--r": "2px"});
+      const angle = rand(0, Math.PI * 2);
+      crack(n, Math.cos(angle) * rand(28, 78), Math.sin(angle) * rand(24, 62), 620 + i * 24);
+    }
+  }
+
+  function rendererOrbitRingsLab(effect, layer, x, y) {
+    [42, 70, 98].forEach((s, i) => {
+      const r = add(layer, "fx-ring", x, y, effect);
+      css(r, {"--s": `${s}px`, "--bw": "1px", "--glow": "20px"});
+      ring(r, 850 + i * 120, 1.65 + i * .16);
+    });
+    for (let i = 0; i < 5; i++) {
+      const n = add(layer, "fx-dot", x, y, effect);
+      css(n, {"--s": `${rand(5, 9)}px`, "--rad": `${22 + i * 8}px`, "--turn": `${i % 2 ? -390 : 390}deg`, "--glow": "22px"});
+      n.style.animation = `fxOrbit ${940 + i * 70}ms ease-out forwards`;
+      removeAfter(n, 1400);
+    }
+  }
+
+  function rendererPaperPlane(effect, layer, x, y) {
+    injectLabStyles();
+    for (let i = 0; i < 3; i++) {
+      const n = add(layer, "fx-plane", x + rand(-4, 4), y + rand(-4, 4), effect);
+      const angle = rand(-38, 38) + (i - 1) * 20;
+      const rad = angle * Math.PI / 180;
+      css(n, {"--ang": `${angle}deg`, "--dx": `${Math.cos(rad) * rand(62, 112)}px`, "--dy": `${Math.sin(rad) * rand(42, 78) - rand(10, 32)}px`});
+      n.style.animation = `labPlaneFly ${820 + i * 90}ms cubic-bezier(.16,.9,.24,1) forwards`;
+      removeAfter(n, 1120);
+    }
+  }
+
+  function rendererLiquidBlobLab(effect, layer, x, y) {
+    for (let i = 0; i < 4; i++) {
+      const n = add(layer, "fx-blob", x + rand(-12, 12), y + rand(-10, 10), effect);
+      css(n, {"--s": `${rand(34, 64)}px`, "--blur": `${rand(1, 4)}px`, "--op": ".66"});
+      drift(n, 1180 + i * 90, 34);
+    }
+  }
+
+  function rendererScanlineLab(effect, layer, x, y) {
+    injectLabStyles();
+    const n = add(layer, "fx-lab-scan", x, y, effect);
+    const angle = rand(-12, 12);
+    css(n, {"--rot": `${angle}deg`, "--dx": `${rand(18, 48)}px`, "--dy": `${rand(-8, 8)}px`});
+    n.style.animation = `fxSlide 640ms ease-out forwards`;
+    removeAfter(n, 760);
+    const pulse = add(layer, "fx-ring", x, y, effect);
+    css(pulse, {"--s": "38px", "--bw": "1px", "--glow": "16px"});
+    ring(pulse, 700, 2.2);
+  }
+
+  function rendererMagnetCards(effect, layer, x, y) {
+    for (let i = 0; i < 4; i++) {
+      const n = add(layer, "fx-card", x + rand(-8, 8), y + rand(-8, 8), effect);
+      css(n, {"--w": `${rand(38, 56)}px`, "--h": `${rand(26, 36)}px`, "--dx": `${rand(-76, 76)}px`, "--dy": `${rand(-58, 58)}px`, "--rot": `${rand(-24, 24)}deg`, "--sc": ".08"});
+      n.style.animation = `fxMagnet ${820 + i * 70}ms ease-in forwards`;
+      removeAfter(n, 1160);
+    }
+  }
+
+  function rendererConstellationWeb(effect, layer, x, y) {
+    const points = [];
+    for (let i = 0; i < 6; i++) {
+      const px = x + rand(-46, 46);
+      const py = y + rand(-34, 34);
+      points.push([px, py]);
+      const n = add(layer, "fx-dot", px, py, effect);
+      css(n, {"--s": `${rand(5, 9)}px`, "--glow": "22px"});
+      drift(n, 1080, 28);
+    }
+    for (let i = 0; i < points.length - 1; i++) {
+      const a = points[i], b = points[i + 1];
+      const dx = b[0] - a[0], dy = b[1] - a[1];
+      const n = add(layer, "fx-line", (a[0] + b[0]) / 2, (a[1] + b[1]) / 2, effect);
+      css(n, {"--w": `${Math.hypot(dx, dy)}px`, "--h": "1px", "--glow": "10px"});
+      slide(n, Math.atan2(dy, dx) * 180 / Math.PI, 920, 6);
+    }
+  }
+
+  function rendererFirefliesGlow(effect, layer, x, y) {
+    for (let i = 0; i < 5; i++) {
+      const n = add(layer, "fx-dot", x + rand(-30, 30), y + rand(-18, 18), effect);
+      css(n, {"--s": `${rand(6, 12)}px`, "--dx": `${rand(-26, 26)}px`, "--dy": `${rand(-90, -35)}px`, "--rot": "0deg", "--sc": `${rand(.45, 1.15)}`, "--glow": "28px"});
+      n.style.animation = `fxDrift ${1200 + i * 120}ms ease-out forwards`;
+      removeAfter(n, 1800);
+    }
+  }
+
+  function rendererGlassShardsLab(effect, layer, x, y) {
+    for (let i = 0; i < 7; i++) {
+      const n = add(layer, "fx-shard", x + rand(-7, 7), y + rand(-7, 7), effect);
+      css(n, {"--s": `${rand(9, 17)}px`});
+      slide(n, rand(-180, 20), 820 + i * 42, rand(38, 84));
+    }
+  }
+
+  function rendererClockwork(effect, layer, x, y) {
+    injectLabStyles();
+    for (let i = 0; i < 3; i++) {
+      const n = add(layer, "fx-gear", x + rand(-10, 10), y + rand(-10, 10), effect);
+      css(n, {"--s": `${rand(22, 42)}px`, "--dx": `${rand(-62, 62)}px`, "--dy": `${rand(-58, 58)}px`, "--spin": `${rand(180, 520)}deg`});
+      n.style.animation = `labGearMove ${940 + i * 120}ms ease-out forwards`;
+      removeAfter(n, 1400);
+    }
+  }
+
+  function rendererSpineSerpent(effect, layer, x, y) {
+    injectLabStyles();
+    updateTail(layer, "spine-serpent", effect, x, y, 26, (i) => `fx-spine-lab ${i === 0 ? "head" : ""}`, {
+      headEase: .24,
+      ease: .34,
+      wave: 3.6,
+      shrink: .024
+    });
+  }
+
+
+/* ===== UPLOADED LAB CURSORS END ===== */
   const renderers = {
+    "digital-dust-lab": rendererDigitalDustLab,
+    "orbit-rings-lab": rendererOrbitRingsLab,
+    "paper-plane": rendererPaperPlane,
+    "liquid-blob-lab": rendererLiquidBlobLab,
+    "scanline-lab": rendererScanlineLab,
+    "magnet-cards": rendererMagnetCards,
+    "constellation-web": rendererConstellationWeb,
+    "fireflies-glow": rendererFirefliesGlow,
+    "glass-shards-lab": rendererGlassShardsLab,
+    "clockwork": rendererClockwork,
+    "spine-serpent": rendererSpineSerpent,
     "ember-constellation": rendererConstellation,
     "pixel-crack": rendererPixelCrack,
     "glass-manta": rendererGlassManta,
@@ -557,7 +712,7 @@ const COLD_FX = (() => {
     "gravity-sparks": rendererGravitySparks
   };
 
-  const fast = new Set(["bone-orbit", "jelly-chain", "larva-blink"]);
+  const fast = new Set(["spine-serpent", "bone-orbit", "jelly-chain", "larva-blink"]);
   const medium = new Set(["stitch-thread", "terminal-caret", "binary-rain", "orbit-satellite", "magnetic-pebbles"]);
 
   function spawn(effect, layer, x, y) {

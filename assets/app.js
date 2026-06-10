@@ -46,23 +46,85 @@ function initTheme() {
 }
 function syncCategoryExpandedState(grid, expanded) {
   const strip = grid ? grid.closest(".category-strip") : null;
-  if (strip) strip.classList.toggle("is-expanded", expanded);
+  if (!strip) return;
+  strip.classList.remove("is-expanded");
+  strip.classList.remove("has-extra-categories");
 }
+function renderCategoryGrid(grid, activeId, sameFolder, expanded = false) {
+  if (!grid) return;
 
-function renderCategoryGrid(grid, activeId, expanded, sameFolder) {
-  grid.innerHTML = COLD_DATA.map((cat) => {
+  const primaryLimit = 5;
+  const visible = COLD_DATA.slice(0, primaryLimit);
+
+  function card(cat, insidePanel = false) {
     const href = sameFolder ? `${cat.id}.html` : `categories/${cat.id}.html`;
     return `
-      <a class="category-card ${cat.id === activeId ? "active" : ""}" href="${href}">
+      <a class="category-card ${cat.id === activeId ? "active" : ""} ${insidePanel ? "panel-card" : ""}" href="${href}">
         <strong>
           <span class="cat-icon" aria-hidden="true">${cat.icon}</span>
           <span class="cat-label">${cat.title}</span>
         </strong>
       </a>
     `;
-  }).join("");
+  }
+
+  grid.innerHTML = `
+    <div class="category-main-row">
+      ${visible.map((cat) => card(cat, false)).join("")}
+    </div>
+    <div class="category-more-panel" aria-hidden="${expanded ? "false" : "true"}">
+      <div class="more-panel-title">All categories</div>
+      <div class="more-panel-grid">
+        ${COLD_DATA.map((cat) => card(cat, true)).join("")}
+      </div>
+    </div>
+  `;
+
+  const strip = grid.closest(".category-strip");
+  if (strip) {
+    strip.classList.toggle("is-expanded", expanded);
+    strip.classList.toggle("has-extra-categories", COLD_DATA.length > primaryLimit);
+  }
 }
 
+function setupCategoryNav(activeId, sameFolder) {
+  const strip = qs(".category-strip");
+  const grid = strip ? qs("#categoryGrid", strip) : qs("#categoryGrid");
+  const button = strip ? qs("#seeMoreBtn", strip) : qs("#seeMoreBtn");
+
+  if (!grid) return;
+
+  let expanded = false;
+
+  function render() {
+    renderCategoryGrid(grid, activeId, sameFolder, expanded);
+
+    if (button) {
+      const hasExtra = COLD_DATA.length > 5;
+      button.hidden = !hasExtra;
+      button.textContent = expanded ? "Close" : "See more";
+      button.setAttribute("aria-expanded", expanded ? "true" : "false");
+    }
+  }
+
+  render();
+
+  if (button) {
+    button.onclick = (event) => {
+      event.preventDefault();
+      expanded = !expanded;
+      render();
+    };
+  }
+
+  document.addEventListener("click", (event) => {
+    if (!strip || !expanded) return;
+    if (!strip.contains(event.target)) {
+      expanded = false;
+      render();
+    }
+  });
+}
 function attachEffectPreview(section, effect) {
   const layer = qs(".fx-layer", section);
   const target = qs(".preview-zone", section) || section;
@@ -92,47 +154,17 @@ function attachEffectPreview(section, effect) {
 
 function initIndex() {
   initTheme();
-
-  const grid = qs("#categoryGrid");
-  const button = qs("#seeMoreBtn");
-
-  if (!grid) return;
-
-  let expanded = true;
-
-  function render() {
-    renderCategoryGrid(grid, "", expanded, false);
-    syncCategoryExpandedState(grid, expanded);
-    if (button) button.style.display = "none";
-  }
-
-  render();
+  setupCategoryNav("", false);
 }
-
 function initCategoryPage(catId) {
   initTheme();
-
-  const grid = qs("#categoryGrid");
-  const button = qs("#seeMoreBtn");
-
-  if (!grid) return;
-
-  let expanded = true;
-
-  function render() {
-    renderCategoryGrid(grid, catId, expanded, true);
-    syncCategoryExpandedState(grid, expanded);
-    if (button) button.style.display = "none";
-  }
-
-  render();
+  setupCategoryNav(catId, true);
 
   qsa(".effect-box").forEach((box) => {
     const effect = COLD_EFFECTS.find((item) => item.key === box.dataset.effect);
     attachEffectPreview(box, effect);
   });
 }
-
 function initSourcePage(effectKey) {
   initTheme();
 
@@ -197,3 +229,4 @@ function initSourcePage(effectKey) {
     }
   }, { passive: true });
 })();
+

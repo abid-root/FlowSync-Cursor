@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex,nofollow">
-  <title>Keycap Pop | Source Code</title>
+  <title>Orbit Rings Lab | Source Code</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
     <header class="nav">
       <a class="brand" href="../index.html"><span class="brand-dot"></span>Coldboot</a>
       <nav class="nav-links">
-        <a href="../categories/data-ui.html">Back</a>
+        <a href="../categories/light-physics.html">Back</a>
         <a href="#preview">Preview</a>
         <a href="#code">Code</a>
         <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle theme">&#9789;</button>
@@ -21,13 +21,13 @@
 
     <section class="category-hero">
       <div class="text">
-        <span class="pill">05.0 / source</span>
-        <h1>Keycap Pop</h1>
-        <p>Mini keycaps jump with real keyboard-card feeling.</p>
+        <span class="pill">06.0 / source</span>
+        <h1>Orbit Rings Lab</h1>
+        <p>Orbit rings expand with tiny satellites spinning around them.</p>
       </div>
     </section>
 
-    <section class="source-preview section-gap" id="sourcePreview" data-effect="keycap-pop">
+    <section class="source-preview section-gap" id="sourcePreview" data-effect="orbit-rings-lab">
       <div class="fx-layer" aria-hidden="true"></div>
       <div class="preview-zone" aria-hidden="true"></div>
     </section>
@@ -47,7 +47,7 @@
         <button class="code-tab" data-tab="js" type="button">JS</button>
       </div>
 
-      <pre class="code-pane" data-code="html"><code>&lt;section class=&quot;cursor-demo&quot; data-cursor-effect=&quot;keycap-pop&quot;&gt;
+      <pre class="code-pane" data-code="html"><code>&lt;section class=&quot;cursor-demo&quot; data-cursor-effect=&quot;orbit-rings-lab&quot;&gt;
   &lt;div class=&quot;fx-layer&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
 &lt;/section&gt;</code></pre>
       <pre class="code-pane" data-code="css" hidden><code>.cursor-demo {
@@ -62,8 +62,8 @@
   inset: 0;
   pointer-events: none;
 }</code></pre>
-      <pre class="code-pane" data-code="js" hidden><code>const effect = COLD_EFFECTS.find((item) =&gt; item.key === &quot;keycap-pop&quot;);
-const target = document.querySelector(&quot;[data-cursor-effect=&#39;keycap-pop&#39;]&quot;);
+      <pre class="code-pane" data-code="js" hidden><code>const effect = COLD_EFFECTS.find((item) =&gt; item.key === &quot;orbit-rings-lab&quot;);
+const target = document.querySelector(&quot;[data-cursor-effect=&#39;orbit-rings-lab&#39;]&quot;);
 const layer = target.querySelector(&quot;.fx-layer&quot;);
 
 target.addEventListener(&quot;pointermove&quot;, (event) =&gt; {
@@ -77,6 +77,6 @@ target.addEventListener(&quot;pointermove&quot;, (event) =&gt; {
   <script src="../assets/data.js"></script>
   <script src="../assets/fx.js"></script>
   <script src="../assets/app.js"></script>
-  <script>initSourcePage("keycap-pop");</script>
+  <script>initSourcePage("orbit-rings-lab");</script>
 </body>
 </html>
