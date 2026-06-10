@@ -503,3 +503,286 @@ html[data-theme="light"] .site-snake-fx{
 @keyframes extraRing{0%{opacity:.72;transform:translate(-50%,-50%) scale(.2)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.45)}}
 @keyframes extraBounce{0%{opacity:0;transform:translate(-50%,-50%) scale(.6)}20%{opacity:1}55%{transform:translate(-50%,-50%) translate(calc(var(--dx) * .55),calc(var(--dy) * .65)) scale(1.05)}75%{transform:translate(-50%,-50%) translate(calc(var(--dx) * .75),calc(var(--dy) * .35)) scale(.96)}100%{opacity:0;transform:translate(-50%,-50%) translate(var(--dx),var(--dy)) scale(.8)}}
 /* ===== EXTRA SIMPLE ANIMAL TOY CURSORS END ===== */
+
+/* ===== WILD CREATURES EXTRA CURSORS START ===== */
+.wild-animal-fx{
+  position:absolute !important;
+  left:0;
+  top:0;
+  pointer-events:none !important;
+  transform-origin:50% 50% !important;
+  transition:opacity 120ms ease !important;
+  will-change:transform, opacity !important;
+  backface-visibility:hidden !important;
+  contain:layout paint !important;
+  width:calc(24px - (var(--i) * .45px));
+  height:calc(14px - (var(--i) * .18px));
+  min-width:7px;
+  min-height:5px;
+  border-radius:999px;
+  background:linear-gradient(90deg,var(--a),var(--b));
+  box-shadow:0 0 8px color-mix(in srgb, var(--b) 30%, transparent);
+}
+
+.wild-animal-fx::after{
+  content:"";
+  position:absolute;
+  inset:24%;
+  border-radius:inherit;
+  background:rgba(255,255,255,.28);
+}
+
+.wild-head{
+  z-index:100060 !important;
+  width:32px !important;
+  height:18px !important;
+}
+
+.wild-head::before{
+  content:"";
+  position:absolute;
+  right:7px;
+  top:4px;
+  width:4px;
+  height:4px;
+  border-radius:999px;
+  background:var(--ink);
+  box-shadow:0 8px 0 var(--ink);
+}
+
+/* spider */
+.wild-spider{
+  width:calc(20px - (var(--i) * .22px));
+  height:calc(16px - (var(--i) * .16px));
+  border-radius:55% 45% 52% 48%;
+  background:
+    radial-gradient(circle at 68% 34%, var(--ink) 0 1.4px, transparent 1.7px),
+    radial-gradient(circle at 68% 66%, var(--ink) 0 1.4px, transparent 1.7px),
+    linear-gradient(90deg, color-mix(in srgb,var(--a) 64%,#15121f), color-mix(in srgb,var(--b) 35%,#15121f));
+}
+.wild-spider.wild-body::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:30px;
+  height:22px;
+  transform:translate(-50%,-50%);
+  background:
+    linear-gradient(25deg, transparent 0 44%, color-mix(in srgb,var(--a) 75%,transparent) 45% 53%, transparent 54%),
+    linear-gradient(-25deg, transparent 0 44%, color-mix(in srgb,var(--a) 75%,transparent) 45% 53%, transparent 54%),
+    linear-gradient(155deg, transparent 0 44%, color-mix(in srgb,var(--b) 70%,transparent) 45% 53%, transparent 54%),
+    linear-gradient(-155deg, transparent 0 44%, color-mix(in srgb,var(--b) 70%,transparent) 45% 53%, transparent 54%);
+  opacity:.68;
+}
+
+/* cockroach */
+.wild-cockroach{
+  border-radius:60% 45% 45% 60%;
+  background:
+    linear-gradient(90deg, color-mix(in srgb,var(--a) 80%,#241000), color-mix(in srgb,var(--b) 75%,#3a1b06));
+  border:1px solid rgba(255,220,160,.16);
+}
+.wild-cockroach.wild-head::after{
+  inset:34%;
+  background:rgba(255,222,170,.24);
+}
+.wild-cockroach.wild-head::before{
+  box-shadow:0 8px 0 var(--ink), 8px -6px 0 -1px color-mix(in srgb,var(--b) 75%,transparent), 8px 6px 0 -1px color-mix(in srgb,var(--b) 75%,transparent);
+}
+
+/* crocodile */
+.wild-crocodile{
+  border-radius:8px 999px 999px 8px;
+  background:
+    repeating-linear-gradient(90deg, rgba(255,255,255,.16) 0 3px, transparent 3px 9px),
+    linear-gradient(90deg, color-mix(in srgb,var(--a) 86%,#0d2b12), color-mix(in srgb,var(--b) 78%,#1d3b0f));
+}
+.wild-crocodile.wild-body::before{
+  content:"";
+  position:absolute;
+  left:20%;
+  right:15%;
+  top:-4px;
+  height:7px;
+  background:linear-gradient(135deg, transparent 0 48%, color-mix(in srgb,var(--b) 72%,transparent) 50% 70%, transparent 72%);
+  background-size:10px 7px;
+}
+.wild-crocodile.wild-head{
+  width:38px !important;
+  border-radius:12px 70% 70% 12px !important;
+}
+
+/* dragon */
+.wild-dragon{
+  background:linear-gradient(90deg, hsl(var(--hue),92%,58%), hsl(calc(var(--hue) + 45),96%,66%));
+  box-shadow:0 0 10px hsla(var(--hue),95%,64%,.32);
+}
+.wild-dragon.wild-head{
+  width:36px !important;
+  background:
+    radial-gradient(circle at 70% 34%, var(--ink) 0 2px, transparent 2.3px),
+    radial-gradient(circle at 70% 66%, var(--ink) 0 2px, transparent 2.3px),
+    linear-gradient(90deg,#ff7b4a,#54d7ff,#c89cff) !important;
+}
+.wild-dragon.wild-head::after{
+  content:"";
+  position:absolute;
+  left:7px;
+  top:-10px;
+  width:20px;
+  height:16px;
+  border-radius:90% 10% 90% 10%;
+  background:rgba(200,156,255,.28);
+  transform:rotate(-22deg);
+}
+
+/* scorpion */
+.wild-scorpion{
+  background:linear-gradient(90deg, color-mix(in srgb,var(--a) 82%,#2a1705), color-mix(in srgb,var(--b) 72%,#3a1908));
+}
+.wild-scorpion.wild-body{
+  border-radius:48% 52% 52% 48%;
+}
+.wild-scorpion.wild-body::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:-5px;
+  width:8px;
+  height:8px;
+  border-top:2px solid color-mix(in srgb,var(--b) 75%,transparent);
+  border-right:2px solid color-mix(in srgb,var(--b) 75%,transparent);
+  transform:translateX(-50%) rotate(-45deg);
+  opacity:.6;
+}
+
+/* gecko */
+.wild-gecko{
+  background:linear-gradient(90deg, color-mix(in srgb,var(--a) 78%,#0d2a16), color-mix(in srgb,var(--b) 55%,#10343a));
+}
+.wild-gecko.wild-body::before{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:34px;
+  height:22px;
+  transform:translate(-50%,-50%);
+  background:
+    radial-gradient(circle at 10% 15%, var(--a) 0 2px, transparent 2.4px),
+    radial-gradient(circle at 10% 85%, var(--a) 0 2px, transparent 2.4px),
+    radial-gradient(circle at 90% 15%, var(--b) 0 2px, transparent 2.4px),
+    radial-gradient(circle at 90% 85%, var(--b) 0 2px, transparent 2.4px);
+  opacity:.62;
+}
+
+/* bat */
+.wild-bat{
+  border-radius:999px;
+  background:linear-gradient(90deg, color-mix(in srgb,var(--a) 60%,#08080f), color-mix(in srgb,var(--b) 45%,#07070f));
+}
+.wild-bat.wild-head::after,
+.wild-bat.wild-body::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:38px;
+  height:20px;
+  transform:translate(-50%,-50%);
+  background:
+    radial-gradient(ellipse at 20% 50%, color-mix(in srgb,var(--a) 50%,transparent) 0 45%, transparent 48%),
+    radial-gradient(ellipse at 80% 50%, color-mix(in srgb,var(--a) 50%,transparent) 0 45%, transparent 48%);
+  opacity:.72;
+}
+
+/* crab */
+.wild-crab{
+  border-radius:45% 55% 55% 45%;
+  background:linear-gradient(90deg, color-mix(in srgb,var(--a) 78%,#3a0f0a), color-mix(in srgb,var(--b) 70%,#5a2e0b));
+}
+.wild-crab.wild-head::after{
+  content:"";
+  position:absolute;
+  left:50%;
+  top:50%;
+  width:40px;
+  height:22px;
+  transform:translate(-50%,-50%);
+  background:
+    radial-gradient(circle at 5% 50%, color-mix(in srgb,var(--a) 74%,transparent) 0 5px, transparent 5.4px),
+    radial-gradient(circle at 95% 50%, color-mix(in srgb,var(--b) 74%,transparent) 0 5px, transparent 5.4px);
+}
+
+/* classic basics */
+.wild-basic-fx{
+  position:absolute;
+  pointer-events:none;
+  color:var(--a);
+  border-color:var(--a);
+  transform:translate(-50%,-50%);
+}
+
+.wild-default-dot{
+  width:12px;
+  height:12px;
+  border-radius:999px;
+  background:var(--a);
+  box-shadow:0 0 14px color-mix(in srgb,var(--a) 42%,transparent);
+}
+
+.wild-default-ring{
+  width:54px;
+  height:54px;
+  border:2px solid var(--a);
+  border-radius:999px;
+}
+
+.wild-default-crosshair{
+  width:34px;
+  height:34px;
+}
+.wild-default-crosshair::before,
+.wild-default-crosshair::after{
+  content:"";
+  position:absolute;
+  background:var(--a);
+  border-radius:999px;
+}
+.wild-default-crosshair::before{left:50%;top:0;width:2px;height:100%;transform:translateX(-50%)}
+.wild-default-crosshair::after{left:0;top:50%;width:100%;height:2px;transform:translateY(-50%)}
+
+.wild-corner-bracket{
+  width:42px;
+  height:42px;
+  border-radius:9px;
+  background:
+    linear-gradient(var(--a),var(--a)) left top/14px 2px no-repeat,
+    linear-gradient(var(--a),var(--a)) left top/2px 14px no-repeat,
+    linear-gradient(var(--a),var(--a)) right top/14px 2px no-repeat,
+    linear-gradient(var(--a),var(--a)) right top/2px 14px no-repeat,
+    linear-gradient(var(--a),var(--a)) left bottom/14px 2px no-repeat,
+    linear-gradient(var(--a),var(--a)) left bottom/2px 14px no-repeat,
+    linear-gradient(var(--a),var(--a)) right bottom/14px 2px no-repeat,
+    linear-gradient(var(--a),var(--a)) right bottom/2px 14px no-repeat;
+}
+
+.wild-click-flash{
+  width:8px;
+  height:8px;
+  border-radius:2px;
+  background:var(--a);
+}
+
+@keyframes wildBasicFly{
+  0%{opacity:0;transform:translate(-50%,-50%) scale(.72) rotate(0deg)}
+  16%{opacity:.96}
+  100%{opacity:0;transform:translate(-50%,-50%) translate(var(--dx),var(--dy)) scale(var(--sc)) rotate(var(--rot))}
+}
+
+@keyframes wildBasicRing{
+  0%{opacity:.85;transform:translate(-50%,-50%) scale(.32)}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(1.35)}
+}
+/* ===== WILD CREATURES EXTRA CURSORS END ===== */

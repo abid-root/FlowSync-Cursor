@@ -102,7 +102,7 @@ function attachEffectPreview(section, effect) {
   let last = 0;
   target.addEventListener("pointermove", (event) => {
     const now = performance.now();
-    const gap = ["snake", "centipede", "jelly", "fish"].includes(effect.kind) ? 0 : 72;
+    const gap = ["snake", "centipede", "jelly", "fish", "wild-animal"].includes(effect.kind) ? 0 : 72;
     if (now - last < gap) return;
     last = now;
     const rect = layer.getBoundingClientRect();
@@ -110,7 +110,7 @@ function attachEffectPreview(section, effect) {
   });
 
   target.addEventListener("pointerleave", () => {
-    if (["snake", "centipede", "jelly", "fish"].includes(effect.kind)) {
+    if (["snake", "centipede", "jelly", "fish", "wild-animal"].includes(effect.kind)) {
       setTimeout(() => COLD_FX.clear(layer), 320);
     }
   });
