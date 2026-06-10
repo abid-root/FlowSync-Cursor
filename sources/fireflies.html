@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Keycap Pop | Source Code</title>
+  <title>Fireflies | Source Code</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
@@ -11,19 +11,19 @@
     <header class="nav">
       <a class="brand" href="../index.html"><span class="brand-dot"></span>Coldboot</a>
       <nav class="nav-links">
-        <a href="../categories/ui-objects.html">Back</a>
+        <a href="../categories/nature-motion.html">Back</a>
         <a href="#preview">Preview</a>
         <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle theme">&#9789;</button>
       </nav>
     </header>
 
-    <section class="category-hero" data-watermark="Keycap Pop">
+    <section class="category-hero" data-watermark="Fireflies">
       <span class="pill">source</span>
-      <h1>Keycap Pop</h1>
-      <p>Tiny keycaps lift and fade.</p>
+      <h1>Fireflies</h1>
+      <p>Glowing fireflies float with soft trails.</p>
     </section>
 
-    <section class="source-preview section-gap" id="sourcePreview" data-effect="keycap-pop">
+    <section class="source-preview section-gap" id="sourcePreview" data-effect="fireflies">
       <div class="fx-layer" aria-hidden="true"></div>
       <div class="preview-zone" aria-hidden="true"></div>
     </section>
@@ -38,7 +38,7 @@
         <button class="code-tab" data-tab="css" type="button">CSS</button>
         <button class="code-tab" data-tab="js" type="button">JS</button>
       </div>
-      <pre class="code-pane" data-code="html"><code>&lt;section class=&quot;cursor-demo&quot; data-cursor-effect=&quot;keycap-pop&quot;&gt;
+      <pre class="code-pane" data-code="html"><code>&lt;section class=&quot;cursor-demo&quot; data-cursor-effect=&quot;fireflies&quot;&gt;
   &lt;div class=&quot;fx-layer&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
 &lt;/section&gt;</code></pre>
       <pre class="code-pane" data-code="css" hidden><code>.cursor-demo {
@@ -52,8 +52,8 @@
   inset: 0;
   pointer-events: none;
 }</code></pre>
-      <pre class="code-pane" data-code="js" hidden><code>const effect = COLD_EFFECTS.find((item) =&gt; item.key === &quot;keycap-pop&quot;);
-const target = document.querySelector(&quot;[data-cursor-effect=&#39;keycap-pop&#39;]&quot;);
+      <pre class="code-pane" data-code="js" hidden><code>const effect = COLD_EFFECTS.find((item) =&gt; item.key === &quot;fireflies&quot;);
+const target = document.querySelector(&quot;[data-cursor-effect=&#39;fireflies&#39;]&quot;);
 const layer = target.querySelector(&quot;.fx-layer&quot;);
 target.addEventListener(&quot;pointermove&quot;, (event) =&gt; {
   const rect = layer.getBoundingClientRect();
@@ -67,6 +67,6 @@ target.addEventListener(&quot;pointermove&quot;, (event) =&gt; {
   <script src="../assets/fx.js"></script>
   <script src="../assets/app.js"></script>
   <script src="../assets/snake-site-override.js?v=20260611-033709"></script>
-  <script>initSourcePage("keycap-pop");</script>
+  <script>initSourcePage("fireflies");</script>
 </body>
 </html>

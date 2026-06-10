@@ -1,1156 +1,1119 @@
 window.COLD_DATA = [
   {
-    "id": "particles",
+    "id": "particle-craft",
     "num": "01",
     "title": "Particle Craft",
-    "desc": "Small material effects with different shapes, weight and motion.",
+    "desc": "Pixels, dust, sparks, pollen and confetti effects.",
     "icon": "*",
     "effects": [
-      "ember-constellation",
-      "pixel-crack",
-      "glass-manta",
-      "pollen-orbit",
-      "ash-spiral",
-      "micro-snow",
-      "digital-dust-lab"
+      "pixel-fracture",
+      "ember-dust",
+      "orbit-sparks",
+      "pollen-field",
+      "prism-confetti"
     ]
   },
   {
-    "id": "trails",
+    "id": "trails-echo",
     "num": "02",
-    "title": "Signature Trails",
-    "desc": "Cursor marks that leave readable motion instead of random dots.",
+    "title": "Trails & Echo",
+    "desc": "Ribbon, comet, ink, halo and elastic trail effects.",
     "icon": "~",
     "effects": [
-      "ribbon-weave",
-      "ink-comet",
-      "ghost-frames",
-      "stitch-thread",
-      "comet-scratch",
-      "halo-breath",
-      "paper-plane"
+      "ghost-ribbon",
+      "comet-thread",
+      "ink-silk",
+      "halo-pulse",
+      "elastic-line"
     ]
   },
   {
-    "id": "organic",
+    "id": "creature-motion",
     "num": "03",
-    "title": "Organic Followers",
-    "desc": "Creature-like cursor followers with body, rhythm and character.",
-    "icon": "o",
+    "title": "Creature Motion",
+    "desc": "Snake, centipede, larva, beetle and fish follower effects.",
+    "icon": "S",
     "effects": [
-      "bone-orbit",
-      "jelly-chain",
-      "firefly-swarm",
-      "leaf-cut",
-      "bubble-ladder",
-      "larva-blink",
-      "spine-serpent"
+      "spine-serpent",
+      "neon-centipede",
+      "jelly-larva",
+      "beetle-steps",
+      "fish-chain"
     ]
   },
   {
-    "id": "fluid",
+    "id": "fluid-smoke",
     "num": "04",
-    "title": "Fluid Surfaces",
-    "desc": "Smoke, water and membrane effects with slower premium motion.",
-    "icon": "()",
+    "title": "Fluid & Smoke",
+    "desc": "Smoke, ink, water, vapor and oil-cell effects.",
+    "icon": "O",
     "effects": [
-      "smoke-fold",
-      "oil-membrane",
+      "smoke-bloom",
+      "ink-drop",
       "water-ripple",
-      "vapor-knot",
-      "plasma-blob",
-      "mist-window",
-      "liquid-blob-lab"
+      "vapor-curl",
+      "oil-cell"
     ]
   },
   {
-    "id": "data-ui",
+    "id": "geometry-light",
     "num": "05",
-    "title": "Data UI Marks",
-    "desc": "Developer-friendly effects using code, keys and interface objects.",
-    "icon": "[]",
+    "title": "Geometry & Light",
+    "desc": "Portal rings, lasers, scan grids, triangles and cubes.",
+    "icon": "G",
     "effects": [
-      "code-scramble",
-      "terminal-caret",
-      "binary-rain",
-      "bracket-lock",
-      "keycap-pop",
-      "card-stack",
-      "magnet-cards"
+      "portal-ring",
+      "laser-slice",
+      "scan-grid",
+      "triangle-swarm",
+      "cube-pop"
     ]
   },
   {
-    "id": "light-physics",
+    "id": "code-data",
     "num": "06",
-    "title": "Light Physics",
-    "desc": "Sharper energy effects with visible physics-based direction.",
-    "icon": "//",
+    "title": "Code & Data",
+    "desc": "Syntax tokens, binary rain, terminal cursor and matrix effects.",
+    "icon": "{}",
     "effects": [
-      "laser-slicer",
-      "prism-split",
-      "scan-radar",
-      "orbit-satellite",
-      "magnetic-pebbles",
-      "gravity-sparks",
-      "orbit-rings-lab",
-      "scanline-lab"
+      "token-burst",
+      "binary-rain",
+      "terminal-caret",
+      "matrix-beads",
+      "bracket-orbit"
     ]
   },
   {
-    "id": "cosmic-lab",
+    "id": "nature-motion",
     "num": "07",
-    "title": "Cosmic Lab",
-    "desc": "Constellation, glow and glass effects imported from your uploaded cursor labs.",
-    "icon": "*",
+    "title": "Nature Motion",
+    "desc": "Fireflies, leaf spin, snow crystals, rain streaks and petals.",
+    "icon": "N",
     "effects": [
-      "constellation-web",
-      "fireflies-glow",
-      "glass-shards-lab"
+      "fireflies",
+      "leaf-spin",
+      "snow-crystal",
+      "rain-streak",
+      "petal-drift"
     ]
   },
   {
-    "id": "mechanical",
+    "id": "ui-objects",
     "num": "08",
-    "title": "Mechanical Motion",
-    "desc": "Gear, machine and serpent-style motion for stronger cursor character.",
-    "icon": "[]",
+    "title": "UI Objects",
+    "desc": "Keycaps, app cards, windows, toggles and magnetic cards.",
+    "icon": "UI",
     "effects": [
-      "clockwork"
+      "keycap-pop",
+      "app-vault-cards",
+      "window-stack",
+      "toggle-switch",
+      "card-magnet"
+    ]
+  },
+  {
+    "id": "money-service",
+    "num": "09",
+    "title": "Money Service",
+    "desc": "Dollar burst, coin flip, receipts, invoices and chart blips.",
+    "icon": "$",
+    "effects": [
+      "dollar-spread",
+      "coin-flip",
+      "receipt-slip",
+      "invoice-card",
+      "chart-blip"
     ]
   }
 ];
 window.COLD_EFFECTS = [
   {
-    "key": "ember-constellation",
-    "name": "Ember Constellation",
-    "desc": "Dots connect into a tiny star map, then break apart.",
-    "kind": "constellation",
-    "cat_id": "particles",
+    "key": "pixel-fracture",
+    "name": "Pixel Fracture",
+    "desc": "Blocks crack outward from the cursor.",
+    "kind": "pixel",
+    "cat_id": "particle-craft",
     "cat_num": "01",
     "cat_title": "Particle Craft",
-    "cat_desc": "Small material effects with different shapes, weight and motion.",
+    "cat_desc": "Pixels, dust, sparks, pollen and confetti effects.",
     "cat_icon": "*",
     "index": 1,
     "dark": {
-      "a": "#ffb454",
-      "b": "#ff6b6b",
-      "ink": "#fff3d6"
+      "a": "#5cf28b",
+      "b": "#c89cff",
+      "ink": "#f4f4ef"
     },
     "light": {
-      "a": "#9a5b16",
-      "b": "#c76f2d",
-      "ink": "#28180a"
-    }
-  },
-  {
-    "key": "pixel-crack",
-    "name": "Pixel Crack",
-    "desc": "A clean grid fracture that snaps outward from the cursor.",
-    "kind": "pixel-crack",
-    "cat_id": "particles",
-    "cat_num": "01",
-    "cat_title": "Particle Craft",
-    "cat_desc": "Small material effects with different shapes, weight and motion.",
-    "cat_icon": "*",
-    "index": 2,
-    "dark": {
-      "a": "#7dd3fc",
-      "b": "#a7e956",
-      "ink": "#effaff"
-    },
-    "light": {
-      "a": "#1f6f8b",
-      "b": "#4e7f18",
-      "ink": "#0d232a"
-    }
-  },
-  {
-    "key": "glass-manta",
-    "name": "Glass Manta",
-    "desc": "Transparent shard fins slide like a tiny glass creature.",
-    "kind": "glass-manta",
-    "cat_id": "particles",
-    "cat_num": "01",
-    "cat_title": "Particle Craft",
-    "cat_desc": "Small material effects with different shapes, weight and motion.",
-    "cat_icon": "*",
-    "index": 3,
-    "dark": {
-      "a": "#c7f9ff",
-      "b": "#8bd8ff",
-      "ink": "#ffffff"
-    },
-    "light": {
-      "a": "#426a73",
-      "b": "#577f8c",
-      "ink": "#102126"
-    }
-  },
-  {
-    "key": "pollen-orbit",
-    "name": "Pollen Orbit",
-    "desc": "Organic pollen dots circle once before drifting away.",
-    "kind": "pollen-orbit",
-    "cat_id": "particles",
-    "cat_num": "01",
-    "cat_title": "Particle Craft",
-    "cat_desc": "Small material effects with different shapes, weight and motion.",
-    "cat_icon": "*",
-    "index": 4,
-    "dark": {
-      "a": "#b7ff54",
-      "b": "#ffe66d",
-      "ink": "#f8ffe9"
-    },
-    "light": {
-      "a": "#6f8f20",
-      "b": "#99751d",
-      "ink": "#213006"
-    }
-  },
-  {
-    "key": "ash-spiral",
-    "name": "Ash Spiral",
-    "desc": "Muted ash flakes fall in a small twisting column.",
-    "kind": "ash-spiral",
-    "cat_id": "particles",
-    "cat_num": "01",
-    "cat_title": "Particle Craft",
-    "cat_desc": "Small material effects with different shapes, weight and motion.",
-    "cat_icon": "*",
-    "index": 5,
-    "dark": {
-      "a": "#c8c2b4",
-      "b": "#77736b",
-      "ink": "#f2ede4"
-    },
-    "light": {
-      "a": "#5e5a52",
-      "b": "#8a8174",
-      "ink": "#211f1b"
-    }
-  },
-  {
-    "key": "micro-snow",
-    "name": "Micro Snow",
-    "desc": "Cold soft grains fall slowly with side wind.",
-    "kind": "micro-snow",
-    "cat_id": "particles",
-    "cat_num": "01",
-    "cat_title": "Particle Craft",
-    "cat_desc": "Small material effects with different shapes, weight and motion.",
-    "cat_icon": "*",
-    "index": 6,
-    "dark": {
-      "a": "#d8f5ff",
-      "b": "#9ad7ff",
-      "ink": "#ffffff"
-    },
-    "light": {
-      "a": "#426d7d",
-      "b": "#6c93a3",
-      "ink": "#0d2228"
-    }
-  },
-  {
-    "key": "digital-dust-lab",
-    "name": "Digital Dust Lab",
-    "desc": "Uploaded pixel dust effect: tiny blocks scatter with fast material fade.",
-    "kind": "digital-dust-lab",
-    "cat_id": "particles",
-    "cat_num": "01",
-    "cat_title": "Particle Craft",
-    "cat_desc": "Small material effects with different shapes, weight and motion.",
-    "cat_icon": "*",
-    "index": 7,
-    "dark": {
-      "a": "#9cff5a",
-      "b": "#61e6ff",
-      "ink": "#f5f1e8"
-    },
-    "light": {
-      "a": "#49772e",
-      "b": "#286f7d",
+      "a": "#2d7b49",
+      "b": "#6b4d9e",
       "ink": "#15191e"
     }
   },
   {
-    "key": "ribbon-weave",
-    "name": "Ribbon Weave",
-    "desc": "Short woven ribbons alternate direction behind the pointer.",
-    "kind": "ribbon-weave",
-    "cat_id": "trails",
+    "key": "ember-dust",
+    "name": "Ember Dust",
+    "desc": "Warm dust sparks rise and fade.",
+    "kind": "ember",
+    "cat_id": "particle-craft",
+    "cat_num": "01",
+    "cat_title": "Particle Craft",
+    "cat_desc": "Pixels, dust, sparks, pollen and confetti effects.",
+    "cat_icon": "*",
+    "index": 2,
+    "dark": {
+      "a": "#ff8b3d",
+      "b": "#ffd08a",
+      "ink": "#fff8e8"
+    },
+    "light": {
+      "a": "#8f4e23",
+      "b": "#a56b28",
+      "ink": "#1d160f"
+    }
+  },
+  {
+    "key": "orbit-sparks",
+    "name": "Orbit Sparks",
+    "desc": "Tiny particles orbit before escaping.",
+    "kind": "orbit",
+    "cat_id": "particle-craft",
+    "cat_num": "01",
+    "cat_title": "Particle Craft",
+    "cat_desc": "Pixels, dust, sparks, pollen and confetti effects.",
+    "cat_icon": "*",
+    "index": 3,
+    "dark": {
+      "a": "#6ee7ff",
+      "b": "#b9ff34",
+      "ink": "#f8fff0"
+    },
+    "light": {
+      "a": "#2f7182",
+      "b": "#5e8026",
+      "ink": "#121914"
+    }
+  },
+  {
+    "key": "pollen-field",
+    "name": "Pollen Field",
+    "desc": "Soft organic dots drift around the pointer.",
+    "kind": "pollen",
+    "cat_id": "particle-craft",
+    "cat_num": "01",
+    "cat_title": "Particle Craft",
+    "cat_desc": "Pixels, dust, sparks, pollen and confetti effects.",
+    "cat_icon": "*",
+    "index": 4,
+    "dark": {
+      "a": "#b9ff34",
+      "b": "#fff58a",
+      "ink": "#f8ffe8"
+    },
+    "light": {
+      "a": "#698a22",
+      "b": "#9a8427",
+      "ink": "#171a10"
+    }
+  },
+  {
+    "key": "prism-confetti",
+    "name": "Prism Confetti",
+    "desc": "Small prismatic chips pop in different angles.",
+    "kind": "prism",
+    "cat_id": "particle-craft",
+    "cat_num": "01",
+    "cat_title": "Particle Craft",
+    "cat_desc": "Pixels, dust, sparks, pollen and confetti effects.",
+    "cat_icon": "*",
+    "index": 5,
+    "dark": {
+      "a": "#ff5b8a",
+      "b": "#61d9ff",
+      "ink": "#ffffff"
+    },
+    "light": {
+      "a": "#9a3658",
+      "b": "#387486",
+      "ink": "#16191f"
+    }
+  },
+  {
+    "key": "ghost-ribbon",
+    "name": "Ghost Ribbon",
+    "desc": "Fading ribbon strips follow the cursor.",
+    "kind": "ribbon",
+    "cat_id": "trails-echo",
     "cat_num": "02",
-    "cat_title": "Signature Trails",
-    "cat_desc": "Cursor marks that leave readable motion instead of random dots.",
+    "cat_title": "Trails & Echo",
+    "cat_desc": "Ribbon, comet, ink, halo and elastic trail effects.",
     "cat_icon": "~",
     "index": 1,
     "dark": {
-      "a": "#ff7ac8",
-      "b": "#a78bfa",
-      "ink": "#fff1fb"
+      "a": "#c89cff",
+      "b": "#e8dcff",
+      "ink": "#ffffff"
     },
     "light": {
-      "a": "#8e2f66",
-      "b": "#5540a6",
-      "ink": "#25111e"
+      "a": "#6b4d9e",
+      "b": "#8a7ba8",
+      "ink": "#17151d"
     }
   },
   {
-    "key": "ink-comet",
-    "name": "Ink Comet",
-    "desc": "A dark ink head drags a soft brush tail.",
-    "kind": "ink-comet",
-    "cat_id": "trails",
+    "key": "comet-thread",
+    "name": "Comet Thread",
+    "desc": "A bright comet stroke shoots forward.",
+    "kind": "comet",
+    "cat_id": "trails-echo",
     "cat_num": "02",
-    "cat_title": "Signature Trails",
-    "cat_desc": "Cursor marks that leave readable motion instead of random dots.",
+    "cat_title": "Trails & Echo",
+    "cat_desc": "Ribbon, comet, ink, halo and elastic trail effects.",
     "cat_icon": "~",
     "index": 2,
     "dark": {
-      "a": "#f5f1e8",
-      "b": "#6ee7b7",
-      "ink": "#101319"
+      "a": "#b9ff34",
+      "b": "#ffffff",
+      "ink": "#f8ffe8"
     },
     "light": {
-      "a": "#1b1e24",
-      "b": "#3c6f5b",
-      "ink": "#08090b"
+      "a": "#64822b",
+      "b": "#f0f0df",
+      "ink": "#15191e"
     }
   },
   {
-    "key": "ghost-frames",
-    "name": "Ghost Frames",
-    "desc": "Delayed rectangular afterimages fade like animation frames.",
-    "kind": "ghost-frames",
-    "cat_id": "trails",
+    "key": "ink-silk",
+    "name": "Ink Silk",
+    "desc": "Dark silky ink droplets stretch behind the cursor.",
+    "kind": "inktail",
+    "cat_id": "trails-echo",
     "cat_num": "02",
-    "cat_title": "Signature Trails",
-    "cat_desc": "Cursor marks that leave readable motion instead of random dots.",
+    "cat_title": "Trails & Echo",
+    "cat_desc": "Ribbon, comet, ink, halo and elastic trail effects.",
     "cat_icon": "~",
     "index": 3,
     "dark": {
-      "a": "#a7e956",
+      "a": "#c6b7ff",
+      "b": "#1c2030",
+      "ink": "#ffffff"
+    },
+    "light": {
+      "a": "#554a7c",
+      "b": "#303036",
+      "ink": "#16191f"
+    }
+  },
+  {
+    "key": "halo-pulse",
+    "name": "Halo Pulse",
+    "desc": "Large quiet halo rings expand from the pointer.",
+    "kind": "halo",
+    "cat_id": "trails-echo",
+    "cat_num": "02",
+    "cat_title": "Trails & Echo",
+    "cat_desc": "Ribbon, comet, ink, halo and elastic trail effects.",
+    "cat_icon": "~",
+    "index": 4,
+    "dark": {
+      "a": "#b9ff34",
       "b": "#6ee7ff",
-      "ink": "#f8ffe7"
-    },
-    "light": {
-      "a": "#597b20",
-      "b": "#237383",
-      "ink": "#142306"
-    }
-  },
-  {
-    "key": "stitch-thread",
-    "name": "Stitch Thread",
-    "desc": "Tiny dashed stitches sew the cursor path.",
-    "kind": "stitch-thread",
-    "cat_id": "trails",
-    "cat_num": "02",
-    "cat_title": "Signature Trails",
-    "cat_desc": "Cursor marks that leave readable motion instead of random dots.",
-    "cat_icon": "~",
-    "index": 4,
-    "dark": {
-      "a": "#facc15",
-      "b": "#fb7185",
-      "ink": "#fff7d1"
-    },
-    "light": {
-      "a": "#8a6a00",
-      "b": "#9b3146",
-      "ink": "#2b2100"
-    }
-  },
-  {
-    "key": "comet-scratch",
-    "name": "Comet Scratch",
-    "desc": "A sharp scratch line cuts through with grain sparks.",
-    "kind": "comet-scratch",
-    "cat_id": "trails",
-    "cat_num": "02",
-    "cat_title": "Signature Trails",
-    "cat_desc": "Cursor marks that leave readable motion instead of random dots.",
-    "cat_icon": "~",
-    "index": 5,
-    "dark": {
-      "a": "#ffffff",
-      "b": "#ff9f1c",
-      "ink": "#fff4dd"
-    },
-    "light": {
-      "a": "#2b2b2b",
-      "b": "#a85d00",
-      "ink": "#151515"
-    }
-  },
-  {
-    "key": "halo-breath",
-    "name": "Halo Breath",
-    "desc": "Two breathing halos expand at different speeds.",
-    "kind": "halo-breath",
-    "cat_id": "trails",
-    "cat_num": "02",
-    "cat_title": "Signature Trails",
-    "cat_desc": "Cursor marks that leave readable motion instead of random dots.",
-    "cat_icon": "~",
-    "index": 6,
-    "dark": {
-      "a": "#93c5fd",
-      "b": "#c4b5fd",
-      "ink": "#eff6ff"
-    },
-    "light": {
-      "a": "#315f99",
-      "b": "#66519a",
-      "ink": "#14223a"
-    }
-  },
-  {
-    "key": "paper-plane",
-    "name": "Paper Plane",
-    "desc": "Tiny triangular planes fly away from the cursor with a soft turn.",
-    "kind": "paper-plane",
-    "cat_id": "trails",
-    "cat_num": "02",
-    "cat_title": "Signature Trails",
-    "cat_desc": "Cursor marks that leave readable motion instead of random dots.",
-    "cat_icon": "~",
-    "index": 7,
-    "dark": {
-      "a": "#8ff2c0",
-      "b": "#b9ff57",
-      "ink": "#f5f1e8"
-    },
-    "light": {
-      "a": "#2d7b55",
-      "b": "#5d8429",
-      "ink": "#15191e"
-    }
-  },
-  {
-    "key": "bone-orbit",
-    "name": "Bone Orbit",
-    "desc": "A segmented ivory spine follows with slight side swing.",
-    "kind": "bone-orbit",
-    "cat_id": "organic",
-    "cat_num": "03",
-    "cat_title": "Organic Followers",
-    "cat_desc": "Creature-like cursor followers with body, rhythm and character.",
-    "cat_icon": "o",
-    "index": 1,
-    "dark": {
-      "a": "#f2ede4",
-      "b": "#b9ff57",
       "ink": "#ffffff"
     },
     "light": {
-      "a": "#433f37",
-      "b": "#6f8f35",
-      "ink": "#171511"
+      "a": "#5a7c2a",
+      "b": "#3b7882",
+      "ink": "#121914"
     }
   },
   {
-    "key": "jelly-chain",
-    "name": "Jelly Chain",
-    "desc": "Transparent jelly bubbles stretch into a soft tail.",
-    "kind": "jelly-chain",
-    "cat_id": "organic",
-    "cat_num": "03",
-    "cat_title": "Organic Followers",
-    "cat_desc": "Creature-like cursor followers with body, rhythm and character.",
-    "cat_icon": "o",
-    "index": 2,
-    "dark": {
-      "a": "#67e8f9",
-      "b": "#a7f3d0",
-      "ink": "#ecfeff"
-    },
-    "light": {
-      "a": "#26717a",
-      "b": "#3d8064",
-      "ink": "#0c2528"
-    }
-  },
-  {
-    "key": "firefly-swarm",
-    "name": "Firefly Swarm",
-    "desc": "Warm living lights gather, blink, then separate.",
-    "kind": "firefly-swarm",
-    "cat_id": "organic",
-    "cat_num": "03",
-    "cat_title": "Organic Followers",
-    "cat_desc": "Creature-like cursor followers with body, rhythm and character.",
-    "cat_icon": "o",
-    "index": 3,
-    "dark": {
-      "a": "#fef08a",
-      "b": "#bef264",
-      "ink": "#fffbe6"
-    },
-    "light": {
-      "a": "#8a7009",
-      "b": "#66840e",
-      "ink": "#2d2502"
-    }
-  },
-  {
-    "key": "leaf-cut",
-    "name": "Leaf Cut",
-    "desc": "Tiny leaf blades rotate and glide like cut paper.",
-    "kind": "leaf-cut",
-    "cat_id": "organic",
-    "cat_num": "03",
-    "cat_title": "Organic Followers",
-    "cat_desc": "Creature-like cursor followers with body, rhythm and character.",
-    "cat_icon": "o",
-    "index": 4,
-    "dark": {
-      "a": "#86efac",
-      "b": "#22c55e",
-      "ink": "#f0fff4"
-    },
-    "light": {
-      "a": "#2f6b3b",
-      "b": "#28703d",
-      "ink": "#092313"
-    }
-  },
-  {
-    "key": "bubble-ladder",
-    "name": "Bubble Ladder",
-    "desc": "Bubbles climb in a vertical chain with changing size.",
-    "kind": "bubble-ladder",
-    "cat_id": "organic",
-    "cat_num": "03",
-    "cat_title": "Organic Followers",
-    "cat_desc": "Creature-like cursor followers with body, rhythm and character.",
-    "cat_icon": "o",
+    "key": "elastic-line",
+    "name": "Elastic Line",
+    "desc": "Rubber-like short lines stretch and snap back.",
+    "kind": "elastic",
+    "cat_id": "trails-echo",
+    "cat_num": "02",
+    "cat_title": "Trails & Echo",
+    "cat_desc": "Ribbon, comet, ink, halo and elastic trail effects.",
+    "cat_icon": "~",
     "index": 5,
     "dark": {
-      "a": "#bae6fd",
-      "b": "#7dd3fc",
-      "ink": "#f0f9ff"
+      "a": "#ffcf5d",
+      "b": "#f5f1e8",
+      "ink": "#15191e"
     },
     "light": {
-      "a": "#39708c",
-      "b": "#4b90a8",
-      "ink": "#10242d"
-    }
-  },
-  {
-    "key": "larva-blink",
-    "name": "Larva Blink",
-    "desc": "A tiny soft larva tail follows and blinks.",
-    "kind": "larva-blink",
-    "cat_id": "organic",
-    "cat_num": "03",
-    "cat_title": "Organic Followers",
-    "cat_desc": "Creature-like cursor followers with body, rhythm and character.",
-    "cat_icon": "o",
-    "index": 6,
-    "dark": {
-      "a": "#f0abfc",
-      "b": "#f9a8d4",
-      "ink": "#fff0fb"
-    },
-    "light": {
-      "a": "#8b3e8f",
-      "b": "#9a476f",
-      "ink": "#30122d"
+      "a": "#816b2f",
+      "b": "#f2eadb",
+      "ink": "#15191e"
     }
   },
   {
     "key": "spine-serpent",
     "name": "Spine Serpent",
-    "desc": "Uploaded snake-style cursor: a long segmented body follows with smooth physics.",
-    "kind": "spine-serpent",
-    "cat_id": "organic",
+    "desc": "A clean segmented snake with a visible head and spine.",
+    "kind": "snake",
+    "cat_id": "creature-motion",
     "cat_num": "03",
-    "cat_title": "Organic Followers",
-    "cat_desc": "Creature-like cursor followers with body, rhythm and character.",
-    "cat_icon": "o",
-    "index": 7,
-    "dark": {
-      "a": "#efe7d4",
-      "b": "#a7e956",
-      "ink": "#f5f1e8"
-    },
-    "light": {
-      "a": "#2b241b",
-      "b": "#6f8f35",
-      "ink": "#15191e"
-    }
-  },
-  {
-    "key": "smoke-fold",
-    "name": "Smoke Fold",
-    "desc": "Layered smoke folds roll away from the cursor.",
-    "kind": "smoke-fold",
-    "cat_id": "fluid",
-    "cat_num": "04",
-    "cat_title": "Fluid Surfaces",
-    "cat_desc": "Smoke, water and membrane effects with slower premium motion.",
-    "cat_icon": "()",
+    "cat_title": "Creature Motion",
+    "cat_desc": "Snake, centipede, larva, beetle and fish follower effects.",
+    "cat_icon": "S",
     "index": 1,
     "dark": {
-      "a": "#d1d5db",
-      "b": "#94a3b8",
-      "ink": "#f8fafc"
+      "a": "#d7e8be",
+      "b": "#8cff77",
+      "ink": "#07100b"
     },
     "light": {
-      "a": "#5e6570",
-      "b": "#777f8d",
-      "ink": "#1e232b"
+      "a": "#536b36",
+      "b": "#89a956",
+      "ink": "#f5f1e8"
     }
   },
   {
-    "key": "oil-membrane",
-    "name": "Oil Membrane",
-    "desc": "Iridescent cells stretch like thin oil on glass.",
-    "kind": "oil-membrane",
-    "cat_id": "fluid",
-    "cat_num": "04",
-    "cat_title": "Fluid Surfaces",
-    "cat_desc": "Smoke, water and membrane effects with slower premium motion.",
-    "cat_icon": "()",
+    "key": "neon-centipede",
+    "name": "Neon Centipede",
+    "desc": "Small neon body segments chase the cursor.",
+    "kind": "centipede",
+    "cat_id": "creature-motion",
+    "cat_num": "03",
+    "cat_title": "Creature Motion",
+    "cat_desc": "Snake, centipede, larva, beetle and fish follower effects.",
+    "cat_icon": "S",
     "index": 2,
     "dark": {
-      "a": "#38bdf8",
-      "b": "#fb7185",
-      "ink": "#f0f9ff"
+      "a": "#5cf28b",
+      "b": "#61d9ff",
+      "ink": "#07100b"
     },
     "light": {
-      "a": "#146b8f",
-      "b": "#93445a",
-      "ink": "#092432"
+      "a": "#2c7c49",
+      "b": "#337583",
+      "ink": "#f5f1e8"
+    }
+  },
+  {
+    "key": "jelly-larva",
+    "name": "Jelly Larva",
+    "desc": "Transparent jelly body blobs wobble behind the cursor.",
+    "kind": "jelly",
+    "cat_id": "creature-motion",
+    "cat_num": "03",
+    "cat_title": "Creature Motion",
+    "cat_desc": "Snake, centipede, larva, beetle and fish follower effects.",
+    "cat_icon": "S",
+    "index": 3,
+    "dark": {
+      "a": "#9fe7ff",
+      "b": "#f2d2ff",
+      "ink": "#111827"
+    },
+    "light": {
+      "a": "#4d7d87",
+      "b": "#8e77a1",
+      "ink": "#f5f1e8"
+    }
+  },
+  {
+    "key": "beetle-steps",
+    "name": "Beetle Steps",
+    "desc": "Tiny step marks appear left and right.",
+    "kind": "steps",
+    "cat_id": "creature-motion",
+    "cat_num": "03",
+    "cat_title": "Creature Motion",
+    "cat_desc": "Snake, centipede, larva, beetle and fish follower effects.",
+    "cat_icon": "S",
+    "index": 4,
+    "dark": {
+      "a": "#f5f1e8",
+      "b": "#b9ff34",
+      "ink": "#07100b"
+    },
+    "light": {
+      "a": "#3f4039",
+      "b": "#6b8a2c",
+      "ink": "#f5f1e8"
+    }
+  },
+  {
+    "key": "fish-chain",
+    "name": "Fish Chain",
+    "desc": "Linked tail pieces swim behind the pointer.",
+    "kind": "fish",
+    "cat_id": "creature-motion",
+    "cat_num": "03",
+    "cat_title": "Creature Motion",
+    "cat_desc": "Snake, centipede, larva, beetle and fish follower effects.",
+    "cat_icon": "S",
+    "index": 5,
+    "dark": {
+      "a": "#61d9ff",
+      "b": "#b9ff34",
+      "ink": "#07100b"
+    },
+    "light": {
+      "a": "#337583",
+      "b": "#6b8a2c",
+      "ink": "#f5f1e8"
+    }
+  },
+  {
+    "key": "smoke-bloom",
+    "name": "Smoke Bloom",
+    "desc": "Soft smoke circles bloom and dissolve.",
+    "kind": "smoke",
+    "cat_id": "fluid-smoke",
+    "cat_num": "04",
+    "cat_title": "Fluid & Smoke",
+    "cat_desc": "Smoke, ink, water, vapor and oil-cell effects.",
+    "cat_icon": "O",
+    "index": 1,
+    "dark": {
+      "a": "#d9dde8",
+      "b": "#8790a8",
+      "ink": "#f4f5fb"
+    },
+    "light": {
+      "a": "#6f726d",
+      "b": "#9a9388",
+      "ink": "#16191f"
+    }
+  },
+  {
+    "key": "ink-drop",
+    "name": "Ink Drop",
+    "desc": "Heavy ink drops spread into soft stains.",
+    "kind": "inkdrop",
+    "cat_id": "fluid-smoke",
+    "cat_num": "04",
+    "cat_title": "Fluid & Smoke",
+    "cat_desc": "Smoke, ink, water, vapor and oil-cell effects.",
+    "cat_icon": "O",
+    "index": 2,
+    "dark": {
+      "a": "#0e1118",
+      "b": "#c89cff",
+      "ink": "#ffffff"
+    },
+    "light": {
+      "a": "#2f3035",
+      "b": "#69509c",
+      "ink": "#ffffff"
     }
   },
   {
     "key": "water-ripple",
     "name": "Water Ripple",
-    "desc": "A ripple expands while small droplets jump outward.",
-    "kind": "water-ripple",
-    "cat_id": "fluid",
+    "desc": "Ripple rings and small droplets expand outward.",
+    "kind": "water",
+    "cat_id": "fluid-smoke",
     "cat_num": "04",
-    "cat_title": "Fluid Surfaces",
-    "cat_desc": "Smoke, water and membrane effects with slower premium motion.",
-    "cat_icon": "()",
+    "cat_title": "Fluid & Smoke",
+    "cat_desc": "Smoke, ink, water, vapor and oil-cell effects.",
+    "cat_icon": "O",
     "index": 3,
     "dark": {
-      "a": "#5eead4",
-      "b": "#67e8f9",
-      "ink": "#ecfeff"
+      "a": "#7de1bc",
+      "b": "#6ee7ff",
+      "ink": "#06100d"
     },
     "light": {
-      "a": "#247b70",
-      "b": "#267884",
-      "ink": "#082a27"
+      "a": "#347e69",
+      "b": "#3b7882",
+      "ink": "#f5f1e8"
     }
   },
   {
-    "key": "vapor-knot",
-    "name": "Vapor Knot",
-    "desc": "Two soft vapor loops cross and fade.",
-    "kind": "vapor-knot",
-    "cat_id": "fluid",
+    "key": "vapor-curl",
+    "name": "Vapor Curl",
+    "desc": "Curved vapor puffs drift upward.",
+    "kind": "vapor",
+    "cat_id": "fluid-smoke",
     "cat_num": "04",
-    "cat_title": "Fluid Surfaces",
-    "cat_desc": "Smoke, water and membrane effects with slower premium motion.",
-    "cat_icon": "()",
+    "cat_title": "Fluid & Smoke",
+    "cat_desc": "Smoke, ink, water, vapor and oil-cell effects.",
+    "cat_icon": "O",
     "index": 4,
     "dark": {
-      "a": "#c4b5fd",
-      "b": "#f0abfc",
-      "ink": "#faf5ff"
-    },
-    "light": {
-      "a": "#6251a2",
-      "b": "#85458d",
-      "ink": "#20153b"
-    }
-  },
-  {
-    "key": "plasma-blob",
-    "name": "Plasma Blob",
-    "desc": "Bright plasma cells pop with a liquid edge.",
-    "kind": "plasma-blob",
-    "cat_id": "fluid",
-    "cat_num": "04",
-    "cat_title": "Fluid Surfaces",
-    "cat_desc": "Smoke, water and membrane effects with slower premium motion.",
-    "cat_icon": "()",
-    "index": 5,
-    "dark": {
-      "a": "#f97316",
-      "b": "#ec4899",
-      "ink": "#fff7ed"
-    },
-    "light": {
-      "a": "#a34108",
-      "b": "#9d2b66",
-      "ink": "#2c1102"
-    }
-  },
-  {
-    "key": "mist-window",
-    "name": "Mist Window",
-    "desc": "Blurred glass panels drift like fogged UI windows.",
-    "kind": "mist-window",
-    "cat_id": "fluid",
-    "cat_num": "04",
-    "cat_title": "Fluid Surfaces",
-    "cat_desc": "Smoke, water and membrane effects with slower premium motion.",
-    "cat_icon": "()",
-    "index": 6,
-    "dark": {
-      "a": "#e0f2fe",
-      "b": "#99f6e4",
+      "a": "#e0e7ff",
+      "b": "#aab7d9",
       "ink": "#ffffff"
     },
     "light": {
-      "a": "#526a73",
-      "b": "#5d837b",
-      "ink": "#111f22"
-    }
-  },
-  {
-    "key": "liquid-blob-lab",
-    "name": "Liquid Blob Lab",
-    "desc": "Soft liquid blobs melt outward with organic rounded surfaces.",
-    "kind": "liquid-blob-lab",
-    "cat_id": "fluid",
-    "cat_num": "04",
-    "cat_title": "Fluid Surfaces",
-    "cat_desc": "Smoke, water and membrane effects with slower premium motion.",
-    "cat_icon": "()",
-    "index": 7,
-    "dark": {
-      "a": "#7ce6af",
-      "b": "#67e8f9",
-      "ink": "#f5f1e8"
-    },
-    "light": {
-      "a": "#287d60",
-      "b": "#296e7d",
+      "a": "#777d8f",
+      "b": "#989ea8",
       "ink": "#15191e"
     }
   },
   {
-    "key": "code-scramble",
-    "name": "Code Scramble",
-    "desc": "Syntax chips scatter with small code labels.",
-    "kind": "code-scramble",
-    "cat_id": "data-ui",
-    "cat_num": "05",
-    "cat_title": "Data UI Marks",
-    "cat_desc": "Developer-friendly effects using code, keys and interface objects.",
-    "cat_icon": "[]",
-    "index": 1,
+    "key": "oil-cell",
+    "name": "Oil Cell",
+    "desc": "Iridescent organic cells inflate and fade.",
+    "kind": "oil",
+    "cat_id": "fluid-smoke",
+    "cat_num": "04",
+    "cat_title": "Fluid & Smoke",
+    "cat_desc": "Smoke, ink, water, vapor and oil-cell effects.",
+    "cat_icon": "O",
+    "index": 5,
     "dark": {
-      "a": "#a7e956",
-      "b": "#60a5fa",
-      "ink": "#f5ffe5"
+      "a": "#ff5b8a",
+      "b": "#61d9ff",
+      "ink": "#ffffff"
     },
     "light": {
-      "a": "#577c1f",
-      "b": "#245e9f",
-      "ink": "#132506"
+      "a": "#7a3b52",
+      "b": "#3b7882",
+      "ink": "#15191e"
     }
   },
   {
-    "key": "terminal-caret",
-    "name": "Terminal Caret",
-    "desc": "Caret blocks step forward like a command prompt.",
-    "kind": "terminal-caret",
-    "cat_id": "data-ui",
+    "key": "portal-ring",
+    "name": "Portal Ring",
+    "desc": "Double portal rings open around the cursor.",
+    "kind": "portal",
+    "cat_id": "geometry-light",
     "cat_num": "05",
-    "cat_title": "Data UI Marks",
-    "cat_desc": "Developer-friendly effects using code, keys and interface objects.",
-    "cat_icon": "[]",
-    "index": 2,
+    "cat_title": "Geometry & Light",
+    "cat_desc": "Portal rings, lasers, scan grids, triangles and cubes.",
+    "cat_icon": "G",
+    "index": 1,
     "dark": {
-      "a": "#22c55e",
-      "b": "#bbf7d0",
-      "ink": "#ecfdf5"
+      "a": "#b9ff34",
+      "b": "#c89cff",
+      "ink": "#ffffff"
     },
     "light": {
-      "a": "#147334",
-      "b": "#3e7b51",
-      "ink": "#062111"
+      "a": "#5f7d1c",
+      "b": "#6b4d9e",
+      "ink": "#15191e"
+    }
+  },
+  {
+    "key": "laser-slice",
+    "name": "Laser Slice",
+    "desc": "Sharp light slices cut across the preview.",
+    "kind": "laser",
+    "cat_id": "geometry-light",
+    "cat_num": "05",
+    "cat_title": "Geometry & Light",
+    "cat_desc": "Portal rings, lasers, scan grids, triangles and cubes.",
+    "cat_icon": "G",
+    "index": 2,
+    "dark": {
+      "a": "#ff5b8a",
+      "b": "#ffffff",
+      "ink": "#ffffff"
+    },
+    "light": {
+      "a": "#9a3658",
+      "b": "#f2eadb",
+      "ink": "#15191e"
+    }
+  },
+  {
+    "key": "scan-grid",
+    "name": "Scan Grid",
+    "desc": "A scanner bar and small grid bits appear.",
+    "kind": "scan",
+    "cat_id": "geometry-light",
+    "cat_num": "05",
+    "cat_title": "Geometry & Light",
+    "cat_desc": "Portal rings, lasers, scan grids, triangles and cubes.",
+    "cat_icon": "G",
+    "index": 3,
+    "dark": {
+      "a": "#61d9ff",
+      "b": "#b9ff34",
+      "ink": "#ffffff"
+    },
+    "light": {
+      "a": "#337583",
+      "b": "#6b8a2c",
+      "ink": "#15191e"
+    }
+  },
+  {
+    "key": "triangle-swarm",
+    "name": "Triangle Swarm",
+    "desc": "Tiny triangles rotate and scatter.",
+    "kind": "tri",
+    "cat_id": "geometry-light",
+    "cat_num": "05",
+    "cat_title": "Geometry & Light",
+    "cat_desc": "Portal rings, lasers, scan grids, triangles and cubes.",
+    "cat_icon": "G",
+    "index": 4,
+    "dark": {
+      "a": "#ffd166",
+      "b": "#ff5b8a",
+      "ink": "#ffffff"
+    },
+    "light": {
+      "a": "#8a6b24",
+      "b": "#9a3658",
+      "ink": "#15191e"
+    }
+  },
+  {
+    "key": "cube-pop",
+    "name": "Cube Pop",
+    "desc": "Isometric cube blocks pop out from the pointer.",
+    "kind": "cube",
+    "cat_id": "geometry-light",
+    "cat_num": "05",
+    "cat_title": "Geometry & Light",
+    "cat_desc": "Portal rings, lasers, scan grids, triangles and cubes.",
+    "cat_icon": "G",
+    "index": 5,
+    "dark": {
+      "a": "#c89cff",
+      "b": "#6ee7ff",
+      "ink": "#ffffff"
+    },
+    "light": {
+      "a": "#6b4d9e",
+      "b": "#3b7882",
+      "ink": "#15191e"
+    }
+  },
+  {
+    "key": "token-burst",
+    "name": "Token Burst",
+    "desc": "Code tokens jump out like syntax fragments.",
+    "kind": "token",
+    "cat_id": "code-data",
+    "cat_num": "06",
+    "cat_title": "Code & Data",
+    "cat_desc": "Syntax tokens, binary rain, terminal cursor and matrix effects.",
+    "cat_icon": "{}",
+    "index": 1,
+    "dark": {
+      "a": "#b9ff34",
+      "b": "#c89cff",
+      "ink": "#07100b"
+    },
+    "light": {
+      "a": "#5f7d1c",
+      "b": "#6b4d9e",
+      "ink": "#ffffff"
     }
   },
   {
     "key": "binary-rain",
     "name": "Binary Rain",
-    "desc": "Small 0/1 columns drop and dissolve.",
-    "kind": "binary-rain",
-    "cat_id": "data-ui",
-    "cat_num": "05",
-    "cat_title": "Data UI Marks",
-    "cat_desc": "Developer-friendly effects using code, keys and interface objects.",
-    "cat_icon": "[]",
-    "index": 3,
+    "desc": "Binary marks fall downward from the cursor.",
+    "kind": "binary",
+    "cat_id": "code-data",
+    "cat_num": "06",
+    "cat_title": "Code & Data",
+    "cat_desc": "Syntax tokens, binary rain, terminal cursor and matrix effects.",
+    "cat_icon": "{}",
+    "index": 2,
     "dark": {
-      "a": "#4ade80",
-      "b": "#a7f3d0",
-      "ink": "#f0fdf4"
+      "a": "#5cf28b",
+      "b": "#0d121a",
+      "ink": "#ffffff"
     },
     "light": {
-      "a": "#237944",
-      "b": "#42795d",
-      "ink": "#071f11"
+      "a": "#2d7b49",
+      "b": "#c7c0b1",
+      "ink": "#15191e"
     }
   },
   {
-    "key": "bracket-lock",
-    "name": "Bracket Lock",
-    "desc": "Four brackets snap around the pointer like a focus lock.",
-    "kind": "bracket-lock",
-    "cat_id": "data-ui",
-    "cat_num": "05",
-    "cat_title": "Data UI Marks",
-    "cat_desc": "Developer-friendly effects using code, keys and interface objects.",
-    "cat_icon": "[]",
-    "index": 4,
+    "key": "terminal-caret",
+    "name": "Terminal Caret",
+    "desc": "Terminal prompts and carets blink and fade.",
+    "kind": "terminal",
+    "cat_id": "code-data",
+    "cat_num": "06",
+    "cat_title": "Code & Data",
+    "cat_desc": "Syntax tokens, binary rain, terminal cursor and matrix effects.",
+    "cat_icon": "{}",
+    "index": 3,
     "dark": {
-      "a": "#f472b6",
-      "b": "#93c5fd",
-      "ink": "#fff1f8"
+      "a": "#b9ff34",
+      "b": "#f5f1e8",
+      "ink": "#07100b"
     },
     "light": {
-      "a": "#9c3f79",
-      "b": "#37659c",
-      "ink": "#2b1022"
+      "a": "#5f7d1c",
+      "b": "#c7c0b1",
+      "ink": "#15191e"
+    }
+  },
+  {
+    "key": "matrix-beads",
+    "name": "Matrix Beads",
+    "desc": "Data beads fall in short vertical chains.",
+    "kind": "matrix",
+    "cat_id": "code-data",
+    "cat_num": "06",
+    "cat_title": "Code & Data",
+    "cat_desc": "Syntax tokens, binary rain, terminal cursor and matrix effects.",
+    "cat_icon": "{}",
+    "index": 4,
+    "dark": {
+      "a": "#5cf28b",
+      "b": "#b9ff34",
+      "ink": "#07100b"
+    },
+    "light": {
+      "a": "#2d7b49",
+      "b": "#5f7d1c",
+      "ink": "#f5f1e8"
+    }
+  },
+  {
+    "key": "bracket-orbit",
+    "name": "Bracket Orbit",
+    "desc": "Brackets rotate around the pointer.",
+    "kind": "bracket",
+    "cat_id": "code-data",
+    "cat_num": "06",
+    "cat_title": "Code & Data",
+    "cat_desc": "Syntax tokens, binary rain, terminal cursor and matrix effects.",
+    "cat_icon": "{}",
+    "index": 5,
+    "dark": {
+      "a": "#61d9ff",
+      "b": "#c89cff",
+      "ink": "#ffffff"
+    },
+    "light": {
+      "a": "#337583",
+      "b": "#6b4d9e",
+      "ink": "#15191e"
+    }
+  },
+  {
+    "key": "fireflies",
+    "name": "Fireflies",
+    "desc": "Glowing fireflies float with soft trails.",
+    "kind": "firefly",
+    "cat_id": "nature-motion",
+    "cat_num": "07",
+    "cat_title": "Nature Motion",
+    "cat_desc": "Fireflies, leaf spin, snow crystals, rain streaks and petals.",
+    "cat_icon": "N",
+    "index": 1,
+    "dark": {
+      "a": "#fff58a",
+      "b": "#b9ff34",
+      "ink": "#07100b"
+    },
+    "light": {
+      "a": "#9a8427",
+      "b": "#6b8a2c",
+      "ink": "#15191e"
+    }
+  },
+  {
+    "key": "leaf-spin",
+    "name": "Leaf Spin",
+    "desc": "Leaf-like marks spin away from the cursor.",
+    "kind": "leaf",
+    "cat_id": "nature-motion",
+    "cat_num": "07",
+    "cat_title": "Nature Motion",
+    "cat_desc": "Fireflies, leaf spin, snow crystals, rain streaks and petals.",
+    "cat_icon": "N",
+    "index": 2,
+    "dark": {
+      "a": "#5cf28b",
+      "b": "#b9ff34",
+      "ink": "#07100b"
+    },
+    "light": {
+      "a": "#2d7b49",
+      "b": "#6b8a2c",
+      "ink": "#15191e"
+    }
+  },
+  {
+    "key": "snow-crystal",
+    "name": "Snow Crystal",
+    "desc": "Small crystal flakes drift and rotate.",
+    "kind": "snow",
+    "cat_id": "nature-motion",
+    "cat_num": "07",
+    "cat_title": "Nature Motion",
+    "cat_desc": "Fireflies, leaf spin, snow crystals, rain streaks and petals.",
+    "cat_icon": "N",
+    "index": 3,
+    "dark": {
+      "a": "#e7f6ff",
+      "b": "#9fdfff",
+      "ink": "#111827"
+    },
+    "light": {
+      "a": "#82929b",
+      "b": "#5d7f8b",
+      "ink": "#15191e"
+    }
+  },
+  {
+    "key": "rain-streak",
+    "name": "Rain Streak",
+    "desc": "Thin rain lines drop quickly downward.",
+    "kind": "rain",
+    "cat_id": "nature-motion",
+    "cat_num": "07",
+    "cat_title": "Nature Motion",
+    "cat_desc": "Fireflies, leaf spin, snow crystals, rain streaks and petals.",
+    "cat_icon": "N",
+    "index": 4,
+    "dark": {
+      "a": "#6ee7ff",
+      "b": "#d8f8ff",
+      "ink": "#111827"
+    },
+    "light": {
+      "a": "#3b7882",
+      "b": "#b6cfd5",
+      "ink": "#15191e"
+    }
+  },
+  {
+    "key": "petal-drift",
+    "name": "Petal Drift",
+    "desc": "Petal shapes drift gently in the air.",
+    "kind": "petal",
+    "cat_id": "nature-motion",
+    "cat_num": "07",
+    "cat_title": "Nature Motion",
+    "cat_desc": "Fireflies, leaf spin, snow crystals, rain streaks and petals.",
+    "cat_icon": "N",
+    "index": 5,
+    "dark": {
+      "a": "#ff9bc6",
+      "b": "#ffd7e8",
+      "ink": "#111827"
+    },
+    "light": {
+      "a": "#a54e70",
+      "b": "#bd879a",
+      "ink": "#15191e"
     }
   },
   {
     "key": "keycap-pop",
     "name": "Keycap Pop",
-    "desc": "Mini keycaps jump with real keyboard-card feeling.",
-    "kind": "keycap-pop",
-    "cat_id": "data-ui",
-    "cat_num": "05",
-    "cat_title": "Data UI Marks",
-    "cat_desc": "Developer-friendly effects using code, keys and interface objects.",
-    "cat_icon": "[]",
-    "index": 5,
+    "desc": "Tiny keycaps lift and fade.",
+    "kind": "keycap",
+    "cat_id": "ui-objects",
+    "cat_num": "08",
+    "cat_title": "UI Objects",
+    "cat_desc": "Keycaps, app cards, windows, toggles and magnetic cards.",
+    "cat_icon": "UI",
+    "index": 1,
     "dark": {
       "a": "#f5f1e8",
-      "b": "#a7e956",
+      "b": "#b9ff34",
       "ink": "#111827"
     },
     "light": {
-      "a": "#282828",
-      "b": "#5f7f1e",
-      "ink": "#111111"
-    }
-  },
-  {
-    "key": "card-stack",
-    "name": "Card Stack",
-    "desc": "Tiny UI cards fan out from the cursor.",
-    "kind": "card-stack",
-    "cat_id": "data-ui",
-    "cat_num": "05",
-    "cat_title": "Data UI Marks",
-    "cat_desc": "Developer-friendly effects using code, keys and interface objects.",
-    "cat_icon": "[]",
-    "index": 6,
-    "dark": {
-      "a": "#e9d5ff",
-      "b": "#a5b4fc",
-      "ink": "#faf5ff"
-    },
-    "light": {
-      "a": "#6e5395",
-      "b": "#53639a",
-      "ink": "#211536"
-    }
-  },
-  {
-    "key": "magnet-cards",
-    "name": "Magnet Cards",
-    "desc": "Small UI cards are pulled toward the cursor then tossed away.",
-    "kind": "magnet-cards",
-    "cat_id": "data-ui",
-    "cat_num": "05",
-    "cat_title": "Data UI Marks",
-    "cat_desc": "Developer-friendly effects using code, keys and interface objects.",
-    "cat_icon": "[]",
-    "index": 7,
-    "dark": {
-      "a": "#b9ff57",
-      "b": "#7ce6af",
-      "ink": "#f5f1e8"
-    },
-    "light": {
-      "a": "#5c7d2c",
-      "b": "#2d8060",
+      "a": "#d0c7b7",
+      "b": "#6b8a2c",
       "ink": "#15191e"
     }
   },
   {
-    "key": "laser-slicer",
-    "name": "Laser Slicer",
-    "desc": "A clean laser slice crosses with a small flash point.",
-    "kind": "laser-slicer",
-    "cat_id": "light-physics",
-    "cat_num": "06",
-    "cat_title": "Light Physics",
-    "cat_desc": "Sharper energy effects with visible physics-based direction.",
-    "cat_icon": "//",
-    "index": 1,
-    "dark": {
-      "a": "#ef4444",
-      "b": "#fef2f2",
-      "ink": "#fff1f1"
-    },
-    "light": {
-      "a": "#9b1c1c",
-      "b": "#3a1414",
-      "ink": "#2b0808"
-    }
-  },
-  {
-    "key": "prism-split",
-    "name": "Prism Split",
-    "desc": "Three color rays split from one cursor point.",
-    "kind": "prism-split",
-    "cat_id": "light-physics",
-    "cat_num": "06",
-    "cat_title": "Light Physics",
-    "cat_desc": "Sharper energy effects with visible physics-based direction.",
-    "cat_icon": "//",
+    "key": "app-vault-cards",
+    "name": "App Vault Cards",
+    "desc": "Three app cards rise like your essentials preview.",
+    "kind": "vault",
+    "cat_id": "ui-objects",
+    "cat_num": "08",
+    "cat_title": "UI Objects",
+    "cat_desc": "Keycaps, app cards, windows, toggles and magnetic cards.",
+    "cat_icon": "UI",
     "index": 2,
     "dark": {
-      "a": "#60a5fa",
-      "b": "#f472b6",
-      "ink": "#fef08a"
+      "a": "#b9ff34",
+      "b": "#ffffff",
+      "ink": "#0d121a"
     },
     "light": {
-      "a": "#255da0",
-      "b": "#9c3f79",
-      "ink": "#8a7009"
+      "a": "#66832d",
+      "b": "#ffffff",
+      "ink": "#16191f"
     }
   },
   {
-    "key": "scan-radar",
-    "name": "Scan Radar",
-    "desc": "Radar arcs sweep out from the pointer.",
-    "kind": "scan-radar",
-    "cat_id": "light-physics",
-    "cat_num": "06",
-    "cat_title": "Light Physics",
-    "cat_desc": "Sharper energy effects with visible physics-based direction.",
-    "cat_icon": "//",
+    "key": "window-stack",
+    "name": "Window Stack",
+    "desc": "Mini windows stack and slide out.",
+    "kind": "window",
+    "cat_id": "ui-objects",
+    "cat_num": "08",
+    "cat_title": "UI Objects",
+    "cat_desc": "Keycaps, app cards, windows, toggles and magnetic cards.",
+    "cat_icon": "UI",
     "index": 3,
     "dark": {
-      "a": "#34d399",
-      "b": "#67e8f9",
-      "ink": "#ecfdf5"
+      "a": "#61d9ff",
+      "b": "#f5f1e8",
+      "ink": "#111827"
     },
     "light": {
-      "a": "#1b7a5a",
-      "b": "#287884",
-      "ink": "#09291e"
+      "a": "#337583",
+      "b": "#c7c0b1",
+      "ink": "#15191e"
     }
   },
   {
-    "key": "orbit-satellite",
-    "name": "Orbit Satellite",
-    "desc": "Small satellites circle a central cursor core.",
-    "kind": "orbit-satellite",
-    "cat_id": "light-physics",
-    "cat_num": "06",
-    "cat_title": "Light Physics",
-    "cat_desc": "Sharper energy effects with visible physics-based direction.",
-    "cat_icon": "//",
+    "key": "toggle-switch",
+    "name": "Toggle Switch",
+    "desc": "Small toggle pills blink between on and off.",
+    "kind": "toggle",
+    "cat_id": "ui-objects",
+    "cat_num": "08",
+    "cat_title": "UI Objects",
+    "cat_desc": "Keycaps, app cards, windows, toggles and magnetic cards.",
+    "cat_icon": "UI",
     "index": 4,
     "dark": {
-      "a": "#facc15",
-      "b": "#38bdf8",
-      "ink": "#fffbea"
+      "a": "#b9ff34",
+      "b": "#61d9ff",
+      "ink": "#111827"
     },
     "light": {
-      "a": "#8a6a00",
-      "b": "#146b8f",
-      "ink": "#2b2200"
+      "a": "#6b8a2c",
+      "b": "#337583",
+      "ink": "#15191e"
     }
   },
   {
-    "key": "magnetic-pebbles",
-    "name": "Magnetic Pebbles",
-    "desc": "Pebbles pull inward as if the cursor has gravity.",
-    "kind": "magnetic-pebbles",
-    "cat_id": "light-physics",
-    "cat_num": "06",
-    "cat_title": "Light Physics",
-    "cat_desc": "Sharper energy effects with visible physics-based direction.",
-    "cat_icon": "//",
+    "key": "card-magnet",
+    "name": "Card Magnet",
+    "desc": "Cards pull inward like magnetic UI pieces.",
+    "kind": "magnet",
+    "cat_id": "ui-objects",
+    "cat_num": "08",
+    "cat_title": "UI Objects",
+    "cat_desc": "Keycaps, app cards, windows, toggles and magnetic cards.",
+    "cat_icon": "UI",
     "index": 5,
     "dark": {
-      "a": "#c084fc",
-      "b": "#22d3ee",
-      "ink": "#faf5ff"
+      "a": "#c89cff",
+      "b": "#f5f1e8",
+      "ink": "#111827"
     },
     "light": {
-      "a": "#7747a6",
-      "b": "#147b8c",
-      "ink": "#241136"
-    }
-  },
-  {
-    "key": "gravity-sparks",
-    "name": "Gravity Sparks",
-    "desc": "Sparks drop downward with heavier gravity motion.",
-    "kind": "gravity-sparks",
-    "cat_id": "light-physics",
-    "cat_num": "06",
-    "cat_title": "Light Physics",
-    "cat_desc": "Sharper energy effects with visible physics-based direction.",
-    "cat_icon": "//",
-    "index": 6,
-    "dark": {
-      "a": "#fb923c",
-      "b": "#fde68a",
-      "ink": "#fff7ed"
-    },
-    "light": {
-      "a": "#9a4c12",
-      "b": "#8a7009",
-      "ink": "#2a1302"
-    }
-  },
-  {
-    "key": "orbit-rings-lab",
-    "name": "Orbit Rings Lab",
-    "desc": "Orbit rings expand with tiny satellites spinning around them.",
-    "kind": "orbit-rings-lab",
-    "cat_id": "light-physics",
-    "cat_num": "06",
-    "cat_title": "Light Physics",
-    "cat_desc": "Sharper energy effects with visible physics-based direction.",
-    "cat_icon": "//",
-    "index": 7,
-    "dark": {
-      "a": "#b9ff57",
-      "b": "#67e8f9",
-      "ink": "#f5f1e8"
-    },
-    "light": {
-      "a": "#638d2b",
-      "b": "#2b7a89",
+      "a": "#6b4d9e",
+      "b": "#c7c0b1",
       "ink": "#15191e"
     }
   },
   {
-    "key": "scanline-lab",
-    "name": "Scanline Cross",
-    "desc": "A thin scanner beam flashes through the cursor with vertical targeting lines.",
-    "kind": "scanline-lab",
-    "cat_id": "light-physics",
-    "cat_num": "06",
-    "cat_title": "Light Physics",
-    "cat_desc": "Sharper energy effects with visible physics-based direction.",
-    "cat_icon": "//",
-    "index": 8,
-    "dark": {
-      "a": "#a7e956",
-      "b": "#ffffff",
-      "ink": "#f5f1e8"
-    },
-    "light": {
-      "a": "#5f812e",
-      "b": "#20242a",
-      "ink": "#15191e"
-    }
-  },
-  {
-    "key": "constellation-web",
-    "name": "Constellation Web",
-    "desc": "Stars appear around the pointer and connect into a small moving web.",
-    "kind": "constellation-web",
-    "cat_id": "cosmic-lab",
-    "cat_num": "07",
-    "cat_title": "Cosmic Lab",
-    "cat_desc": "Constellation, glow and glass effects imported from your uploaded cursor labs.",
-    "cat_icon": "*",
+    "key": "dollar-spread",
+    "name": "Dollar Spread",
+    "desc": "Money symbols burst outward with tiny bills.",
+    "kind": "money",
+    "cat_id": "money-service",
+    "cat_num": "09",
+    "cat_title": "Money Service",
+    "cat_desc": "Dollar burst, coin flip, receipts, invoices and chart blips.",
+    "cat_icon": "$",
     "index": 1,
     "dark": {
-      "a": "#fff7e8",
-      "b": "#b9ff57",
-      "ink": "#f5f1e8"
+      "a": "#b9ff34",
+      "b": "#ffe58a",
+      "ink": "#fbffe8"
     },
     "light": {
-      "a": "#37322a",
-      "b": "#6f8f35",
-      "ink": "#15191e"
+      "a": "#5f7d1c",
+      "b": "#957020",
+      "ink": "#1b210d"
     }
   },
   {
-    "key": "fireflies-glow",
-    "name": "Fireflies Glow",
-    "desc": "Slow floating firefly dots move upward with uneven natural glow.",
-    "kind": "fireflies-glow",
-    "cat_id": "cosmic-lab",
-    "cat_num": "07",
-    "cat_title": "Cosmic Lab",
-    "cat_desc": "Constellation, glow and glass effects imported from your uploaded cursor labs.",
-    "cat_icon": "*",
+    "key": "coin-flip",
+    "name": "Coin Flip",
+    "desc": "Coins flip and arc away from the pointer.",
+    "kind": "coin",
+    "cat_id": "money-service",
+    "cat_num": "09",
+    "cat_title": "Money Service",
+    "cat_desc": "Dollar burst, coin flip, receipts, invoices and chart blips.",
+    "cat_icon": "$",
     "index": 2,
     "dark": {
-      "a": "#d7ff66",
-      "b": "#7ce6af",
-      "ink": "#f5f1e8"
+      "a": "#ffd166",
+      "b": "#fff5bd",
+      "ink": "#111827"
     },
     "light": {
-      "a": "#667e20",
-      "b": "#327c59",
+      "a": "#8a6b24",
+      "b": "#c5a84a",
       "ink": "#15191e"
     }
   },
   {
-    "key": "glass-shards-lab",
-    "name": "Glass Shards Lab",
-    "desc": "Transparent shards crack outward like small pieces of cursor glass.",
-    "kind": "glass-shards-lab",
-    "cat_id": "cosmic-lab",
-    "cat_num": "07",
-    "cat_title": "Cosmic Lab",
-    "cat_desc": "Constellation, glow and glass effects imported from your uploaded cursor labs.",
-    "cat_icon": "*",
+    "key": "receipt-slip",
+    "name": "Receipt Slip",
+    "desc": "Small receipt strips slide and fade.",
+    "kind": "receipt",
+    "cat_id": "money-service",
+    "cat_num": "09",
+    "cat_title": "Money Service",
+    "cat_desc": "Dollar burst, coin flip, receipts, invoices and chart blips.",
+    "cat_icon": "$",
     "index": 3,
     "dark": {
-      "a": "#c7f9ff",
-      "b": "#b9ff57",
-      "ink": "#f5f1e8"
+      "a": "#f5f1e8",
+      "b": "#b9ff34",
+      "ink": "#111827"
     },
     "light": {
-      "a": "#345d66",
-      "b": "#6e8f32",
+      "a": "#d0c7b7",
+      "b": "#6b8a2c",
       "ink": "#15191e"
     }
   },
   {
-    "key": "clockwork",
-    "name": "Clockwork",
-    "desc": "Tiny gear circles rotate and fade like a mechanical cursor trail.",
-    "kind": "clockwork",
-    "cat_id": "mechanical",
-    "cat_num": "08",
-    "cat_title": "Mechanical Motion",
-    "cat_desc": "Gear, machine and serpent-style motion for stronger cursor character.",
-    "cat_icon": "[]",
-    "index": 1,
+    "key": "invoice-card",
+    "name": "Invoice Card",
+    "desc": "Invoice cards tilt and lift away.",
+    "kind": "invoice",
+    "cat_id": "money-service",
+    "cat_num": "09",
+    "cat_title": "Money Service",
+    "cat_desc": "Dollar burst, coin flip, receipts, invoices and chart blips.",
+    "cat_icon": "$",
+    "index": 4,
     "dark": {
-      "a": "#ffd166",
-      "b": "#a7e956",
-      "ink": "#f5f1e8"
+      "a": "#6ee7ff",
+      "b": "#f5f1e8",
+      "ink": "#111827"
     },
     "light": {
-      "a": "#7d5a18",
-      "b": "#6f8f35",
+      "a": "#3b7882",
+      "b": "#c7c0b1",
+      "ink": "#15191e"
+    }
+  },
+  {
+    "key": "chart-blip",
+    "name": "Chart Blip",
+    "desc": "Tiny chart bars blink upward.",
+    "kind": "chart",
+    "cat_id": "money-service",
+    "cat_num": "09",
+    "cat_title": "Money Service",
+    "cat_desc": "Dollar burst, coin flip, receipts, invoices and chart blips.",
+    "cat_icon": "$",
+    "index": 5,
+    "dark": {
+      "a": "#5cf28b",
+      "b": "#b9ff34",
+      "ink": "#111827"
+    },
+    "light": {
+      "a": "#2d7b49",
+      "b": "#6b8a2c",
       "ink": "#15191e"
     }
   }

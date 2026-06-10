@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Code &amp; Data | Coldboot Cursor Library</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="nav">
+      <a class="brand" href="../index.html"><span class="brand-dot"></span>Coldboot</a>
+      <nav class="nav-links">
+        <a href="../index.html">Home</a>
+        <a href="#effects">Effects</a>
+        <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle theme">&#9789;</button>
+      </nav>
+    </header>
+
+    <section class="category-strip" id="categories">
+      <div class="category-grid" id="categoryGrid"></div>
+      <button class="see-more" id="seeMoreBtn" type="button" aria-expanded="false">See more</button>
+    </section>
+
+    <section class="category-hero" data-watermark="Code &amp; Data">
+      <span class="pill">06 / category</span>
+      <h1>Code &amp; Data</h1>
+      <p>Syntax tokens, binary rain, terminal cursor and matrix effects.</p>
+    </section>
+
+    <section class="effects-stack section-gap" id="effects">
+      <section class="effect-box" data-effect="token-burst" data-watermark="Token Burst">
+        <div class="fx-layer" aria-hidden="true"></div>
+        <div class="effect-content">
+          <span class="pill">06.01 / token-burst</span>
+          <h2>Token Burst</h2>
+          <p>Code tokens jump out like syntax fragments.</p>
+          <span class="preview-note">Move cursor inside preview</span>
+        </div>
+        <div class="preview-zone" aria-hidden="true"></div>
+        <a class="source-link" href="../sources/token-burst.html">See source code</a>
+      </section>
+      <section class="effect-box" data-effect="binary-rain" data-watermark="Binary Rain">
+        <div class="fx-layer" aria-hidden="true"></div>
+        <div class="effect-content">
+          <span class="pill">06.02 / binary-rain</span>
+          <h2>Binary Rain</h2>
+          <p>Binary marks fall downward from the cursor.</p>
+          <span class="preview-note">Move cursor inside preview</span>
+        </div>
+        <div class="preview-zone" aria-hidden="true"></div>
+        <a class="source-link" href="../sources/binary-rain.html">See source code</a>
+      </section>
+      <section class="effect-box" data-effect="terminal-caret" data-watermark="Terminal Caret">
+        <div class="fx-layer" aria-hidden="true"></div>
+        <div class="effect-content">
+          <span class="pill">06.03 / terminal-caret</span>
+          <h2>Terminal Caret</h2>
+          <p>Terminal prompts and carets blink and fade.</p>
+          <span class="preview-note">Move cursor inside preview</span>
+        </div>
+        <div class="preview-zone" aria-hidden="true"></div>
+        <a class="source-link" href="../sources/terminal-caret.html">See source code</a>
+      </section>
+      <section class="effect-box" data-effect="matrix-beads" data-watermark="Matrix Beads">
+        <div class="fx-layer" aria-hidden="true"></div>
+        <div class="effect-content">
+          <span class="pill">06.04 / matrix-beads</span>
+          <h2>Matrix Beads</h2>
+          <p>Data beads fall in short vertical chains.</p>
+          <span class="preview-note">Move cursor inside preview</span>
+        </div>
+        <div class="preview-zone" aria-hidden="true"></div>
+        <a class="source-link" href="../sources/matrix-beads.html">See source code</a>
+      </section>
+      <section class="effect-box" data-effect="bracket-orbit" data-watermark="Bracket Orbit">
+        <div class="fx-layer" aria-hidden="true"></div>
+        <div class="effect-content">
+          <span class="pill">06.05 / bracket-orbit</span>
+          <h2>Bracket Orbit</h2>
+          <p>Brackets rotate around the pointer.</p>
+          <span class="preview-note">Move cursor inside preview</span>
+        </div>
+        <div class="preview-zone" aria-hidden="true"></div>
+        <a class="source-link" href="../sources/bracket-orbit.html">See source code</a>
+      </section>
+    </section>
+
+    <footer>Code &amp; Data. Move the cursor inside each preview.</footer>
+  </div>
+  <script src="../assets/data.js"></script>
+  <script src="../assets/fx.js"></script>
+  <script src="../assets/app.js"></script>
+  <script src="../assets/snake-site-override.js?v=20260611-033709"></script>
+  <script>initCategoryPage("code-data");</script>
+</body>
+</html>

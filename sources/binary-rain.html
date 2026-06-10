@@ -3,7 +3,6 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow">
   <title>Binary Rain | Source Code</title>
   <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -12,19 +11,16 @@
     <header class="nav">
       <a class="brand" href="../index.html"><span class="brand-dot"></span>Coldboot</a>
       <nav class="nav-links">
-        <a href="../categories/data-ui.html">Back</a>
+        <a href="../categories/code-data.html">Back</a>
         <a href="#preview">Preview</a>
-        <a href="#code">Code</a>
         <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle theme">&#9789;</button>
       </nav>
     </header>
 
-    <section class="category-hero">
-      <div class="text">
-        <span class="pill">05.0 / source</span>
-        <h1>Binary Rain</h1>
-        <p>Small 0/1 columns drop and dissolve.</p>
-      </div>
+    <section class="category-hero" data-watermark="Binary Rain">
+      <span class="pill">source</span>
+      <h1>Binary Rain</h1>
+      <p>Binary marks fall downward from the cursor.</p>
     </section>
 
     <section class="source-preview section-gap" id="sourcePreview" data-effect="binary-rain">
@@ -34,19 +30,14 @@
 
     <section class="code-card section-gap" id="code">
       <div class="code-head">
-        <div>
-          <span class="pill">copy source</span>
-          <h2>Use this effect</h2>
-        </div>
+        <div><span class="pill">copy source</span><h2>Use this effect</h2></div>
         <button class="copy-btn" id="copyAll" type="button">Copy all</button>
       </div>
-
       <div class="code-tabs">
         <button class="code-tab active" data-tab="html" type="button">HTML</button>
         <button class="code-tab" data-tab="css" type="button">CSS</button>
         <button class="code-tab" data-tab="js" type="button">JS</button>
       </div>
-
       <pre class="code-pane" data-code="html"><code>&lt;section class=&quot;cursor-demo&quot; data-cursor-effect=&quot;binary-rain&quot;&gt;
   &lt;div class=&quot;fx-layer&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
 &lt;/section&gt;</code></pre>
@@ -56,7 +47,6 @@
   overflow: hidden;
   border-radius: 24px;
 }
-
 .fx-layer {
   position: absolute;
   inset: 0;
@@ -65,18 +55,18 @@
       <pre class="code-pane" data-code="js" hidden><code>const effect = COLD_EFFECTS.find((item) =&gt; item.key === &quot;binary-rain&quot;);
 const target = document.querySelector(&quot;[data-cursor-effect=&#39;binary-rain&#39;]&quot;);
 const layer = target.querySelector(&quot;.fx-layer&quot;);
-
 target.addEventListener(&quot;pointermove&quot;, (event) =&gt; {
   const rect = layer.getBoundingClientRect();
   COLD_FX.spawn(effect, layer, event.clientX - rect.left, event.clientY - rect.top);
 });</code></pre>
     </section>
 
-    <footer>Theme-aware palettes are included in assets/data.js.</footer>
+    <footer>Theme-aware colors are defined in assets/data.js.</footer>
   </div>
   <script src="../assets/data.js"></script>
   <script src="../assets/fx.js"></script>
   <script src="../assets/app.js"></script>
+  <script src="../assets/snake-site-override.js?v=20260611-033709"></script>
   <script>initSourcePage("binary-rain");</script>
 </body>
 </html>
