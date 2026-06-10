@@ -15,9 +15,9 @@ function initTheme() {
   root.setAttribute("data-theme", saved);
 
   qsa("[data-theme-toggle]").forEach((btn) => {
-    const sync = () => {
+    function sync() {
       btn.textContent = root.getAttribute("data-theme") === "light" ? "☀" : "☾";
-    };
+    }
 
     sync();
 
@@ -32,29 +32,48 @@ function initTheme() {
   });
 }
 
+function syncCategoryExpandedState(grid, expanded) {
+  const strip = grid ? grid.closest(".category-strip") : null;
+  if (strip) strip.classList.toggle("is-expanded", expanded);
+}
+
+function renderCategoryGrid(grid, activeId, expanded, sameFolder) {
+  grid.innerHTML = COLD_DATA.map((cat, index) => {
+    const href = sameFolder ? `${cat.id}.html` : `categories/${cat.id}.html`;
+    return `
+      <a class="category-card ${cat.id === activeId ? "active" : ""} ${!expanded && index >= 4 ? "hidden" : ""}" href="${href}">
+        <strong>
+          <span class="cat-icon" aria-hidden="true">${cat.icon}</span>
+          <span class="cat-label">${cat.title}</span>
+        </strong>
+      </a>
+    `;
+  }).join("");
+}
+
 function attachEffectPreview(section, effect) {
   const layer = qs(".fx-layer", section);
-  const preview = qs(".preview-zone", section) || section;
+  const target = qs(".preview-zone", section) || section;
 
-  if (!layer || !preview || !effect) return;
+  if (!layer || !target || !effect || typeof COLD_FX === "undefined") return;
 
   let last = 0;
 
-  preview.addEventListener("pointermove", (event) => {
+  target.addEventListener("pointermove", (event) => {
     const now = performance.now();
     const gap = effect.kind && effect.kind.startsWith("snake") ? 24 : 92;
 
     if (now - last < gap) return;
     last = now;
 
-    const layerRect = layer.getBoundingClientRect();
-    const x = event.clientX - layerRect.left;
-    const y = event.clientY - layerRect.top;
+    const rect = layer.getBoundingClientRect();
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
 
     COLD_FX.spawn(effect, layer, x, y);
   });
 
-  preview.addEventListener("pointerleave", () => {
+  target.addEventListener("pointerleave", () => {
     if (effect.kind && effect.kind.startsWith("snake")) {
       setTimeout(() => COLD_FX.clear(layer), 420);
     }
@@ -72,13 +91,8 @@ function initIndex() {
   let expanded = false;
 
   function render() {
-    grid.innerHTML = COLD_DATA.map((cat, index) => `
-      <a class="category-card ${!expanded && index >= 4 ? "hidden" : ""}" href="categories/${cat.id}.html">
-        <small>${cat.num} / 6 effects</small>
-        <strong>${cat.icon} ${cat.title}</strong>
-      </a>
-    `).join("");
-
+    renderCategoryGrid(grid, "", expanded, false);
+    syncCategoryExpandedState(grid, expanded);
     if (button) button.textContent = expanded ? "Show less" : "See more";
   }
 
@@ -103,13 +117,8 @@ function initCategoryPage(catId) {
   let expanded = false;
 
   function render() {
-    grid.innerHTML = COLD_DATA.map((cat, index) => `
-      <a class="category-card ${cat.id === catId ? "active" : ""} ${!expanded && index >= 4 ? "hidden" : ""}" href="${cat.id}.html">
-        <small>${cat.num} / 6 effects</small>
-        <strong>${cat.icon} ${cat.title}</strong>
-      </a>
-    `).join("");
-
+    renderCategoryGrid(grid, catId, expanded, true);
+    syncCategoryExpandedState(grid, expanded);
     if (button) button.textContent = expanded ? "Show less" : "See more";
   }
 
@@ -167,3 +176,32 @@ function initSourcePage(effectKey) {
     });
   }
 }
+
+/* hide nav/category when scrolling down, reveal when scrolling up */
+(function () {
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  function updateBars() {
+    const currentY = window.scrollY;
+    const down = currentY > lastScrollY && currentY > 100;
+    const up = currentY < lastScrollY;
+
+    document.body.classList.toggle("hide-top-bars", down && !up);
+
+    if (up || currentY < 40) {
+      document.body.classList.remove("hide-top-bars");
+    }
+
+    lastScrollY = currentY;
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", () => {
+    if (!ticking) {
+      requestAnimationFrame(updateBars);
+      ticking = true;
+    }
+  }, { passive: true });
+})();
+

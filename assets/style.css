@@ -306,102 +306,222 @@ footer{text-align:center;color:var(--muted);font-size:.84rem;font-weight:700;pad
 
 /* === V11 COMPACT PREVIEW FIX END === */
 
-/* === V12 THIN CATEGORY + STICKY FIX START === */
+/* === V16 CLEAN CATEGORY ROW START === */
 
-/* nav stays fixed on top while scrolling */
+/* nav: make it look like nav, not like category */
 .nav {
   position: sticky !important;
   top: 14px !important;
-  z-index: 80 !important;
+  z-index: 100 !important;
+  min-height: 58px !important;
+  padding: 10px 16px !important;
+  border-radius: 22px !important;
+  background: rgba(17, 24, 39, .92) !important;
+  backdrop-filter: blur(18px) !important;
 }
 
-/* category bar stays under nav while scrolling */
+/* category: separate, thinner, different style */
 .category-strip {
   position: sticky !important;
-  top: 92px !important;
-  z-index: 70 !important;
-  padding: 13px !important;
-  border-radius: 22px !important;
-  backdrop-filter: blur(16px) !important;
+  top: 88px !important;
+  z-index: 90 !important;
+
+  display: grid !important;
+  grid-template-columns: 1fr auto !important;
+  align-items: center !important;
+  gap: 14px !important;
+
+  min-height: 72px !important;
+  padding: 12px 16px !important;
+  border-radius: 18px !important;
+
+  background: rgba(13, 20, 31, .78) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  backdrop-filter: blur(18px) !important;
 }
 
-/* thinner category title row */
+/* keep see more visible */
+.category-head,
 .section-head {
-  margin-bottom: 10px !important;
+  display: contents !important;
 }
 
+.category-head strong,
 .section-head strong {
-  font-size: .68rem !important;
+  display: none !important;
 }
 
 .see-more {
-  padding: 8px 12px !important;
-  font-size: .66rem !important;
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  justify-self: end !important;
+  align-self: center !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  min-width: 112px !important;
+  height: 44px !important;
+  padding: 0 16px !important;
+  border-radius: 999px !important;
+
+  font-size: .72rem !important;
+  font-weight: 950 !important;
+  letter-spacing: .12em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
 }
 
-/* category cards thinner */
+/* one row only by default */
 .category-grid {
-  gap: 10px !important;
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  align-items: center !important;
 }
 
+/* CSS safety: hide after first row unless expanded */
+.category-strip:not(.is-expanded) .category-card:nth-child(n+5) {
+  display: none !important;
+}
+
+/* expanded: show all cards */
+.category-strip.is-expanded .category-card {
+  display: flex !important;
+}
+
+/* category card */
 .category-card {
-  min-height: 58px !important;
-  padding: 10px 13px !important;
+  height: 50px !important;
+  min-height: 50px !important;
+  padding: 0 14px !important;
   border-radius: 16px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: rgba(21, 31, 47, .82) !important;
+  border: 1px solid rgba(255,255,255,.10) !important;
+}
+
+.category-card.active {
+  border-color: rgba(185,255,87,.42) !important;
+  background: rgba(185,255,87,.07) !important;
 }
 
 .category-card small {
-  font-size: .60rem !important;
+  display: none !important;
 }
 
 .category-card strong {
-  margin-top: 4px !important;
-  font-size: .88rem !important;
+  width: 100% !important;
+  margin: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+
+  text-align: center !important;
+  font-size: .95rem !important;
+  line-height: 1 !important;
+  white-space: nowrap !important;
 }
 
-/* the big category hero under categories becomes thinner */
+.cat-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 16px !important;
+  line-height: 1 !important;
+}
+
+/* hide nav/category on scroll down */
+.nav,
+.category-strip {
+  transition: transform .28s ease, opacity .22s ease !important;
+  will-change: transform, opacity !important;
+}
+
+body.hide-top-bars .nav {
+  transform: translateY(-120px) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+body.hide-top-bars .category-strip {
+  transform: translateY(-165px) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* make hero not hide under sticky category */
 .category-hero {
-  min-height: 205px !important;
-  padding: 28px 34px !important;
-  border-radius: 28px !important;
   margin-top: 24px !important;
 }
 
-.category-hero h1 {
-  font-size: clamp(2.4rem, 4.6vw, 4.3rem) !important;
-  line-height: .86 !important;
-  margin: 10px 0 8px !important;
+/* light theme category/nav */
+html[data-theme="light"] .nav {
+  background: rgba(255,253,249,.92) !important;
 }
 
-.category-hero p {
-  font-size: .94rem !important;
-  line-height: 1.55 !important;
+html[data-theme="light"] .category-strip {
+  background: rgba(247,244,237,.86) !important;
 }
 
-.category-hero::after {
-  font-size: clamp(3.2rem, 8vw, 6.6rem) !important;
+html[data-theme="light"] .category-card {
+  background: rgba(255,255,255,.78) !important;
+  border-color: rgba(20,23,31,.10) !important;
 }
 
-/* because category bar is sticky, give effects cleaner spacing */
-.effects-stack {
-  margin-top: 28px !important;
-}
-
-/* phone/tablet: sticky category can take too much space, so keep only nav sticky */
+/* tablet */
 @media (max-width: 860px) {
   .category-strip {
     position: relative !important;
     top: auto !important;
+    grid-template-columns: 1fr auto !important;
   }
 
-  .category-card {
-    min-height: 54px !important;
+  .category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 
-  .category-hero {
-    min-height: 190px !important;
-    padding: 24px !important;
+  .category-strip:not(.is-expanded) .category-card:nth-child(n+3) {
+    display: none !important;
+  }
+
+  body.hide-top-bars .category-strip {
+    transform: none !important;
+    opacity: 1 !important;
+    pointer-events: auto !important;
   }
 }
 
-/* === V12 THIN CATEGORY + STICKY FIX END === */
+/* phone */
+@media (max-width: 560px) {
+  .category-strip {
+    grid-template-columns: 1fr !important;
+  }
+
+  .see-more {
+    grid-column: 1 !important;
+    justify-self: end !important;
+  }
+
+  .category-grid {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+    grid-template-columns: 1fr !important;
+  }
+
+  .category-strip:not(.is-expanded) .category-card:nth-child(n+2) {
+    display: none !important;
+  }
+}
+
+/* === V16 CLEAN CATEGORY ROW END === */
