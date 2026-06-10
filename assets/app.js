@@ -1,3 +1,4 @@
+
 const COLD_DATA = window.COLD_DATA || [];
 const COLD_EFFECTS = window.COLD_EFFECTS || [];
 
@@ -11,37 +12,48 @@ function qsa(sel, root = document) {
 
 function initTheme() {
   const root = document.documentElement;
-  const saved = localStorage.getItem("coldboot-cursor-theme") || "dark";
-  root.setAttribute("data-theme", saved);
+  const body = document.body;
+  const sun = String.fromCharCode(9788);
+  const moon = String.fromCharCode(9789);
+
+  function clean(value) {
+    return value === "light" ? "light" : "dark";
+  }
+
+  function apply(theme) {
+    theme = clean(theme);
+    root.setAttribute("data-theme", theme);
+    body.setAttribute("data-theme", theme);
+    body.classList.toggle("dark", theme === "dark");
+    localStorage.setItem("coldboot-cursor-theme", theme);
+
+    qsa("[data-theme-toggle]").forEach((btn) => {
+      btn.textContent = theme === "light" ? sun : moon;
+      btn.setAttribute("aria-label", "Toggle theme");
+      btn.setAttribute("type", "button");
+    });
+  }
 
   qsa("[data-theme-toggle]").forEach((btn) => {
-    function sync() {
-      btn.textContent = root.getAttribute("data-theme") === "light" ? "☀" : "☾";
-    }
-
-    sync();
-
-    btn.addEventListener("click", () => {
-      const next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
-      root.setAttribute("data-theme", next);
-      localStorage.setItem("coldboot-cursor-theme", next);
-      qsa("[data-theme-toggle]").forEach((b) => {
-        b.textContent = next === "light" ? "☀" : "☾";
-      });
-    });
+    btn.onclick = (event) => {
+      event.preventDefault();
+      const current = clean(root.getAttribute("data-theme"));
+      apply(current === "light" ? "dark" : "light");
+    };
   });
-}
 
+  apply(localStorage.getItem("coldboot-cursor-theme") || root.getAttribute("data-theme") || "dark");
+}
 function syncCategoryExpandedState(grid, expanded) {
   const strip = grid ? grid.closest(".category-strip") : null;
   if (strip) strip.classList.toggle("is-expanded", expanded);
 }
 
 function renderCategoryGrid(grid, activeId, expanded, sameFolder) {
-  grid.innerHTML = COLD_DATA.map((cat, index) => {
+  grid.innerHTML = COLD_DATA.map((cat) => {
     const href = sameFolder ? `${cat.id}.html` : `categories/${cat.id}.html`;
     return `
-      <a class="category-card ${cat.id === activeId ? "active" : ""} ${!expanded && index >= 4 ? "hidden" : ""}" href="${href}">
+      <a class="category-card ${cat.id === activeId ? "active" : ""}" href="${href}">
         <strong>
           <span class="cat-icon" aria-hidden="true">${cat.icon}</span>
           <span class="cat-label">${cat.title}</span>
@@ -61,7 +73,7 @@ function attachEffectPreview(section, effect) {
 
   target.addEventListener("pointermove", (event) => {
     const now = performance.now();
-    const gap = effect.kind && effect.kind.startsWith("snake") ? 24 : 92;
+    const gap = typeof COLD_FX.rate === "function" ? COLD_FX.rate(effect) : 86;
 
     if (now - last < gap) return;
     last = now;
@@ -74,9 +86,7 @@ function attachEffectPreview(section, effect) {
   });
 
   target.addEventListener("pointerleave", () => {
-    if (effect.kind && effect.kind.startsWith("snake")) {
-      setTimeout(() => COLD_FX.clear(layer), 420);
-    }
+    setTimeout(() => COLD_FX.clear(layer), 520);
   });
 }
 
@@ -88,22 +98,15 @@ function initIndex() {
 
   if (!grid) return;
 
-  let expanded = false;
+  let expanded = true;
 
   function render() {
     renderCategoryGrid(grid, "", expanded, false);
     syncCategoryExpandedState(grid, expanded);
-    if (button) button.textContent = expanded ? "Show less" : "See more";
+    if (button) button.style.display = "none";
   }
 
   render();
-
-  if (button) {
-    button.addEventListener("click", () => {
-      expanded = !expanded;
-      render();
-    });
-  }
 }
 
 function initCategoryPage(catId) {
@@ -114,22 +117,15 @@ function initCategoryPage(catId) {
 
   if (!grid) return;
 
-  let expanded = false;
+  let expanded = true;
 
   function render() {
     renderCategoryGrid(grid, catId, expanded, true);
     syncCategoryExpandedState(grid, expanded);
-    if (button) button.textContent = expanded ? "Show less" : "See more";
+    if (button) button.style.display = "none";
   }
 
   render();
-
-  if (button) {
-    button.addEventListener("click", () => {
-      expanded = !expanded;
-      render();
-    });
-  }
 
   qsa(".effect-box").forEach((box) => {
     const effect = COLD_EFFECTS.find((item) => item.key === box.dataset.effect);
@@ -149,10 +145,7 @@ function initSourcePage(effectKey) {
 
   qsa(".code-tab").forEach((btn) => {
     btn.addEventListener("click", () => {
-      qsa(".code-tab").forEach((item) => {
-        item.classList.toggle("active", item === btn);
-      });
-
+      qsa(".code-tab").forEach((item) => item.classList.toggle("active", item === btn));
       qsa(".code-pane").forEach((pane) => {
         pane.hidden = pane.dataset.code !== btn.dataset.tab;
       });
@@ -204,4 +197,3 @@ function initSourcePage(effectKey) {
     }
   }, { passive: true });
 })();
-
