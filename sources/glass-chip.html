@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8">
@@ -183,6 +183,26 @@ footer{text-align:center;color:var(--muted);font-size:.84rem;font-weight:700;pad
   .effect-content{width:100%}
 }
 </style>
+<style id="v11-compact-source-preview-fix">
+.source-preview {
+  min-height: 380px !important;
+  border-radius: 26px !important;
+}
+
+.source-wrap {
+  gap: 22px !important;
+}
+
+.preview-zone {
+  min-height: 260px !important;
+}
+
+@media (max-width: 860px) {
+  .source-preview {
+    min-height: 330px !important;
+  }
+}
+</style>
 </head>
 <body>
   <div class="shell">
@@ -191,7 +211,7 @@ footer{text-align:center;color:var(--muted);font-size:.84rem;font-weight:700;pad
       <nav class="nav-links">
         <a href="../categories/particles.html">Back</a>
         <a href="#code">Code</a>
-        <button class="theme-toggle" data-theme-toggle type="button">☾</button>
+        <button class="theme-toggle" data-theme-toggle type="button">鈽?/button>
       </nav>
     </header>
 
@@ -296,28 +316,28 @@ document.querySelectorAll(&#x27;[data-cursor-effect=&quot;glass-chip&quot;]&#x27
 const COLD_FX = (() => {
   const snakeMap = new WeakMap();
   const tokenMap = {
-    star:["✦","✧","✶"],
+    star:["鉁?,"鉁?,"鉁?],
     "code-token":["JS","CSS","HTML","{}"],
     binary:["0","1","01"],
     terminal:[">","$","_"],
     bracket:["[ ]","{ }","( )"],
-    prompt:["█","▌","_"],
-    leaf:["🍃"],
-    petal:["❧"],
-    coin:["৳","$","¢"],
-    "money-text":["৳","$","€"],
+    prompt:["鈻?,"鈻?,"_"],
+    leaf:["馃崈"],
+    petal:["鉂?],
+    coin:["唰?,"$","垄"],
+    "money-text":["唰?,"$","鈧?],
     keycap:["TAB","JS","CSS"],
     "mini-card":["UI","UX","CARD"],
-    badge:["⚙","⌘","⌗"],
+    badge:["鈿?,"鈱?,"鈱?],
     window:["WIN"],
     toggle:["ON","OFF"],
     tile:["APP"],
     receipt:["SLIP"],
     invoice:["INV"],
     tag:["TAG"],
-    chart:["▃▆"],
-    cross:["✕"],
-    hex:["⬡"]
+    chart:["鈻冣枂"],
+    cross:["鉁?],
+    hex:["猬?]
   };
   const rand = (a,b) => a + Math.random() * (b - a);
 
@@ -477,13 +497,13 @@ function initTheme() {
   if (saved) root.setAttribute('data-theme', saved);
   else root.setAttribute('data-theme', 'dark');
   qsa('[data-theme-toggle]').forEach(btn => {
-    const sync = () => btn.textContent = root.getAttribute('data-theme') === 'light' ? '☀' : '☾';
+    const sync = () => btn.textContent = root.getAttribute('data-theme') === 'light' ? '鈽€' : '鈽?;
     sync();
     btn.addEventListener('click', () => {
       const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
       root.setAttribute('data-theme', next);
       localStorage.setItem('coldboot-cursor-theme', next);
-      qsa('[data-theme-toggle]').forEach(b => b.textContent = next === 'light' ? '☀' : '☾');
+      qsa('[data-theme-toggle]').forEach(b => b.textContent = next === 'light' ? '鈽€' : '鈽?);
     });
   });
 }
@@ -580,3 +600,5 @@ function initSourcePage(effectKey){
   <script>initSourcePage("glass-chip");</script>
 </body>
 </html>
+
+

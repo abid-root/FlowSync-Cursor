@@ -1,4 +1,4 @@
-
+﻿
 :root{
   --bg:#0b0f17;
   --page:#0f1420;
@@ -175,3 +175,233 @@ footer{text-align:center;color:var(--muted);font-size:.84rem;font-weight:700;pad
   .effect-content h2{font-size:clamp(2.2rem,13vw,3.5rem)}
   .effect-content{width:100%}
 }
+
+/* === V11 COMPACT PREVIEW FIX START === */
+
+/* smaller gap between cards */
+.effects-stack {
+  gap: 26px !important;
+  margin-top: 28px !important;
+}
+
+/* card smaller */
+.effect-box {
+  min-height: 390px !important;
+  padding: 26px !important;
+  border-radius: 26px !important;
+}
+
+/* left text smaller */
+.effect-content {
+  width: 38% !important;
+  min-height: 100% !important;
+  justify-content: center !important;
+  padding-right: 18px !important;
+}
+
+.effect-content h2 {
+  font-size: clamp(2.1rem, 3.8vw, 3.7rem) !important;
+  line-height: .86 !important;
+}
+
+.effect-content p {
+  font-size: .94rem !important;
+  line-height: 1.55 !important;
+}
+
+.preview-note {
+  margin-top: 14px !important;
+  padding: 7px 10px !important;
+  font-size: .66rem !important;
+}
+
+/* preview smaller but still clear */
+.preview-zone {
+  top: 24px !important;
+  right: 24px !important;
+  bottom: 24px !important;
+  left: 42% !important;
+  min-height: 260px !important;
+  border-radius: 22px !important;
+}
+
+/* source code button */
+.source-link {
+  right: 32px !important;
+  bottom: 32px !important;
+  padding: 9px 12px !important;
+  font-size: .64rem !important;
+  z-index: 10 !important;
+}
+
+/* category hero smaller */
+.category-hero {
+  min-height: 240px !important;
+  padding: 32px !important;
+  border-radius: 26px !important;
+}
+
+.category-hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4.4rem) !important;
+}
+
+.category-hero p {
+  font-size: .96rem !important;
+}
+
+/* source pages */
+.source-preview {
+  min-height: 380px !important;
+  border-radius: 26px !important;
+}
+
+.source-wrap {
+  gap: 22px !important;
+}
+
+/* mobile/tablet */
+@media (max-width: 860px) {
+  .effect-box {
+    min-height: 510px !important;
+    padding: 22px !important;
+  }
+
+  .effect-content {
+    width: 100% !important;
+    min-height: auto !important;
+    padding-right: 0 !important;
+  }
+
+  .preview-zone {
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    min-height: 230px !important;
+    margin-top: 22px !important;
+  }
+
+  .source-link {
+    right: 22px !important;
+    bottom: 22px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .effect-box {
+    min-height: 480px !important;
+    padding: 18px !important;
+  }
+
+  .preview-zone {
+    min-height: 210px !important;
+  }
+
+  .effect-content h2 {
+    font-size: clamp(2rem, 11vw, 3rem) !important;
+  }
+}
+
+/* === V11 COMPACT PREVIEW FIX END === */
+
+/* === V12 THIN CATEGORY + STICKY FIX START === */
+
+/* nav stays fixed on top while scrolling */
+.nav {
+  position: sticky !important;
+  top: 14px !important;
+  z-index: 80 !important;
+}
+
+/* category bar stays under nav while scrolling */
+.category-strip {
+  position: sticky !important;
+  top: 92px !important;
+  z-index: 70 !important;
+  padding: 13px !important;
+  border-radius: 22px !important;
+  backdrop-filter: blur(16px) !important;
+}
+
+/* thinner category title row */
+.section-head {
+  margin-bottom: 10px !important;
+}
+
+.section-head strong {
+  font-size: .68rem !important;
+}
+
+.see-more {
+  padding: 8px 12px !important;
+  font-size: .66rem !important;
+}
+
+/* category cards thinner */
+.category-grid {
+  gap: 10px !important;
+}
+
+.category-card {
+  min-height: 58px !important;
+  padding: 10px 13px !important;
+  border-radius: 16px !important;
+}
+
+.category-card small {
+  font-size: .60rem !important;
+}
+
+.category-card strong {
+  margin-top: 4px !important;
+  font-size: .88rem !important;
+}
+
+/* the big category hero under categories becomes thinner */
+.category-hero {
+  min-height: 205px !important;
+  padding: 28px 34px !important;
+  border-radius: 28px !important;
+  margin-top: 24px !important;
+}
+
+.category-hero h1 {
+  font-size: clamp(2.4rem, 4.6vw, 4.3rem) !important;
+  line-height: .86 !important;
+  margin: 10px 0 8px !important;
+}
+
+.category-hero p {
+  font-size: .94rem !important;
+  line-height: 1.55 !important;
+}
+
+.category-hero::after {
+  font-size: clamp(3.2rem, 8vw, 6.6rem) !important;
+}
+
+/* because category bar is sticky, give effects cleaner spacing */
+.effects-stack {
+  margin-top: 28px !important;
+}
+
+/* phone/tablet: sticky category can take too much space, so keep only nav sticky */
+@media (max-width: 860px) {
+  .category-strip {
+    position: relative !important;
+    top: auto !important;
+  }
+
+  .category-card {
+    min-height: 54px !important;
+  }
+
+  .category-hero {
+    min-height: 190px !important;
+    padding: 24px !important;
+  }
+}
+
+/* === V12 THIN CATEGORY + STICKY FIX END === */
