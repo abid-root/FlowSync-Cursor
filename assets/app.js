@@ -272,3 +272,49 @@ function initSourcePage(effectKey) {
   }
 })();
 /* ===== ULTRA80 PREVIEW RESCUE END ===== */
+/* ===== ULTRA80 FINAL PREVIEW PATCH START ===== */
+(function () {
+  if (window.__ultra80FinalPreviewPatch) return;
+  window.__ultra80FinalPreviewPatch = true;
+
+  if (typeof attachEffectPreview !== "function") return;
+
+  attachEffectPreview = function (section, effect) {
+    const layer = section.querySelector(".fx-layer");
+    const target = section.querySelector(".preview-zone") || section;
+    if (!layer || !target || !effect || typeof COLD_FX === "undefined") return;
+
+    let last = 0;
+    const persistent = new Set(["snake", "centipede", "jelly", "fish", "wild-animal", "mega-basic", "signature-basic", "ultra-follow"]);
+
+    function spawnAt(clientX, clientY, force) {
+      const now = performance.now();
+      const gap = persistent.has(effect.kind) ? 0 : 40;
+      if (!force && now - last < gap) return;
+      last = now;
+
+      const rect = layer.getBoundingClientRect();
+      COLD_FX.spawn(effect, layer, clientX - rect.left, clientY - rect.top);
+    }
+
+    function spawnCenter() {
+      const rect = target.getBoundingClientRect();
+      spawnAt(rect.left + rect.width / 2, rect.top + rect.height / 2, true);
+    }
+
+    target.addEventListener("pointerenter", spawnCenter);
+    target.addEventListener("pointermove", (event) => spawnAt(event.clientX, event.clientY, false));
+    target.addEventListener("pointerdown", (event) => spawnAt(event.clientX, event.clientY, true));
+    target.addEventListener("touchstart", (event) => {
+      const touch = event.touches && event.touches[0];
+      if (touch) spawnAt(touch.clientX, touch.clientY, true);
+    }, { passive: true });
+
+    target.addEventListener("pointerleave", () => {
+      if (persistent.has(effect.kind)) setTimeout(() => COLD_FX.clear(layer), 240);
+    });
+
+    setTimeout(spawnCenter, 180);
+  };
+})();
+/* ===== ULTRA80 FINAL PREVIEW PATCH END ===== */
