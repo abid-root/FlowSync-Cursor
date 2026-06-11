@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Coal Flicker | Source Code</title>
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <div class="shell">
+    <header class="nav">
+      <a class="brand" href="../index.html"><span class="brand-dot"></span>Coldboot</a>
+      <nav class="nav-links">
+        <a href="../categories/addon-ash-smoke.html">Back</a>
+        <a href="#preview">Preview</a>
+        <a href="#code">Code</a>
+        <button class="theme-toggle" data-theme-toggle type="button" aria-label="Toggle theme">&#9789;</button>
+      </nav>
+    </header>
+
+    <section class="category-hero" data-watermark="Coal Flicker">
+      <div class="text">
+        <span class="pill">Ash &amp; Smoke / source</span>
+        <h1>Coal Flicker</h1>
+        <p>Tiny coal sparks flicker close to the cursor.</p>
+      </div>
+    </section>
+
+    <section class="source-preview section-gap" id="sourcePreview" data-effect="cb-coal-flicker">
+      <div class="fx-layer" aria-hidden="true"></div>
+      <div class="preview-zone" aria-hidden="true"></div>
+    </section>
+
+    <section class="code-card section-gap" id="code">
+      <div class="code-head">
+        <div>
+          <span class="pill">copy source</span>
+          <h2>Use this effect</h2>
+        </div>
+        <button class="copy-btn" id="copyAll" type="button">Copy all</button>
+      </div>
+
+      <div class="code-tabs">
+        <button class="code-tab active" data-tab="html" type="button">HTML</button>
+        <button class="code-tab" data-tab="css" type="button">CSS</button>
+        <button class="code-tab" data-tab="js" type="button">JS</button>
+      </div>
+
+      <pre class="code-pane" data-code="html"><code>&lt;!-- Required files --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+&lt;script src=&quot;assets/data.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/fx.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/final-site-snake-physics.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/extra-cursors.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/coldboot-addon-cursors.js&quot;&gt;&lt;/script&gt;
+
+&lt;section class=&quot;cursor-demo&quot; data-cursor-effect=&quot;cb-coal-flicker&quot;&gt;
+  &lt;div class=&quot;fx-layer&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;preview-zone&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;</code></pre>
+      <pre class="code-pane" data-code="css" hidden><code>.cursor-demo {
+  position: relative;
+  min-height: 320px;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #0f1726;
+}
+
+.fx-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.preview-zone {
+  position: absolute;
+  inset: 0;
+}</code></pre>
+      <pre class="code-pane" data-code="js" hidden><code>const effect = COLD_EFFECTS.find((item) =&gt; item.key === &quot;cb-coal-flicker&quot;);
+const target = document.querySelector(&quot;[data-cursor-effect=&#x27;cb-coal-flicker&#x27;]&quot;);
+const layer = target.querySelector(&quot;.fx-layer&quot;);
+const preview = target.querySelector(&quot;.preview-zone&quot;) || target;
+
+preview.addEventListener(&quot;pointermove&quot;, (event) =&gt; {
+  const rect = layer.getBoundingClientRect();
+  COLD_FX.spawn(effect, layer, event.clientX - rect.left, event.clientY - rect.top);
+});
+
+preview.addEventListener(&quot;pointerleave&quot;, () =&gt; {
+  if ([&quot;snake&quot;, &quot;centipede&quot;, &quot;jelly&quot;, &quot;fish&quot;, &quot;coldboot-basic&quot;].includes(effect.kind)) {
+    COLD_FX.clear(layer);
+  }
+});</code></pre>
+    </section>
+
+    <footer>Renderer: assets/coldboot-addon-cursors.js. The copy button includes real HTML, CSS and JS usage code.</footer>
+  </div>
+  <script src="../assets/data.js"></script>
+    <script src="../assets/ultra80-data.js?v=20260611-134753"></script>
+<script src="../assets/fx.js"></script>
+    <script src="../assets/ultra80-cursors.js?v=20260611-134753"></script>
+<script src="../assets/final-site-snake-physics.js"></script>
+  <script src="../assets/extra-cursors.js"></script>
+  <script src="../assets/coldboot-addon-cursors.js"></script>
+  <script src="../assets/app.js"></script>
+  <script>initSourcePage("cb-coal-flicker");</script>
+</body>
+</html>

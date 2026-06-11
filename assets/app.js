@@ -97,22 +97,68 @@ function setupCategoryNav(activeId, sameFolder) {
 function attachEffectPreview(section, effect) {
   const layer = qs(".fx-layer", section);
   const target = qs(".preview-zone", section) || section;
-  if (!layer || !target || !effect || typeof COLD_FX === "undefined") return;
+  if (!layer || !target || !effect || typeof COLD_FX === "undefined" || typeof COLD_FX.spawn !== "function") return;
+
+  const liveKinds = new Set([
+    "snake",
+    "centipede",
+    "jelly",
+    "fish",
+    "wild-animal",
+    "coldboot-basic",
+    "signature-basic",
+    "mega-basic"
+  ]);
 
   let last = 0;
-  target.addEventListener("pointermove", (event) => {
-    const now = performance.now();
-    const gap = ["snake", "centipede", "jelly", "fish", "wild-animal"].includes(effect.kind) ? 0 : 72;
-    if (now - last < gap) return;
-    last = now;
+  let lastX = null;
+  let lastY = null;
+
+  function pointFromEvent(event) {
     const rect = layer.getBoundingClientRect();
-    COLD_FX.spawn(effect, layer, event.clientX - rect.left, event.clientY - rect.top);
-  });
+    const source = event.touches && event.touches[0] ? event.touches[0] : event;
+    let x = source.clientX - rect.left;
+    let y = source.clientY - rect.top;
+
+    if (!Number.isFinite(x) || !Number.isFinite(y)) {
+      x = rect.width / 2;
+      y = rect.height / 2;
+    }
+
+    x = Math.max(8, Math.min(rect.width - 8, x));
+    y = Math.max(8, Math.min(rect.height - 8, y));
+    return { x, y };
+  }
+
+  function fire(event, force = false) {
+    const now = performance.now();
+    const gap = liveKinds.has(effect.kind) ? 0 : 48;
+    if (!force && now - last < gap) return;
+    last = now;
+
+    const pt = pointFromEvent(event || {});
+    lastX = pt.x;
+    lastY = pt.y;
+    COLD_FX.spawn(effect, layer, pt.x, pt.y);
+  }
+
+  target.addEventListener("pointerenter", (event) => fire(event, true));
+  target.addEventListener("pointermove", (event) => fire(event, false));
+  target.addEventListener("mousemove", (event) => fire(event, false));
+
+  target.addEventListener("touchstart", (event) => fire(event, true), { passive: true });
+  target.addEventListener("touchmove", (event) => fire(event, false), { passive: true });
 
   target.addEventListener("pointerleave", () => {
-    if (["snake", "centipede", "jelly", "fish", "wild-animal"].includes(effect.kind)) {
-      setTimeout(() => COLD_FX.clear(layer), 320);
+    if (liveKinds.has(effect.kind)) {
+      setTimeout(() => COLD_FX.clear(layer), 180);
+      return;
     }
+
+    // For particle effects, clear old pieces after they finish so previews do not stack forever.
+    setTimeout(() => {
+      if (lastX !== null || lastY !== null) COLD_FX.clear(layer);
+    }, 1300);
   });
 }
 
@@ -174,3 +220,55 @@ function initSourcePage(effectKey) {
     ticking = true;
   }, { passive: true });
 })();
+
+/* ===== ULTRA80 PREVIEW RESCUE START ===== */
+(function () {
+  if (window.__ultra80PreviewRescueApplied) return;
+  window.__ultra80PreviewRescueApplied = true;
+
+  if (typeof attachEffectPreview === "function") {
+    attachEffectPreview = function (section, effect) {
+      const layer = section.querySelector(".fx-layer");
+      const target = section.querySelector(".preview-zone") || section;
+      if (!layer || !target || !effect || typeof COLD_FX === "undefined") return;
+
+      let last = 0;
+      const persistentKinds = new Set(["snake", "centipede", "jelly", "fish", "wild-animal", "ultra-follow", "signature-basic", "mega-basic"]);
+
+      function spawnAt(clientX, clientY, force) {
+        const now = performance.now();
+        const gap = persistentKinds.has(effect.kind) ? 0 : 46;
+        if (!force && now - last < gap) return;
+        last = now;
+
+        const rect = layer.getBoundingClientRect();
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
+        COLD_FX.spawn(effect, layer, x, y);
+      }
+
+      function spawnCenter() {
+        const rect = target.getBoundingClientRect();
+        spawnAt(rect.left + rect.width / 2, rect.top + rect.height / 2, true);
+      }
+
+      target.addEventListener("pointerenter", spawnCenter);
+      target.addEventListener("pointerdown", (event) => spawnAt(event.clientX, event.clientY, true));
+      target.addEventListener("pointermove", (event) => spawnAt(event.clientX, event.clientY, false));
+      target.addEventListener("touchstart", (event) => {
+        const touch = event.touches && event.touches[0];
+        if (touch) spawnAt(touch.clientX, touch.clientY, true);
+      }, { passive: true });
+
+      target.addEventListener("pointerleave", () => {
+        if (persistentKinds.has(effect.kind)) {
+          setTimeout(() => COLD_FX.clear(layer), 240);
+        }
+      });
+
+      // Make empty previews visibly start even before the first mouse move.
+      window.setTimeout(spawnCenter, 160);
+    };
+  }
+})();
+/* ===== ULTRA80 PREVIEW RESCUE END ===== */

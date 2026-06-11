@@ -21,7 +21,7 @@
 
     <section class="category-hero" data-watermark="Snow Crystal">
       <div class="text">
-        <span class="pill">source</span>
+        <span class="pill">Nature Motion / source</span>
         <h1>Snow Crystal</h1>
         <p>Small crystal flakes drift and rotate.</p>
       </div>
@@ -47,39 +47,63 @@
         <button class="code-tab" data-tab="js" type="button">JS</button>
       </div>
 
-      <pre class="code-pane" data-code="html"><code>&lt;section class=&quot;cursor-demo&quot; data-cursor-effect=&quot;snow-crystal&quot;&gt;
+      <pre class="code-pane" data-code="html"><code>&lt;!-- Required files --&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;assets/style.css&quot;&gt;
+&lt;script src=&quot;assets/data.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/fx.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/final-site-snake-physics.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/extra-cursors.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;assets/coldboot-addon-cursors.js&quot;&gt;&lt;/script&gt;
+
+&lt;section class=&quot;cursor-demo&quot; data-cursor-effect=&quot;snow-crystal&quot;&gt;
   &lt;div class=&quot;fx-layer&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+  &lt;div class=&quot;preview-zone&quot;&gt;&lt;/div&gt;
 &lt;/section&gt;</code></pre>
       <pre class="code-pane" data-code="css" hidden><code>.cursor-demo {
   position: relative;
   min-height: 320px;
   overflow: hidden;
   border-radius: 24px;
+  background: #0f1726;
 }
 
 .fx-layer {
   position: absolute;
   inset: 0;
   pointer-events: none;
+}
+
+.preview-zone {
+  position: absolute;
+  inset: 0;
 }</code></pre>
       <pre class="code-pane" data-code="js" hidden><code>const effect = COLD_EFFECTS.find((item) =&gt; item.key === &quot;snow-crystal&quot;);
-const target = document.querySelector(&quot;[data-cursor-effect=&#39;snow-crystal&#39;]&quot;);
+const target = document.querySelector(&quot;[data-cursor-effect=&#x27;snow-crystal&#x27;]&quot;);
 const layer = target.querySelector(&quot;.fx-layer&quot;);
+const preview = target.querySelector(&quot;.preview-zone&quot;) || target;
 
-target.addEventListener(&quot;pointermove&quot;, (event) =&gt; {
+preview.addEventListener(&quot;pointermove&quot;, (event) =&gt; {
   const rect = layer.getBoundingClientRect();
   COLD_FX.spawn(effect, layer, event.clientX - rect.left, event.clientY - rect.top);
+});
+
+preview.addEventListener(&quot;pointerleave&quot;, () =&gt; {
+  if ([&quot;snake&quot;, &quot;centipede&quot;, &quot;jelly&quot;, &quot;fish&quot;, &quot;coldboot-basic&quot;].includes(effect.kind)) {
+    COLD_FX.clear(layer);
+  }
 });</code></pre>
     </section>
 
-    <footer>Theme-aware palettes are included in assets/data.js.</footer>
+    <footer>Renderer: assets/fx.js / assets/extra-cursors.js. The copy button includes real HTML, CSS and JS usage code.</footer>
   </div>
   <script src="../assets/data.js"></script>
-  <script src="../assets/fx.js"></script>
-  <script src="../assets/final-site-snake-physics.js"></script>
+    <script src="../assets/ultra80-data.js?v=20260611-134753"></script>
+<script src="../assets/fx.js"></script>
+    <script src="../assets/ultra80-cursors.js?v=20260611-134753"></script>
+<script src="../assets/final-site-snake-physics.js"></script>
   <script src="../assets/extra-cursors.js"></script>
-    <script src="../assets/wild-creatures.js?v=20260611-040209"></script>
-<script src="../assets/app.js"></script>
+  <script src="../assets/coldboot-addon-cursors.js"></script>
+  <script src="../assets/app.js"></script>
   <script>initSourcePage("snow-crystal");</script>
 </body>
 </html>
