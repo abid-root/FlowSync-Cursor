@@ -1,21 +1,21 @@
 {
   "name": "FlowSync Cursor Library",
-  "short_name": "FlowSync Cursor",
+  "short_name": "FlowSync",
   "description": "A cleaned, curated cursor animation library with live previews, source code, and dark/light theme support.",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": ".",
+  "scope": ".",
   "display": "standalone",
   "background_color": "#06090f",
   "theme_color": "#06090f",
   "icons": [
     {
-      "src": "assets/common/coldboot-black.png",
+      "src": "assets/common/favicon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "assets/common/coldboot-black.png",
+      "src": "assets/common/favicon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
