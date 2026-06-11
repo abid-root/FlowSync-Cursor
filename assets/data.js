@@ -114,9 +114,9 @@ window.COLD_DATA = [
   {
     "id": "addon-ash-smoke",
     "num": "09",
-    "title": "Ash & Smoke",
+    "title": "Ash Smoke",
     "desc": "Dry ash, soot, vapor, cinder and ember-style cursor motion.",
-    "icon": "ash",
+    "icon": "◌",
     "effects": [
       "cb-ash-spiral",
       "cb-ember-veil",
@@ -133,9 +133,9 @@ window.COLD_DATA = [
   {
     "id": "addon-structure",
     "num": "10",
-    "title": "Signature Structure",
+    "title": "Structure",
     "desc": "Grids, brackets, cursor ghosts and structural cursor marks.",
-    "icon": "structure",
+    "icon": "▦",
     "effects": [
       "cb-fractured-cursor",
       "cb-hinge-bracket",
@@ -152,9 +152,9 @@ window.COLD_DATA = [
   {
     "id": "addon-energy",
     "num": "11",
-    "title": "Signal & Energy",
+    "title": "Signal",
     "desc": "Wave, signal, electric and pulse-based cursor effects.",
-    "icon": "energy",
+    "icon": "ϟ",
     "effects": [
       "cb-pulse-beacon",
       "cb-wave-ladder",
@@ -171,9 +171,9 @@ window.COLD_DATA = [
   {
     "id": "u80-precision-instruments",
     "num": "12",
-    "title": "Precision Instruments",
+    "title": "Precision",
     "desc": "Measuring, scanning and instrument-like cursor mechanics.",
-    "icon": "instrument",
+    "icon": "⌖",
     "effects": [
       "u80-caliper-snap",
       "u80-protractor-sweep",
@@ -190,9 +190,9 @@ window.COLD_DATA = [
   {
     "id": "u80-kinetic-objects",
     "num": "13",
-    "title": "Kinetic Objects",
+    "title": "Kinetic",
     "desc": "Physical toys, springs, levers and weighted cursor motion.",
-    "icon": "kinetic",
+    "icon": "◆",
     "effects": [
       "u80-rubber-band",
       "u80-spring-coil",

@@ -1823,3 +1823,88 @@ footer {
   }
 }
 /* ===== FLOWSYNC FINAL READY UI END ===== */
+
+/* ===== CATEGORY LABEL AND PREVIEW FIX START ===== */
+
+/* Fix long category names/icons overlapping in See More panel */
+.category-main-row {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+}
+
+.category-card {
+  overflow: hidden !important;
+}
+
+.category-card strong {
+  min-width: 0 !important;
+  width: 100% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+.cat-icon {
+  flex: 0 0 22px !important;
+  width: 22px !important;
+  max-width: 22px !important;
+  overflow: hidden !important;
+  text-align: center !important;
+  font-size: .74rem !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+}
+
+.cat-label {
+  min-width: 0 !important;
+  max-width: 100% !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-size: clamp(.64rem, .78vw, .78rem) !important;
+  line-height: 1 !important;
+}
+
+/* More panel: wider cards, no text collision */
+.more-panel-grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)) !important;
+}
+
+.category-more-panel .category-card {
+  justify-content: flex-start !important;
+  padding-inline: 14px !important;
+}
+
+.category-more-panel .category-card strong {
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+.category-more-panel .cat-label {
+  font-size: .76rem !important;
+}
+
+.category-more-panel .cat-icon {
+  color: var(--accent) !important;
+}
+
+/* Ensure invisible overlay never blocks preview pointer events */
+.preview-zone {
+  pointer-events: auto !important;
+}
+
+.fx-layer {
+  pointer-events: none !important;
+}
+
+@media (max-width: 720px) {
+  .cat-label {
+    font-size: .72rem !important;
+  }
+
+  .more-panel-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ===== CATEGORY LABEL AND PREVIEW FIX END ===== */

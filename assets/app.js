@@ -223,49 +223,82 @@ function initSourcePage(effectKey) {
   }, { passive: true });
 })();
 
-/* ===== ULTRA80 FINAL PREVIEW PATCH START ===== */
+/* ===== REAL POINTER PREVIEW FIX START ===== */
 (function () {
-  if (window.__ultra80FinalPreviewPatch) return;
-  window.__ultra80FinalPreviewPatch = true;
+  if (window.__flowsyncRealPointerPreviewFix) return;
+  window.__flowsyncRealPointerPreviewFix = true;
 
   if (typeof attachEffectPreview !== "function") return;
 
   attachEffectPreview = function (section, effect) {
     const layer = section.querySelector(".fx-layer");
     const target = section.querySelector(".preview-zone") || section;
-    if (!layer || !target || !effect || typeof COLD_FX === "undefined") return;
+
+    if (!layer || !target || !effect || typeof COLD_FX === "undefined" || typeof COLD_FX.spawn !== "function") return;
+
+    const liveKinds = new Set([
+      "snake",
+      "centipede",
+      "jelly",
+      "fish",
+      "wild-animal",
+      "coldboot-basic",
+      "signature-basic",
+      "mega-basic",
+      "ultra-follow"
+    ]);
 
     let last = 0;
-    const persistent = new Set(["snake", "centipede", "jelly", "fish", "wild-animal", "mega-basic", "signature-basic", "ultra-follow"]);
+    let hasPointer = false;
 
-    function spawnAt(clientX, clientY, force) {
+    function localPoint(event) {
+      const rect = layer.getBoundingClientRect();
+      const source = event.touches && event.touches[0] ? event.touches[0] : event;
+
+      const x = source.clientX - rect.left;
+      const y = source.clientY - rect.top;
+
+      if (!Number.isFinite(x) || !Number.isFinite(y)) return null;
+      if (x < 0 || y < 0 || x > rect.width || y > rect.height) return null;
+
+      return {
+        x: Math.max(8, Math.min(rect.width - 8, x)),
+        y: Math.max(8, Math.min(rect.height - 8, y))
+      };
+    }
+
+    function fire(event, force = false) {
+      const pt = localPoint(event);
+      if (!pt) return;
+
+      hasPointer = true;
+
       const now = performance.now();
-      const gap = persistent.has(effect.kind) ? 0 : 40;
+      const gap = liveKinds.has(effect.kind) ? 0 : 42;
+
       if (!force && now - last < gap) return;
       last = now;
 
-      const rect = layer.getBoundingClientRect();
-      COLD_FX.spawn(effect, layer, clientX - rect.left, clientY - rect.top);
+      COLD_FX.spawn(effect, layer, pt.x, pt.y);
     }
 
-    function spawnCenter() {
-      const rect = target.getBoundingClientRect();
-      spawnAt(rect.left + rect.width / 2, rect.top + rect.height / 2, true);
-    }
+    target.addEventListener("pointerenter", (event) => fire(event, true));
+    target.addEventListener("pointermove", (event) => fire(event, false));
+    target.addEventListener("pointerdown", (event) => fire(event, true));
 
-    target.addEventListener("pointerenter", spawnCenter);
-    target.addEventListener("pointermove", (event) => spawnAt(event.clientX, event.clientY, false));
-    target.addEventListener("pointerdown", (event) => spawnAt(event.clientX, event.clientY, true));
-    target.addEventListener("touchstart", (event) => {
-      const touch = event.touches && event.touches[0];
-      if (touch) spawnAt(touch.clientX, touch.clientY, true);
-    }, { passive: true });
+    target.addEventListener("touchstart", (event) => fire(event, true), { passive: true });
+    target.addEventListener("touchmove", (event) => fire(event, false), { passive: true });
 
     target.addEventListener("pointerleave", () => {
-      if (persistent.has(effect.kind)) setTimeout(() => COLD_FX.clear(layer), 240);
-    });
+      if (!hasPointer) return;
 
-    setTimeout(spawnCenter, 180);
+      if (liveKinds.has(effect.kind)) {
+        setTimeout(() => COLD_FX.clear(layer), 220);
+        return;
+      }
+
+      setTimeout(() => COLD_FX.clear(layer), 1300);
+    });
   };
 })();
-/* ===== ULTRA80 FINAL PREVIEW PATCH END ===== */
+/* ===== REAL POINTER PREVIEW FIX END ===== */
