@@ -112,36 +112,8 @@ window.COLD_DATA = [
     ]
   },
   {
-    "id": "money-service",
-    "num": "09",
-    "title": "Money Service",
-    "desc": "Dollar burst, coin flip, receipts, invoices and chart blips.",
-    "icon": "$",
-    "effects": [
-      "dollar-spread",
-      "coin-flip",
-      "receipt-slip",
-      "invoice-card",
-      "chart-blip"
-    ]
-  },
-  {
-    "id": "tiny-toys",
-    "num": "10",
-    "title": "Tiny Toys",
-    "desc": "Playful paper plane, rocket, wand, bouncing ball and mini planet effects.",
-    "icon": "toy",
-    "effects": [
-      "paper-plane",
-      "rocket-spark",
-      "magic-wand",
-      "bouncing-ball",
-      "mini-planet"
-    ]
-  },
-  {
     "id": "addon-ash-smoke",
-    "num": "11",
+    "num": "09",
     "title": "Ash & Smoke",
     "desc": "Dry ash, soot, vapor, cinder and ember-style cursor motion.",
     "icon": "ash",
@@ -160,7 +132,7 @@ window.COLD_DATA = [
   },
   {
     "id": "addon-structure",
-    "num": "12",
+    "num": "10",
     "title": "Signature Structure",
     "desc": "Grids, brackets, cursor ghosts and structural cursor marks.",
     "icon": "structure",
@@ -179,7 +151,7 @@ window.COLD_DATA = [
   },
   {
     "id": "addon-energy",
-    "num": "13",
+    "num": "11",
     "title": "Signal & Energy",
     "desc": "Wave, signal, electric and pulse-based cursor effects.",
     "icon": "energy",
@@ -197,79 +169,41 @@ window.COLD_DATA = [
     ]
   },
   {
-    "id": "addon-data-ui",
-    "num": "14",
-    "title": "Data UI Motion",
-    "desc": "Command stacks, packet jumps, cursor clones and UI micro-motion.",
-    "icon": "data",
+    "id": "u80-precision-instruments",
+    "num": "12",
+    "title": "Precision Instruments",
+    "desc": "Measuring, scanning and instrument-like cursor mechanics.",
+    "icon": "instrument",
     "effects": [
-      "cb-command-stack",
-      "cb-packet-hop",
-      "cb-cursor-clone",
-      "cb-keycap-pop",
-      "cb-loading-orbit",
-      "cb-slider-ghost",
-      "cb-window-shard",
-      "cb-menu-dots",
-      "cb-code-shiver",
-      "cb-upload-burst"
+      "u80-caliper-snap",
+      "u80-protractor-sweep",
+      "u80-magnifier-bloom",
+      "u80-level-bubble",
+      "u80-metronome-tick",
+      "u80-pendulum-arc",
+      "u80-ruler-crawl",
+      "u80-barcode-wipe",
+      "u80-focus-reticle",
+      "u80-gauge-needle"
     ]
   },
   {
-    "id": "addon-matter-cosmic",
-    "num": "15",
-    "title": "Matter & Cosmic",
-    "desc": "Liquid, paper, gravity, constellations and geometric orbit effects.",
-    "icon": "cosmic",
+    "id": "u80-kinetic-objects",
+    "num": "13",
+    "title": "Kinetic Objects",
+    "desc": "Physical toys, springs, levers and weighted cursor motion.",
+    "icon": "kinetic",
     "effects": [
-      "cb-liquid-drop",
-      "cb-paper-kite",
-      "cb-feather-fall",
-      "cb-dust-collapse",
-      "cb-moon-crescent",
-      "cb-gravity-dots",
-      "cb-constellation-snap",
-      "cb-cube-wire",
-      "cb-map-pin-pop",
-      "cb-spiral-beads"
-    ]
-  },
-  {
-    "id": "addon-basic-marks",
-    "num": "16",
-    "title": "Basic Cursor Marks",
-    "desc": "Simple follow-cursor marks: rings, dots, plus signs, corners and bars.",
-    "icon": "basic",
-    "effects": [
-      "cb-basic-soft-dot",
-      "cb-basic-clean-ring",
-      "cb-basic-cross-plus",
-      "cb-basic-tiny-plus",
-      "cb-basic-cursor-halo",
-      "cb-basic-square-pulse",
-      "cb-basic-triangle-tick",
-      "cb-basic-underline-trail",
-      "cb-basic-corner-ticks",
-      "cb-basic-mini-dash"
-    ]
-  },
-  {
-    "id": "addon-interface-basics",
-    "num": "17",
-    "title": "Interface Basics",
-    "desc": "Default UI-style cursor helpers with clean, simple follow motion.",
-    "icon": "ui",
-    "effects": [
-      "cb-basic-pointer",
-      "cb-basic-caret",
-      "cb-basic-target-dot",
-      "cb-basic-click-ripple",
-      "cb-basic-small-spark",
-      "cb-basic-plain-ring",
-      "cb-basic-follow-bar",
-      "cb-basic-axis-mark",
-      "cb-basic-mono-dot",
-      "cb-basic-quiet-bubble"
+      "u80-rubber-band",
+      "u80-spring-coil",
+      "u80-chain-link",
+      "u80-piston-push",
+      "u80-lever-snap",
+      "u80-pulley-rope",
+      "u80-bearing-orbit",
+      "u80-bolt-scatter",
+      "u80-domino-fall",
+      "u80-dice-tumble"
     ]
   }
 ];
@@ -1156,233 +1090,13 @@ window.COLD_EFFECTS = [
     }
   },
   {
-    "key": "dollar-spread",
-    "name": "Dollar Spread",
-    "desc": "Money symbols burst outward with tiny bills.",
-    "kind": "money",
-    "cat_id": "money-service",
-    "cat_num": "09",
-    "cat_title": "Money Service",
-    "cat_desc": "Dollar burst, coin flip, receipts, invoices and chart blips.",
-    "cat_icon": "$",
-    "index": 1,
-    "dark": {
-      "a": "#b9ff34",
-      "b": "#ffe58a",
-      "ink": "#fbffe8"
-    },
-    "light": {
-      "a": "#5f7d1c",
-      "b": "#957020",
-      "ink": "#1b210d"
-    }
-  },
-  {
-    "key": "coin-flip",
-    "name": "Coin Flip",
-    "desc": "Coins flip and arc away from the pointer.",
-    "kind": "coin",
-    "cat_id": "money-service",
-    "cat_num": "09",
-    "cat_title": "Money Service",
-    "cat_desc": "Dollar burst, coin flip, receipts, invoices and chart blips.",
-    "cat_icon": "$",
-    "index": 2,
-    "dark": {
-      "a": "#ffd166",
-      "b": "#fff5bd",
-      "ink": "#111827"
-    },
-    "light": {
-      "a": "#8a6b24",
-      "b": "#c5a84a",
-      "ink": "#15191e"
-    }
-  },
-  {
-    "key": "receipt-slip",
-    "name": "Receipt Slip",
-    "desc": "Small receipt strips slide and fade.",
-    "kind": "receipt",
-    "cat_id": "money-service",
-    "cat_num": "09",
-    "cat_title": "Money Service",
-    "cat_desc": "Dollar burst, coin flip, receipts, invoices and chart blips.",
-    "cat_icon": "$",
-    "index": 3,
-    "dark": {
-      "a": "#f5f1e8",
-      "b": "#b9ff34",
-      "ink": "#111827"
-    },
-    "light": {
-      "a": "#d0c7b7",
-      "b": "#6b8a2c",
-      "ink": "#15191e"
-    }
-  },
-  {
-    "key": "invoice-card",
-    "name": "Invoice Card",
-    "desc": "Invoice cards tilt and lift away.",
-    "kind": "invoice",
-    "cat_id": "money-service",
-    "cat_num": "09",
-    "cat_title": "Money Service",
-    "cat_desc": "Dollar burst, coin flip, receipts, invoices and chart blips.",
-    "cat_icon": "$",
-    "index": 4,
-    "dark": {
-      "a": "#6ee7ff",
-      "b": "#f5f1e8",
-      "ink": "#111827"
-    },
-    "light": {
-      "a": "#3b7882",
-      "b": "#c7c0b1",
-      "ink": "#15191e"
-    }
-  },
-  {
-    "key": "chart-blip",
-    "name": "Chart Blip",
-    "desc": "Tiny chart bars blink upward.",
-    "kind": "chart",
-    "cat_id": "money-service",
-    "cat_num": "09",
-    "cat_title": "Money Service",
-    "cat_desc": "Dollar burst, coin flip, receipts, invoices and chart blips.",
-    "cat_icon": "$",
-    "index": 5,
-    "dark": {
-      "a": "#5cf28b",
-      "b": "#b9ff34",
-      "ink": "#111827"
-    },
-    "light": {
-      "a": "#2d7b49",
-      "b": "#6b8a2c",
-      "ink": "#15191e"
-    }
-  },
-  {
-    "key": "paper-plane",
-    "name": "Paper Plane",
-    "desc": "A folded paper plane glides from the cursor.",
-    "kind": "paper-plane",
-    "cat_id": "tiny-toys",
-    "cat_num": "10",
-    "cat_title": "Tiny Toys",
-    "cat_desc": "Playful paper plane, rocket, wand, bouncing ball and mini planet effects.",
-    "cat_icon": "toy",
-    "index": 1,
-    "dark": {
-      "a": "#f5f1e8",
-      "b": "#9bd7ff",
-      "ink": "#101014"
-    },
-    "light": {
-      "a": "#2f343b",
-      "b": "#5b7b92",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "rocket-spark",
-    "name": "Rocket Spark",
-    "desc": "A mini rocket streaks with sparks.",
-    "kind": "rocket",
-    "cat_id": "tiny-toys",
-    "cat_num": "10",
-    "cat_title": "Tiny Toys",
-    "cat_desc": "Playful paper plane, rocket, wand, bouncing ball and mini planet effects.",
-    "cat_icon": "toy",
-    "index": 2,
-    "dark": {
-      "a": "#ff6b6b",
-      "b": "#ffd166",
-      "ink": "#101014"
-    },
-    "light": {
-      "a": "#944141",
-      "b": "#967739",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "magic-wand",
-    "name": "Magic Wand",
-    "desc": "A small wand throws stars and dust.",
-    "kind": "wand",
-    "cat_id": "tiny-toys",
-    "cat_num": "10",
-    "cat_title": "Tiny Toys",
-    "cat_desc": "Playful paper plane, rocket, wand, bouncing ball and mini planet effects.",
-    "cat_icon": "toy",
-    "index": 3,
-    "dark": {
-      "a": "#c89cff",
-      "b": "#fff27a",
-      "ink": "#101014"
-    },
-    "light": {
-      "a": "#654f8a",
-      "b": "#8a7a29",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "bouncing-ball",
-    "name": "Bouncing Ball",
-    "desc": "A little ball drops and bounces away.",
-    "kind": "ball",
-    "cat_id": "tiny-toys",
-    "cat_num": "10",
-    "cat_title": "Tiny Toys",
-    "cat_desc": "Playful paper plane, rocket, wand, bouncing ball and mini planet effects.",
-    "cat_icon": "toy",
-    "index": 4,
-    "dark": {
-      "a": "#54d7ff",
-      "b": "#ffffff",
-      "ink": "#101014"
-    },
-    "light": {
-      "a": "#2d6f83",
-      "b": "#293036",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "mini-planet",
-    "name": "Mini Planet",
-    "desc": "A small planet with an orbit ring appears.",
-    "kind": "planet",
-    "cat_id": "tiny-toys",
-    "cat_num": "10",
-    "cat_title": "Tiny Toys",
-    "cat_desc": "Playful paper plane, rocket, wand, bouncing ball and mini planet effects.",
-    "cat_icon": "toy",
-    "index": 5,
-    "dark": {
-      "a": "#b9ff57",
-      "b": "#c89cff",
-      "ink": "#101014"
-    },
-    "light": {
-      "a": "#5f8032",
-      "b": "#6b4f8a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
     "key": "cb-ash-spiral",
     "name": "Ash Spiral",
     "desc": "Ash dots spiral outward like burnt paper.",
     "kind": "coldboot-rich",
     "mode": "ashSpiral",
     "cat_id": "addon-ash-smoke",
-    "cat_num": "11",
+    "cat_num": "09",
     "cat_title": "Ash & Smoke",
     "cat_desc": "Dry ash, soot, vapor, cinder and ember-style cursor motion.",
     "cat_icon": "ash",
@@ -1405,7 +1119,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "emberVeil",
     "cat_id": "addon-ash-smoke",
-    "cat_num": "11",
+    "cat_num": "09",
     "cat_title": "Ash & Smoke",
     "cat_desc": "Dry ash, soot, vapor, cinder and ember-style cursor motion.",
     "cat_icon": "ash",
@@ -1428,7 +1142,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "smokeKnot",
     "cat_id": "addon-ash-smoke",
-    "cat_num": "11",
+    "cat_num": "09",
     "cat_title": "Ash & Smoke",
     "cat_desc": "Dry ash, soot, vapor, cinder and ember-style cursor motion.",
     "cat_icon": "ash",
@@ -1451,7 +1165,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "cinderLift",
     "cat_id": "addon-ash-smoke",
-    "cat_num": "11",
+    "cat_num": "09",
     "cat_title": "Ash & Smoke",
     "cat_desc": "Dry ash, soot, vapor, cinder and ember-style cursor motion.",
     "cat_icon": "ash",
@@ -1474,7 +1188,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "sootComet",
     "cat_id": "addon-ash-smoke",
-    "cat_num": "11",
+    "cat_num": "09",
     "cat_title": "Ash & Smoke",
     "cat_desc": "Dry ash, soot, vapor, cinder and ember-style cursor motion.",
     "cat_icon": "ash",
@@ -1497,7 +1211,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "burntPollen",
     "cat_id": "addon-ash-smoke",
-    "cat_num": "11",
+    "cat_num": "09",
     "cat_title": "Ash & Smoke",
     "cat_desc": "Dry ash, soot, vapor, cinder and ember-style cursor motion.",
     "cat_icon": "ash",
@@ -1520,7 +1234,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "charcoalRain",
     "cat_id": "addon-ash-smoke",
-    "cat_num": "11",
+    "cat_num": "09",
     "cat_title": "Ash & Smoke",
     "cat_desc": "Dry ash, soot, vapor, cinder and ember-style cursor motion.",
     "cat_icon": "ash",
@@ -1543,7 +1257,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "vaporStitch",
     "cat_id": "addon-ash-smoke",
-    "cat_num": "11",
+    "cat_num": "09",
     "cat_title": "Ash & Smoke",
     "cat_desc": "Dry ash, soot, vapor, cinder and ember-style cursor motion.",
     "cat_icon": "ash",
@@ -1566,7 +1280,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "ghostAsh",
     "cat_id": "addon-ash-smoke",
-    "cat_num": "11",
+    "cat_num": "09",
     "cat_title": "Ash & Smoke",
     "cat_desc": "Dry ash, soot, vapor, cinder and ember-style cursor motion.",
     "cat_icon": "ash",
@@ -1589,7 +1303,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "coalFlicker",
     "cat_id": "addon-ash-smoke",
-    "cat_num": "11",
+    "cat_num": "09",
     "cat_title": "Ash & Smoke",
     "cat_desc": "Dry ash, soot, vapor, cinder and ember-style cursor motion.",
     "cat_icon": "ash",
@@ -1612,7 +1326,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "fracturedCursor",
     "cat_id": "addon-structure",
-    "cat_num": "12",
+    "cat_num": "10",
     "cat_title": "Signature Structure",
     "cat_desc": "Grids, brackets, cursor ghosts and structural cursor marks.",
     "cat_icon": "structure",
@@ -1635,7 +1349,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "hingeBracket",
     "cat_id": "addon-structure",
-    "cat_num": "12",
+    "cat_num": "10",
     "cat_title": "Signature Structure",
     "cat_desc": "Grids, brackets, cursor ghosts and structural cursor marks.",
     "cat_icon": "structure",
@@ -1658,7 +1372,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "dottedLasso",
     "cat_id": "addon-structure",
-    "cat_num": "12",
+    "cat_num": "10",
     "cat_title": "Signature Structure",
     "cat_desc": "Grids, brackets, cursor ghosts and structural cursor marks.",
     "cat_icon": "structure",
@@ -1681,7 +1395,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "blueprintCorner",
     "cat_id": "addon-structure",
-    "cat_num": "12",
+    "cat_num": "10",
     "cat_title": "Signature Structure",
     "cat_desc": "Grids, brackets, cursor ghosts and structural cursor marks.",
     "cat_icon": "structure",
@@ -1704,7 +1418,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "rulerSnap",
     "cat_id": "addon-structure",
-    "cat_num": "12",
+    "cat_num": "10",
     "cat_title": "Signature Structure",
     "cat_desc": "Grids, brackets, cursor ghosts and structural cursor marks.",
     "cat_icon": "structure",
@@ -1727,7 +1441,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "foldedGrid",
     "cat_id": "addon-structure",
-    "cat_num": "12",
+    "cat_num": "10",
     "cat_title": "Signature Structure",
     "cat_desc": "Grids, brackets, cursor ghosts and structural cursor marks.",
     "cat_icon": "structure",
@@ -1750,7 +1464,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "anchorPin",
     "cat_id": "addon-structure",
-    "cat_num": "12",
+    "cat_num": "10",
     "cat_title": "Signature Structure",
     "cat_desc": "Grids, brackets, cursor ghosts and structural cursor marks.",
     "cat_icon": "structure",
@@ -1773,7 +1487,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "crossSection",
     "cat_id": "addon-structure",
-    "cat_num": "12",
+    "cat_num": "10",
     "cat_title": "Signature Structure",
     "cat_desc": "Grids, brackets, cursor ghosts and structural cursor marks.",
     "cat_icon": "structure",
@@ -1796,7 +1510,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "orbitStamp",
     "cat_id": "addon-structure",
-    "cat_num": "12",
+    "cat_num": "10",
     "cat_title": "Signature Structure",
     "cat_desc": "Grids, brackets, cursor ghosts and structural cursor marks.",
     "cat_icon": "structure",
@@ -1819,7 +1533,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "elasticBox",
     "cat_id": "addon-structure",
-    "cat_num": "12",
+    "cat_num": "10",
     "cat_title": "Signature Structure",
     "cat_desc": "Grids, brackets, cursor ghosts and structural cursor marks.",
     "cat_icon": "structure",
@@ -1842,7 +1556,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "pulseBeacon",
     "cat_id": "addon-energy",
-    "cat_num": "13",
+    "cat_num": "11",
     "cat_title": "Signal & Energy",
     "cat_desc": "Wave, signal, electric and pulse-based cursor effects.",
     "cat_icon": "energy",
@@ -1865,7 +1579,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "waveLadder",
     "cat_id": "addon-energy",
-    "cat_num": "13",
+    "cat_num": "11",
     "cat_title": "Signal & Energy",
     "cat_desc": "Wave, signal, electric and pulse-based cursor effects.",
     "cat_icon": "energy",
@@ -1888,7 +1602,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "signalFan",
     "cat_id": "addon-energy",
-    "cat_num": "13",
+    "cat_num": "11",
     "cat_title": "Signal & Energy",
     "cat_desc": "Wave, signal, electric and pulse-based cursor effects.",
     "cat_icon": "energy",
@@ -1911,7 +1625,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "electricFork",
     "cat_id": "addon-energy",
-    "cat_num": "13",
+    "cat_num": "11",
     "cat_title": "Signal & Energy",
     "cat_desc": "Wave, signal, electric and pulse-based cursor effects.",
     "cat_icon": "energy",
@@ -1934,7 +1648,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "sonarBubble",
     "cat_id": "addon-energy",
-    "cat_num": "13",
+    "cat_num": "11",
     "cat_title": "Signal & Energy",
     "cat_desc": "Wave, signal, electric and pulse-based cursor effects.",
     "cat_icon": "energy",
@@ -1957,7 +1671,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "phaseRings",
     "cat_id": "addon-energy",
-    "cat_num": "13",
+    "cat_num": "11",
     "cat_title": "Signal & Energy",
     "cat_desc": "Wave, signal, electric and pulse-based cursor effects.",
     "cat_icon": "energy",
@@ -1980,7 +1694,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "stormTicks",
     "cat_id": "addon-energy",
-    "cat_num": "13",
+    "cat_num": "11",
     "cat_title": "Signal & Energy",
     "cat_desc": "Wave, signal, electric and pulse-based cursor effects.",
     "cat_icon": "energy",
@@ -2003,7 +1717,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "voltageTeeth",
     "cat_id": "addon-energy",
-    "cat_num": "13",
+    "cat_num": "11",
     "cat_title": "Signal & Energy",
     "cat_desc": "Wave, signal, electric and pulse-based cursor effects.",
     "cat_icon": "energy",
@@ -2026,7 +1740,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "rippleGate",
     "cat_id": "addon-energy",
-    "cat_num": "13",
+    "cat_num": "11",
     "cat_title": "Signal & Energy",
     "cat_desc": "Wave, signal, electric and pulse-based cursor effects.",
     "cat_icon": "energy",
@@ -2049,7 +1763,7 @@ window.COLD_EFFECTS = [
     "kind": "coldboot-rich",
     "mode": "lightDrift",
     "cat_id": "addon-energy",
-    "cat_num": "13",
+    "cat_num": "11",
     "cat_title": "Signal & Energy",
     "cat_desc": "Wave, signal, electric and pulse-based cursor effects.",
     "cat_icon": "energy",
@@ -2066,925 +1780,463 @@ window.COLD_EFFECTS = [
     }
   },
   {
-    "key": "cb-command-stack",
-    "name": "Command Stack",
-    "desc": "Stacked command prompts rise like terminal echoes.",
-    "kind": "coldboot-rich",
-    "mode": "commandStack",
-    "cat_id": "addon-data-ui",
-    "cat_num": "14",
-    "cat_title": "Data UI Motion",
-    "cat_desc": "Command stacks, packet jumps, cursor clones and UI micro-motion.",
-    "cat_icon": "data",
+    "key": "u80-caliper-snap",
+    "name": "Caliper Snap",
+    "desc": "Two measuring jaws close and release around the pointer.",
+    "kind": "ultra80",
+    "mode": "caliperSnap",
+    "cat_id": "u80-precision-instruments",
+    "cat_num": "12",
+    "cat_title": "Precision Instruments",
+    "cat_desc": "Measuring, scanning and instrument-like cursor mechanics.",
+    "cat_icon": "instrument",
     "index": 1,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-packet-hop",
-    "name": "Packet Hop",
-    "desc": "A packet dot hops across a short trace line.",
-    "kind": "coldboot-rich",
-    "mode": "packetHop",
-    "cat_id": "addon-data-ui",
-    "cat_num": "14",
-    "cat_title": "Data UI Motion",
-    "cat_desc": "Command stacks, packet jumps, cursor clones and UI micro-motion.",
-    "cat_icon": "data",
+    "key": "u80-protractor-sweep",
+    "name": "Protractor Sweep",
+    "desc": "A half-circle protractor sweep draws angle ticks.",
+    "kind": "ultra80",
+    "mode": "protractorSweep",
+    "cat_id": "u80-precision-instruments",
+    "cat_num": "12",
+    "cat_title": "Precision Instruments",
+    "cat_desc": "Measuring, scanning and instrument-like cursor mechanics.",
+    "cat_icon": "instrument",
     "index": 2,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-cursor-clone",
-    "name": "Cursor Clone",
-    "desc": "Ghost cursor arrows duplicate and fade.",
-    "kind": "coldboot-rich",
-    "mode": "cursorClone",
-    "cat_id": "addon-data-ui",
-    "cat_num": "14",
-    "cat_title": "Data UI Motion",
-    "cat_desc": "Command stacks, packet jumps, cursor clones and UI micro-motion.",
-    "cat_icon": "data",
+    "key": "u80-magnifier-bloom",
+    "name": "Magnifier Bloom",
+    "desc": "A small magnifier ring expands and focuses dust.",
+    "kind": "ultra80",
+    "mode": "magnifierBloom",
+    "cat_id": "u80-precision-instruments",
+    "cat_num": "12",
+    "cat_title": "Precision Instruments",
+    "cat_desc": "Measuring, scanning and instrument-like cursor mechanics.",
+    "cat_icon": "instrument",
     "index": 3,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-keycap-pop",
-    "name": "Keycap Pop",
-    "desc": "Small keyboard keycaps pop near the pointer.",
-    "kind": "coldboot-rich",
-    "mode": "keycapPop",
-    "cat_id": "addon-data-ui",
-    "cat_num": "14",
-    "cat_title": "Data UI Motion",
-    "cat_desc": "Command stacks, packet jumps, cursor clones and UI micro-motion.",
-    "cat_icon": "data",
+    "key": "u80-level-bubble",
+    "name": "Level Bubble",
+    "desc": "A bubble level capsule slides and balances.",
+    "kind": "ultra80",
+    "mode": "levelBubble",
+    "cat_id": "u80-precision-instruments",
+    "cat_num": "12",
+    "cat_title": "Precision Instruments",
+    "cat_desc": "Measuring, scanning and instrument-like cursor mechanics.",
+    "cat_icon": "instrument",
     "index": 4,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-loading-orbit",
-    "name": "Loading Orbit",
-    "desc": "Three loading dots orbit and shoot away.",
-    "kind": "coldboot-rich",
-    "mode": "loadingOrbit",
-    "cat_id": "addon-data-ui",
-    "cat_num": "14",
-    "cat_title": "Data UI Motion",
-    "cat_desc": "Command stacks, packet jumps, cursor clones and UI micro-motion.",
-    "cat_icon": "data",
+    "key": "u80-metronome-tick",
+    "name": "Metronome Tick",
+    "desc": "A metronome needle swings with tiny base ticks.",
+    "kind": "ultra80",
+    "mode": "metronomeTick",
+    "cat_id": "u80-precision-instruments",
+    "cat_num": "12",
+    "cat_title": "Precision Instruments",
+    "cat_desc": "Measuring, scanning and instrument-like cursor mechanics.",
+    "cat_icon": "instrument",
     "index": 5,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-slider-ghost",
-    "name": "Slider Ghost",
-    "desc": "A slider knob leaves a small ghost trail.",
-    "kind": "coldboot-rich",
-    "mode": "sliderGhost",
-    "cat_id": "addon-data-ui",
-    "cat_num": "14",
-    "cat_title": "Data UI Motion",
-    "cat_desc": "Command stacks, packet jumps, cursor clones and UI micro-motion.",
-    "cat_icon": "data",
+    "key": "u80-pendulum-arc",
+    "name": "Pendulum Arc",
+    "desc": "A pendulum bob swings under a tiny anchor point.",
+    "kind": "ultra80",
+    "mode": "pendulumArc",
+    "cat_id": "u80-precision-instruments",
+    "cat_num": "12",
+    "cat_title": "Precision Instruments",
+    "cat_desc": "Measuring, scanning and instrument-like cursor mechanics.",
+    "cat_icon": "instrument",
     "index": 6,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-window-shard",
-    "name": "Window Shard",
-    "desc": "Tiny app-window shards break apart.",
-    "kind": "coldboot-rich",
-    "mode": "windowShard",
-    "cat_id": "addon-data-ui",
-    "cat_num": "14",
-    "cat_title": "Data UI Motion",
-    "cat_desc": "Command stacks, packet jumps, cursor clones and UI micro-motion.",
-    "cat_icon": "data",
+    "key": "u80-ruler-crawl",
+    "name": "Ruler Crawl",
+    "desc": "Measured ruler ticks crawl outward from the cursor.",
+    "kind": "ultra80",
+    "mode": "rulerCrawl",
+    "cat_id": "u80-precision-instruments",
+    "cat_num": "12",
+    "cat_title": "Precision Instruments",
+    "cat_desc": "Measuring, scanning and instrument-like cursor mechanics.",
+    "cat_icon": "instrument",
     "index": 7,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-menu-dots",
-    "name": "Menu Dots",
-    "desc": "Three menu dots split in different directions.",
-    "kind": "coldboot-rich",
-    "mode": "menuDots",
-    "cat_id": "addon-data-ui",
-    "cat_num": "14",
-    "cat_title": "Data UI Motion",
-    "cat_desc": "Command stacks, packet jumps, cursor clones and UI micro-motion.",
-    "cat_icon": "data",
+    "key": "u80-barcode-wipe",
+    "name": "Barcode Wipe",
+    "desc": "A barcode strip wipes across and breaks apart.",
+    "kind": "ultra80",
+    "mode": "barcodeWipe",
+    "cat_id": "u80-precision-instruments",
+    "cat_num": "12",
+    "cat_title": "Precision Instruments",
+    "cat_desc": "Measuring, scanning and instrument-like cursor mechanics.",
+    "cat_icon": "instrument",
     "index": 8,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-code-shiver",
-    "name": "Code Shiver",
-    "desc": "Tiny code marks shiver and vanish.",
-    "kind": "coldboot-rich",
-    "mode": "codeShiver",
-    "cat_id": "addon-data-ui",
-    "cat_num": "14",
-    "cat_title": "Data UI Motion",
-    "cat_desc": "Command stacks, packet jumps, cursor clones and UI micro-motion.",
-    "cat_icon": "data",
+    "key": "u80-focus-reticle",
+    "name": "Focus Reticle",
+    "desc": "Camera focus brackets tighten then fade.",
+    "kind": "ultra80",
+    "mode": "focusReticle",
+    "cat_id": "u80-precision-instruments",
+    "cat_num": "12",
+    "cat_title": "Precision Instruments",
+    "cat_desc": "Measuring, scanning and instrument-like cursor mechanics.",
+    "cat_icon": "instrument",
     "index": 9,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-upload-burst",
-    "name": "Upload Burst",
-    "desc": "An upload arrow breaks into upward particles.",
-    "kind": "coldboot-rich",
-    "mode": "uploadBurst",
-    "cat_id": "addon-data-ui",
-    "cat_num": "14",
-    "cat_title": "Data UI Motion",
-    "cat_desc": "Command stacks, packet jumps, cursor clones and UI micro-motion.",
-    "cat_icon": "data",
+    "key": "u80-gauge-needle",
+    "name": "Gauge Needle",
+    "desc": "A gauge needle snaps across a mini dial.",
+    "kind": "ultra80",
+    "mode": "gaugeNeedle",
+    "cat_id": "u80-precision-instruments",
+    "cat_num": "12",
+    "cat_title": "Precision Instruments",
+    "cat_desc": "Measuring, scanning and instrument-like cursor mechanics.",
+    "cat_icon": "instrument",
     "index": 10,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-liquid-drop",
-    "name": "Liquid Drop",
-    "desc": "A stretched liquid drop falls and dissolves.",
-    "kind": "coldboot-rich",
-    "mode": "liquidDrop",
-    "cat_id": "addon-matter-cosmic",
-    "cat_num": "15",
-    "cat_title": "Matter & Cosmic",
-    "cat_desc": "Liquid, paper, gravity, constellations and geometric orbit effects.",
-    "cat_icon": "cosmic",
+    "key": "u80-rubber-band",
+    "name": "Rubber Band",
+    "desc": "An elastic loop stretches behind the cursor.",
+    "kind": "ultra80",
+    "mode": "rubberBand",
+    "cat_id": "u80-kinetic-objects",
+    "cat_num": "13",
+    "cat_title": "Kinetic Objects",
+    "cat_desc": "Physical toys, springs, levers and weighted cursor motion.",
+    "cat_icon": "kinetic",
     "index": 1,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-paper-kite",
-    "name": "Paper Kite",
-    "desc": "A tiny paper kite flips and drifts.",
-    "kind": "coldboot-rich",
-    "mode": "paperKite",
-    "cat_id": "addon-matter-cosmic",
-    "cat_num": "15",
-    "cat_title": "Matter & Cosmic",
-    "cat_desc": "Liquid, paper, gravity, constellations and geometric orbit effects.",
-    "cat_icon": "cosmic",
+    "key": "u80-spring-coil",
+    "name": "Spring Coil",
+    "desc": "A tiny spring coil compresses and releases.",
+    "kind": "ultra80",
+    "mode": "springCoil",
+    "cat_id": "u80-kinetic-objects",
+    "cat_num": "13",
+    "cat_title": "Kinetic Objects",
+    "cat_desc": "Physical toys, springs, levers and weighted cursor motion.",
+    "cat_icon": "kinetic",
     "index": 2,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-feather-fall",
-    "name": "Feather Fall",
-    "desc": "Light feather marks fall in different angles.",
-    "kind": "coldboot-rich",
-    "mode": "featherFall",
-    "cat_id": "addon-matter-cosmic",
-    "cat_num": "15",
-    "cat_title": "Matter & Cosmic",
-    "cat_desc": "Liquid, paper, gravity, constellations and geometric orbit effects.",
-    "cat_icon": "cosmic",
+    "key": "u80-chain-link",
+    "name": "Chain Link",
+    "desc": "Short chain links separate with staggered timing.",
+    "kind": "ultra80",
+    "mode": "chainLink",
+    "cat_id": "u80-kinetic-objects",
+    "cat_num": "13",
+    "cat_title": "Kinetic Objects",
+    "cat_desc": "Physical toys, springs, levers and weighted cursor motion.",
+    "cat_icon": "kinetic",
     "index": 3,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-dust-collapse",
-    "name": "Dust Collapse",
-    "desc": "Dust starts outside and collapses inward.",
-    "kind": "coldboot-rich",
-    "mode": "dustCollapse",
-    "cat_id": "addon-matter-cosmic",
-    "cat_num": "15",
-    "cat_title": "Matter & Cosmic",
-    "cat_desc": "Liquid, paper, gravity, constellations and geometric orbit effects.",
-    "cat_icon": "cosmic",
+    "key": "u80-piston-push",
+    "name": "Piston Push",
+    "desc": "A piston shaft pushes forward then retracts.",
+    "kind": "ultra80",
+    "mode": "pistonPush",
+    "cat_id": "u80-kinetic-objects",
+    "cat_num": "13",
+    "cat_title": "Kinetic Objects",
+    "cat_desc": "Physical toys, springs, levers and weighted cursor motion.",
+    "cat_icon": "kinetic",
     "index": 4,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-moon-crescent",
-    "name": "Moon Crescent",
-    "desc": "A crescent moon slips past the cursor.",
-    "kind": "coldboot-rich",
-    "mode": "moonCrescent",
-    "cat_id": "addon-matter-cosmic",
-    "cat_num": "15",
-    "cat_title": "Matter & Cosmic",
-    "cat_desc": "Liquid, paper, gravity, constellations and geometric orbit effects.",
-    "cat_icon": "cosmic",
+    "key": "u80-lever-snap",
+    "name": "Lever Snap",
+    "desc": "A lever bar pivots quickly from a hinge.",
+    "kind": "ultra80",
+    "mode": "leverSnap",
+    "cat_id": "u80-kinetic-objects",
+    "cat_num": "13",
+    "cat_title": "Kinetic Objects",
+    "cat_desc": "Physical toys, springs, levers and weighted cursor motion.",
+    "cat_icon": "kinetic",
     "index": 5,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-gravity-dots",
-    "name": "Gravity Dots",
-    "desc": "Dots curve around the pointer like gravity.",
-    "kind": "coldboot-rich",
-    "mode": "gravityDots",
-    "cat_id": "addon-matter-cosmic",
-    "cat_num": "15",
-    "cat_title": "Matter & Cosmic",
-    "cat_desc": "Liquid, paper, gravity, constellations and geometric orbit effects.",
-    "cat_icon": "cosmic",
+    "key": "u80-pulley-rope",
+    "name": "Pulley Rope",
+    "desc": "A rope arc and pulley dot roll away.",
+    "kind": "ultra80",
+    "mode": "pulleyRope",
+    "cat_id": "u80-kinetic-objects",
+    "cat_num": "13",
+    "cat_title": "Kinetic Objects",
+    "cat_desc": "Physical toys, springs, levers and weighted cursor motion.",
+    "cat_icon": "kinetic",
     "index": 6,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-constellation-snap",
-    "name": "Constellation Snap",
-    "desc": "Small points connect into a quick constellation.",
-    "kind": "coldboot-rich",
-    "mode": "constellationSnap",
-    "cat_id": "addon-matter-cosmic",
-    "cat_num": "15",
-    "cat_title": "Matter & Cosmic",
-    "cat_desc": "Liquid, paper, gravity, constellations and geometric orbit effects.",
-    "cat_icon": "cosmic",
+    "key": "u80-bearing-orbit",
+    "name": "Bearing Orbit",
+    "desc": "Ball bearings orbit then scatter outward.",
+    "kind": "ultra80",
+    "mode": "bearingOrbit",
+    "cat_id": "u80-kinetic-objects",
+    "cat_num": "13",
+    "cat_title": "Kinetic Objects",
+    "cat_desc": "Physical toys, springs, levers and weighted cursor motion.",
+    "cat_icon": "kinetic",
     "index": 7,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-cube-wire",
-    "name": "Cube Wire",
-    "desc": "A tiny wireframe cube unfolds and fades.",
-    "kind": "coldboot-rich",
-    "mode": "cubeWire",
-    "cat_id": "addon-matter-cosmic",
-    "cat_num": "15",
-    "cat_title": "Matter & Cosmic",
-    "cat_desc": "Liquid, paper, gravity, constellations and geometric orbit effects.",
-    "cat_icon": "cosmic",
+    "key": "u80-bolt-scatter",
+    "name": "Bolt Scatter",
+    "desc": "Small bolt shapes tumble away from the cursor.",
+    "kind": "ultra80",
+    "mode": "boltScatter",
+    "cat_id": "u80-kinetic-objects",
+    "cat_num": "13",
+    "cat_title": "Kinetic Objects",
+    "cat_desc": "Physical toys, springs, levers and weighted cursor motion.",
+    "cat_icon": "kinetic",
     "index": 8,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-map-pin-pop",
-    "name": "Map Pin Pop",
-    "desc": "A small map pin pops and leaves a ring.",
-    "kind": "coldboot-rich",
-    "mode": "mapPinPop",
-    "cat_id": "addon-matter-cosmic",
-    "cat_num": "15",
-    "cat_title": "Matter & Cosmic",
-    "cat_desc": "Liquid, paper, gravity, constellations and geometric orbit effects.",
-    "cat_icon": "cosmic",
+    "key": "u80-domino-fall",
+    "name": "Domino Fall",
+    "desc": "Tiny domino tiles fall in sequence.",
+    "kind": "ultra80",
+    "mode": "dominoFall",
+    "cat_id": "u80-kinetic-objects",
+    "cat_num": "13",
+    "cat_title": "Kinetic Objects",
+    "cat_desc": "Physical toys, springs, levers and weighted cursor motion.",
+    "cat_icon": "kinetic",
     "index": 9,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   },
   {
-    "key": "cb-spiral-beads",
-    "name": "Spiral Beads",
-    "desc": "Beads spiral outward in a controlled curve.",
-    "kind": "coldboot-rich",
-    "mode": "spiralBeads",
-    "cat_id": "addon-matter-cosmic",
-    "cat_num": "15",
-    "cat_title": "Matter & Cosmic",
-    "cat_desc": "Liquid, paper, gravity, constellations and geometric orbit effects.",
-    "cat_icon": "cosmic",
+    "key": "u80-dice-tumble",
+    "name": "Dice Tumble",
+    "desc": "Small dice squares tumble in different angles.",
+    "kind": "ultra80",
+    "mode": "diceTumble",
+    "cat_id": "u80-kinetic-objects",
+    "cat_num": "13",
+    "cat_title": "Kinetic Objects",
+    "cat_desc": "Physical toys, springs, levers and weighted cursor motion.",
+    "cat_icon": "kinetic",
     "index": 10,
     "dark": {
-      "a": "#f1e7d6",
-      "b": "#9d8c6e",
-      "ink": "#17131f"
+      "a": "#f0e7d4",
+      "b": "#9b8a6d",
+      "ink": "#16120e"
     },
     "light": {
-      "a": "#211c16",
-      "b": "#70614c",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-soft-dot",
-    "name": "Soft Dot",
-    "desc": "A quiet dot follows the cursor with soft delay.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-basic-marks",
-    "cat_num": "16",
-    "cat_title": "Basic Cursor Marks",
-    "cat_desc": "Simple follow-cursor marks: rings, dots, plus signs, corners and bars.",
-    "cat_icon": "basic",
-    "index": 1,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-clean-ring",
-    "name": "Clean Ring",
-    "desc": "A thin ring follows the pointer cleanly.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-basic-marks",
-    "cat_num": "16",
-    "cat_title": "Basic Cursor Marks",
-    "cat_desc": "Simple follow-cursor marks: rings, dots, plus signs, corners and bars.",
-    "cat_icon": "basic",
-    "index": 2,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-cross-plus",
-    "name": "Cross Plus",
-    "desc": "A minimal plus mark follows the cursor.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-basic-marks",
-    "cat_num": "16",
-    "cat_title": "Basic Cursor Marks",
-    "cat_desc": "Simple follow-cursor marks: rings, dots, plus signs, corners and bars.",
-    "cat_icon": "basic",
-    "index": 3,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-tiny-plus",
-    "name": "Tiny Plus",
-    "desc": "A smaller plus mark with lighter motion.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-basic-marks",
-    "cat_num": "16",
-    "cat_title": "Basic Cursor Marks",
-    "cat_desc": "Simple follow-cursor marks: rings, dots, plus signs, corners and bars.",
-    "cat_icon": "basic",
-    "index": 4,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-cursor-halo",
-    "name": "Cursor Halo",
-    "desc": "A subtle halo follows cursor movement.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-basic-marks",
-    "cat_num": "16",
-    "cat_title": "Basic Cursor Marks",
-    "cat_desc": "Simple follow-cursor marks: rings, dots, plus signs, corners and bars.",
-    "cat_icon": "basic",
-    "index": 5,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-square-pulse",
-    "name": "Square Pulse",
-    "desc": "A small square pulse tracks the pointer.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-basic-marks",
-    "cat_num": "16",
-    "cat_title": "Basic Cursor Marks",
-    "cat_desc": "Simple follow-cursor marks: rings, dots, plus signs, corners and bars.",
-    "cat_icon": "basic",
-    "index": 6,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-triangle-tick",
-    "name": "Triangle Tick",
-    "desc": "A tiny triangle tick follows with rotation.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-basic-marks",
-    "cat_num": "16",
-    "cat_title": "Basic Cursor Marks",
-    "cat_desc": "Simple follow-cursor marks: rings, dots, plus signs, corners and bars.",
-    "cat_icon": "basic",
-    "index": 7,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-underline-trail",
-    "name": "Underline Trail",
-    "desc": "A small underline bar follows beneath the cursor.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-basic-marks",
-    "cat_num": "16",
-    "cat_title": "Basic Cursor Marks",
-    "cat_desc": "Simple follow-cursor marks: rings, dots, plus signs, corners and bars.",
-    "cat_icon": "basic",
-    "index": 8,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-corner-ticks",
-    "name": "Corner Ticks",
-    "desc": "Four small corner ticks follow the pointer.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-basic-marks",
-    "cat_num": "16",
-    "cat_title": "Basic Cursor Marks",
-    "cat_desc": "Simple follow-cursor marks: rings, dots, plus signs, corners and bars.",
-    "cat_icon": "basic",
-    "index": 9,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-mini-dash",
-    "name": "Mini Dash",
-    "desc": "A tiny dash follows cursor direction.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-basic-marks",
-    "cat_num": "16",
-    "cat_title": "Basic Cursor Marks",
-    "cat_desc": "Simple follow-cursor marks: rings, dots, plus signs, corners and bars.",
-    "cat_icon": "basic",
-    "index": 10,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-pointer",
-    "name": "Default Pointer",
-    "desc": "A small pointer arrow follows the cursor.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-interface-basics",
-    "cat_num": "17",
-    "cat_title": "Interface Basics",
-    "cat_desc": "Default UI-style cursor helpers with clean, simple follow motion.",
-    "cat_icon": "ui",
-    "index": 1,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-caret",
-    "name": "Caret Blink",
-    "desc": "A blinking caret follows like a text cursor.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-interface-basics",
-    "cat_num": "17",
-    "cat_title": "Interface Basics",
-    "cat_desc": "Default UI-style cursor helpers with clean, simple follow motion.",
-    "cat_icon": "ui",
-    "index": 2,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-target-dot",
-    "name": "Target Dot",
-    "desc": "A clean target dot follows cursor movement.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-interface-basics",
-    "cat_num": "17",
-    "cat_title": "Interface Basics",
-    "cat_desc": "Default UI-style cursor helpers with clean, simple follow motion.",
-    "cat_icon": "ui",
-    "index": 3,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-click-ripple",
-    "name": "Click Ripple",
-    "desc": "A simple ripple pulse follows the pointer.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-interface-basics",
-    "cat_num": "17",
-    "cat_title": "Interface Basics",
-    "cat_desc": "Default UI-style cursor helpers with clean, simple follow motion.",
-    "cat_icon": "ui",
-    "index": 4,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-small-spark",
-    "name": "Small Spark",
-    "desc": "A tiny spark mark follows with light rotation.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-interface-basics",
-    "cat_num": "17",
-    "cat_title": "Interface Basics",
-    "cat_desc": "Default UI-style cursor helpers with clean, simple follow motion.",
-    "cat_icon": "ui",
-    "index": 5,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-plain-ring",
-    "name": "Plain Ring",
-    "desc": "A plain neutral ring follows the pointer.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-interface-basics",
-    "cat_num": "17",
-    "cat_title": "Interface Basics",
-    "cat_desc": "Default UI-style cursor helpers with clean, simple follow motion.",
-    "cat_icon": "ui",
-    "index": 6,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-follow-bar",
-    "name": "Follow Bar",
-    "desc": "A short bar follows cursor direction.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-interface-basics",
-    "cat_num": "17",
-    "cat_title": "Interface Basics",
-    "cat_desc": "Default UI-style cursor helpers with clean, simple follow motion.",
-    "cat_icon": "ui",
-    "index": 7,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-axis-mark",
-    "name": "Axis Mark",
-    "desc": "A small x/y axis mark follows the cursor.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-interface-basics",
-    "cat_num": "17",
-    "cat_title": "Interface Basics",
-    "cat_desc": "Default UI-style cursor helpers with clean, simple follow motion.",
-    "cat_icon": "ui",
-    "index": 8,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-mono-dot",
-    "name": "Mono Dot",
-    "desc": "A simple mono dot with low movement delay.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-interface-basics",
-    "cat_num": "17",
-    "cat_title": "Interface Basics",
-    "cat_desc": "Default UI-style cursor helpers with clean, simple follow motion.",
-    "cat_icon": "ui",
-    "index": 9,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
-      "ink": "#faf8f1"
-    }
-  },
-  {
-    "key": "cb-basic-quiet-bubble",
-    "name": "Quiet Bubble",
-    "desc": "A small soft bubble follows the cursor.",
-    "kind": "coldboot-basic",
-    "mode": "basic",
-    "cat_id": "addon-interface-basics",
-    "cat_num": "17",
-    "cat_title": "Interface Basics",
-    "cat_desc": "Default UI-style cursor helpers with clean, simple follow motion.",
-    "cat_icon": "ui",
-    "index": 10,
-    "dark": {
-      "a": "#efe6d6",
-      "b": "#a2947b",
-      "ink": "#17131f"
-    },
-    "light": {
-      "a": "#23201b",
-      "b": "#766b5a",
+      "a": "#1f1a14",
+      "b": "#75654d",
       "ink": "#faf8f1"
     }
   }
 ];
-
-window.COLD_ADDON_EFFECTS = window.COLD_EFFECTS.filter((fx) => fx.kind === "coldboot-rich" || fx.kind === "coldboot-basic");

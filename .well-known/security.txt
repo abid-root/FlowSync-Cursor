@@ -1,0 +1,3 @@
+Contact: mailto:abidhasan2348@gmail.com
+Preferred-Languages: en
+Canonical: https://abid-root.github.io/flowsync-cursor-library/.well-known/security.txt

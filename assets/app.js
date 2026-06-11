@@ -6,19 +6,21 @@ function qsa(sel, root = document) { return Array.from(root.querySelectorAll(sel
 
 function initTheme() {
   const root = document.documentElement;
-  const sun = String.fromCharCode(9788);
-  const moon = String.fromCharCode(9789);
 
-  function clean(value) { return value === "light" ? "light" : "dark"; }
+  function clean(value) {
+    return value === "light" ? "light" : "dark";
+  }
+
   function apply(theme) {
     theme = clean(theme);
     root.setAttribute("data-theme", theme);
     document.body.setAttribute("data-theme", theme);
-    localStorage.setItem("coldboot-cursor-theme", theme);
+    localStorage.setItem("flowsync-cursor-theme", theme);
+
     qsa("[data-theme-toggle]").forEach((btn) => {
-      btn.textContent = theme === "light" ? sun : moon;
       btn.type = "button";
-      btn.setAttribute("aria-label", "Toggle theme");
+      btn.setAttribute("aria-label", theme === "light" ? "Switch to dark theme" : "Switch to light theme");
+      btn.setAttribute("aria-pressed", theme === "light" ? "false" : "true");
     });
   }
 
@@ -29,7 +31,7 @@ function initTheme() {
     };
   });
 
-  apply(localStorage.getItem("coldboot-cursor-theme") || root.getAttribute("data-theme") || "dark");
+  apply(localStorage.getItem("flowsync-cursor-theme") || root.getAttribute("data-theme") || "dark");
 }
 
 function renderCategoryGrid(grid, activeId, sameFolder, expanded = false) {
@@ -221,57 +223,6 @@ function initSourcePage(effectKey) {
   }, { passive: true });
 })();
 
-/* ===== ULTRA80 PREVIEW RESCUE START ===== */
-(function () {
-  if (window.__ultra80PreviewRescueApplied) return;
-  window.__ultra80PreviewRescueApplied = true;
-
-  if (typeof attachEffectPreview === "function") {
-    attachEffectPreview = function (section, effect) {
-      const layer = section.querySelector(".fx-layer");
-      const target = section.querySelector(".preview-zone") || section;
-      if (!layer || !target || !effect || typeof COLD_FX === "undefined") return;
-
-      let last = 0;
-      const persistentKinds = new Set(["snake", "centipede", "jelly", "fish", "wild-animal", "ultra-follow", "signature-basic", "mega-basic"]);
-
-      function spawnAt(clientX, clientY, force) {
-        const now = performance.now();
-        const gap = persistentKinds.has(effect.kind) ? 0 : 46;
-        if (!force && now - last < gap) return;
-        last = now;
-
-        const rect = layer.getBoundingClientRect();
-        const x = clientX - rect.left;
-        const y = clientY - rect.top;
-        COLD_FX.spawn(effect, layer, x, y);
-      }
-
-      function spawnCenter() {
-        const rect = target.getBoundingClientRect();
-        spawnAt(rect.left + rect.width / 2, rect.top + rect.height / 2, true);
-      }
-
-      target.addEventListener("pointerenter", spawnCenter);
-      target.addEventListener("pointerdown", (event) => spawnAt(event.clientX, event.clientY, true));
-      target.addEventListener("pointermove", (event) => spawnAt(event.clientX, event.clientY, false));
-      target.addEventListener("touchstart", (event) => {
-        const touch = event.touches && event.touches[0];
-        if (touch) spawnAt(touch.clientX, touch.clientY, true);
-      }, { passive: true });
-
-      target.addEventListener("pointerleave", () => {
-        if (persistentKinds.has(effect.kind)) {
-          setTimeout(() => COLD_FX.clear(layer), 240);
-        }
-      });
-
-      // Make empty previews visibly start even before the first mouse move.
-      window.setTimeout(spawnCenter, 160);
-    };
-  }
-})();
-/* ===== ULTRA80 PREVIEW RESCUE END ===== */
 /* ===== ULTRA80 FINAL PREVIEW PATCH START ===== */
 (function () {
   if (window.__ultra80FinalPreviewPatch) return;

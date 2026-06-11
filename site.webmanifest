@@ -1,0 +1,20 @@
+{
+  "name": "FlowSync Cursor Library",
+  "short_name": "FlowSync",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#070a10",
+  "theme_color": "#070a10",
+  "icons": [
+    {
+      "src": "assets/common/flowsync-logo-dark-128.webp",
+      "sizes": "128x128",
+      "type": "image/webp"
+    },
+    {
+      "src": "assets/common/flowsync-logo-dark.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ]
+}
