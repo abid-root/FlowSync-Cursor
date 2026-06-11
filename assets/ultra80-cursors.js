@@ -141,7 +141,7 @@
     scrollCurl(effect, layer, x, y) { shape(layer,'u80-scroll',x,y,effect,20,-35,860,rand(-20,20)); line(layer,'u80-scroll-line',x,y+8,effect,42,0,20,-30,820); },
     typeSlug(effect, layer, x, y) { ['A','B','/','*'].forEach((t,i)=>card(layer,'u80-type-slug',x+rand(-5,5),y+rand(-5,5),effect,t,rand(-42,42),rand(-52,18),760+i*45,rand(-14,14))); },
     glyphWheel(effect, layer, x, y) { const glyphs=['✕','◇','△','○','+','//','*','□']; glyphs.forEach((g,i)=>{let a=i*Math.PI/4; textMark(layer,'u80-glyph',x+Math.cos(a)*18,y+Math.sin(a)*18,effect,g,Math.cos(a)*48,Math.sin(a)*48,760+i*20,a*180/Math.PI);}); },
-    morseBlips(effect, layer, x, y) { ['•','—','•','•','—'].forEach((t,i)=>textMark(layer,'u80-morse',x-24+i*12,y,effect,t,rand(-10,10),rand(-45,25),700+i*50,0)); },
+    morseBlips(effect, layer, x, y) { ['•','— ','•','•','— '].forEach((t,i)=>textMark(layer,'u80-morse',x-24+i*12,y,effect,t,rand(-10,10),rand(-45,25),700+i*50,0)); },
     brailleDots(effect, layer, x, y) { for(let i=0;i<6;i++) dot(layer,'u80-braille',x+(i%2)*9-4,y+Math.floor(i/2)*9-9,effect,5,rand(-25,25),rand(-40,25),700+i*35); },
     chessStep(effect, layer, x, y) { shape(layer,'u80-chess',x,y,effect,34,-34,820,0); for(let i=0;i<3;i++) dot(layer,'u80-chess-dot',x+i*10,y-i*10,effect,4,30+i*10,-30-i*10,740+i*40); },
     lockShards(effect, layer, x, y) { shape(layer,'u80-lock',x,y,effect,0,-20,760,0); for(let i=0;i<6;i++) shape(layer,'u80-lock-shard',x,y,effect,rand(-50,50),rand(-45,45),700+i*35,rand(-180,180)); },
