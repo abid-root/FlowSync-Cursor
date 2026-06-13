@@ -788,7 +788,7 @@ html[data-theme="light"] .site-snake-fx{
 /* ===== WILD CREATURES EXTRA CURSORS END ===== */
 
 
-/* ===== COLDBOOT ADDON CURSOR PACK START ===== */
+/* ===== FLOWSYNC ADDON CURSOR PACK START ===== */
 .signature-fx {
   position: absolute !important;
   pointer-events: none !important;
@@ -1041,7 +1041,7 @@ html[data-theme="light"] .site-snake-fx{
 .sig-cinder{width:15px;height:12px;background:linear-gradient(135deg,var(--a),var(--b));clip-path:polygon(50% 0,100% 40%,72% 100%,10% 78%,0 28%);box-shadow:0 0 10px color-mix(in srgb,var(--a) 18%,transparent)}
 .sig-ghost-ring{width:44px;height:44px;border-radius:999px;border:1px solid color-mix(in srgb,var(--a) 55%,transparent);background:radial-gradient(circle,color-mix(in srgb,var(--a) 10%,transparent),transparent 64%)}
 
-/* ===== COLDBOOT ADDON CURSOR PACK END ===== */
+/* ===== FLOWSYNC ADDON CURSOR PACK END ===== */
 
 /* ===== BASIC PREVIEW BUGFIX START ===== */
 .signature-basic-follow[class*="cb-basic-"] { opacity: 1; }
